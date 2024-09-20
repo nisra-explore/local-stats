@@ -1,0 +1,627 @@
+{
+  "code": "N10000305",
+  "name": "Collin",
+  "comment": "This JSON includes data for the area explorer app.",
+  "type": "dea",
+  "count": 80,
+  "parents": [
+    {
+      "code": "N09000003",
+      "name": "Belfast",
+      "type": "lgd"
+    },
+    {
+      "code": "N92000002",
+      "name": "Northern Ireland",
+      "type": "ctry"
+    }
+  ],
+  "children": [
+    {
+      "code": "N21000286",
+      "name": "Collin_A",
+      "type": "sdz"
+    },
+    {
+      "code": "N21000287",
+      "name": "Collin_B",
+      "type": "sdz"
+    },
+    {
+      "code": "N21000288",
+      "name": "Collin_C",
+      "type": "sdz"
+    },
+    {
+      "code": "N21000289",
+      "name": "Collin_D",
+      "type": "sdz"
+    },
+    {
+      "code": "N21000290",
+      "name": "Collin_E",
+      "type": "sdz"
+    },
+    {
+      "code": "N21000291",
+      "name": "Collin_F",
+      "type": "sdz"
+    },
+    {
+      "code": "N21000292",
+      "name": "Collin_G",
+      "type": "sdz"
+    },
+    {
+      "code": "N21000293",
+      "name": "Collin_H",
+      "type": "sdz"
+    },
+    {
+      "code": "N21000294",
+      "name": "Collin_J",
+      "type": "sdz"
+    },
+    {
+      "code": "N21000295",
+      "name": "Collin_K",
+      "type": "sdz"
+    },
+    {
+      "code": "N21000296",
+      "name": "Collin_L",
+      "type": "sdz"
+    },
+    {
+      "code": "N21000297",
+      "name": "Collin_N",
+      "type": "sdz"
+    },
+    {
+      "code": "N21000298",
+      "name": "Collin_P",
+      "type": "sdz"
+    },
+    {
+      "code": "N21000299",
+      "name": "Collin_Q",
+      "type": "sdz"
+    },
+    {
+      "code": "N21000300",
+      "name": "Collin_R",
+      "type": "sdz"
+    }
+  ],
+  "bounds": [
+    [-5.9908, 54.5406],
+    [-6.0601, 54.5846]
+  ],
+  "data": {
+    "Admiss": {
+      "text": "Diseases of the respiratory system",
+      "value": 4949
+    },
+    "population": {
+      "perc": {
+        "2011": {
+          "all": 100
+        },
+        "2021": {
+          "all": 100
+        }
+      },
+      "value": {
+        "2011": {
+          "all": 0
+        },
+        "change": {
+          "all": "Inf"
+        },
+        "2021": {
+          "all": 33909
+        }
+      },
+      "value_rank": {
+        "2011": {
+          "all": 0
+        },
+        "2021": {
+          "all": 8
+        }
+      }
+    },
+    "households": {
+      "perc": {
+        "2011": {
+          "all_households": 100
+        },
+        "2021": {
+          "all_households": 100
+        }
+      },
+      "value": {
+        "2011": {
+          "all_households": 0
+        },
+        "change": {
+          "all_households": "Inf"
+        },
+        "2021": {
+          "all_households": 13053
+        }
+      }
+    },
+    "cob": {
+      "perc": {
+        "2011": {
+          "england": 100,
+          "northern_ireland": 100,
+          "other_cob": 100,
+          "republic_of_ireland": 100,
+          "scotland": 100,
+          "wales": 100
+        },
+        "2021": {
+          "england": 1.8315,
+          "northern_ireland": 93.0545,
+          "other_cob": 3.1498,
+          "republic_of_ireland": 1.4953,
+          "scotland": 0.3864,
+          "wales": 0.0826
+        }
+      }
+    },
+    "general_health": {
+      "perc": {
+        "2011": {
+          "bad": 100,
+          "fair": 100,
+          "good": 100,
+          "very_bad": 100,
+          "very_good": 100
+        },
+        "2021": {
+          "bad": 8.0357,
+          "fair": 13.6888,
+          "good": 25.6082,
+          "very_bad": 2.9548,
+          "very_good": 49.7125
+        }
+      }
+    },
+    "hh_size": {
+      "perc": {
+        "2011": {
+          "five_people": 100,
+          "four_people": 100,
+          "one_person": 100,
+          "three_people": 100,
+          "two_people": 100
+        },
+        "2021": {
+          "five_people": 10.3961,
+          "four_people": 14.8165,
+          "one_person": 27.1279,
+          "three_people": 19.9265,
+          "two_people": 27.7331
+        }
+      }
+    },
+    "highest_level_of_qualifications": {
+      "perc": {
+        "2011": {
+          "apprenticeship": 100,
+          "level_1_qualifications": 100,
+          "level_2_qualifications": 100,
+          "level_3_qualifications": 100,
+          "level_4_qualifications_and_above": 100,
+          "no_qualifications": 100,
+          "other_qualifications": 100
+        },
+        "2021": {
+          "apprenticeship": 5.6381,
+          "level_1_qualifications": 6.6087,
+          "level_2_qualifications": 16.0982,
+          "level_3_qualifications": 16.7556,
+          "level_4_qualifications_and_above": 27.9157,
+          "no_qualifications": 25.2243,
+          "other_qualifications": 1.7595
+        }
+      }
+    },
+    "car_or_van": {
+      "perc": {
+        "2011": {
+          "five_or_more": 100,
+          "four": 100,
+          "none": 100,
+          "one": 100,
+          "three": 100,
+          "two": 100
+        },
+        "2021": {
+          "five_or_more": 0.2605,
+          "four": 1.1721,
+          "none": 26.3464,
+          "one": 45.254,
+          "three": 5.018,
+          "two": 21.949
+        }
+      }
+    },
+    "mainlang": {
+      "perc": {
+        "2011": {
+          "english": 100,
+          "other_languages": 100
+        },
+        "2021": {
+          "english": 96.3155,
+          "other_languages": 3.6845
+        }
+      }
+    },
+    "age": {
+      "perc": {
+        "2011": {
+          "a0to14": 100,
+          "a15to39": 100,
+          "a40to64": 100,
+          "a65plus": 100
+        },
+        "2021": {
+          "a0to14": 22.3166,
+          "a15to39": 34.1885,
+          "a40to64": 30.7649,
+          "a65plus": 12.73
+        }
+      }
+    },
+    "provision_care": {
+      "perc": {
+        "2011": {
+          "a1to19_hours": 100,
+          "a20to49_hours": 100,
+          "a50plus_hours": 100,
+          "no_care": 100
+        },
+        "2021": {
+          "a1to19_hours": 5.3474,
+          "a20to49_hours": 3.6652,
+          "a50plus_hours": 5.379,
+          "no_care": 85.6084
+        }
+      }
+    },
+    "religion_or_religion_brought_up_in": {
+      "perc": {
+        "2011": {
+          "catholic": 100,
+          "none": 100,
+          "other_religions": 100,
+          "protestant_and_other_christian_including_christian_related": 100
+        },
+        "2021": {
+          "catholic": 87.8056,
+          "none": 3.415,
+          "other_religions": 1.2003,
+          "protestant_and_other_christian_including_christian_related": 7.5791
+        }
+      }
+    },
+    "renewable_energy": {
+      "perc": {
+        "2011": {
+          "any_renewable": 100,
+          "no_renewable": 100
+        },
+        "2021": {
+          "any_renewable": 3.4551,
+          "no_renewable": 96.5449
+        }
+      }
+    },
+    "sex": {
+      "perc": {
+        "2011": {
+          "females": 100,
+          "males": 100
+        },
+        "2021": {
+          "females": 52.2959,
+          "males": 47.7041
+        }
+      }
+    },
+    "LE": {
+      "value": {
+        "Females": 79.7,
+        "Males": 76.7
+      }
+    },
+    "DEN": {
+      "value": {
+        "GDSDSDentists": 22.17,
+        "GDSDSSurgeries": 7
+      }
+    },
+    "DEN_REG": {
+      "value": {
+        "Dental_Registrations": 24989
+      }
+    },
+    "BS": {
+      "value": {
+        "IS": 690,
+        "JSA": 160,
+        "RP": 4040,
+        "PC": 1240,
+        "AA": 610,
+        "CA": 2130,
+        "DLA": 2030,
+        "ESA": 2630,
+        "UC": 3850,
+        "PIP": 5070
+      }
+    },
+    "Primary": {
+      "value": {
+        "FSME": 1879,
+        "All": 3792
+      },
+      "perc": {
+        "FSME": 49.5517,
+        "All": 100
+      }
+    },
+    "PostPrimary": {
+      "value": {
+        "FSME": 1479,
+        "All": 3238
+      },
+      "perc": {
+        "FSME": 45.6763,
+        "All": 100
+      }
+    },
+    "AllSchools": {
+      "value": {
+        "SEN": 1831
+      },
+      "perc": {
+        "SEN": 26.0455
+      }
+    },
+    "crime": {
+      "value": {
+        "allcrime": 1944,
+        "btcd": 673,
+        "other": 320,
+        "person": 951,
+        "burglary": 62
+      },
+      "perc": {
+        "allcrime": 100,
+        "btcd": 34.6193,
+        "other": 16.4609,
+        "person": 48.9198
+      }
+    },
+    "farms": {
+      "value": {
+        "F": 3,
+        "FA": 3
+      }
+    },
+    "Attainment": {
+      "value": 70.4
+    },
+    "FE": {
+      "value": 1345
+    },
+    "HE": {
+      "value": 1245
+    },
+    "MYETotal": {
+      "value": 34100
+    },
+    "BroadAge": {
+      "perc": {
+        "Age 0-15": 18.6053,
+        "Age 16-39": 34.3393,
+        "Age 40-64": 31.0284,
+        "Age 65+": 16.027
+      }
+    },
+    "Destination": {
+      "perc": {
+        "destHEpct": 40.8,
+        "destFEpct": 17.2,
+        "destEmploypct": 14.5,
+        "destTrainpct": 20.9,
+        "destUnempUnkpct": 6.6
+      }
+    }
+  },
+  "hectares": 1060,
+  "dea_location_description": "part of Belfast City and Lisburn settlements",
+  "meta_data": {
+    "MYETotal": [
+      {
+        "table_code": "MYE01T010",
+        "dataset_url": "https://data.nisra.gov.uk/table/MYE01T010",
+        "geog_level": "dea",
+        "last_updated": "2024-07-31",
+        "email": "census@nisra.gov.uk",
+        "title": "Mid-year population estimates",
+        "year": "2022"
+      }
+    ],
+    "BroadAge": [
+      {
+        "table_code": "MYE01T010",
+        "dataset_url": "https://data.nisra.gov.uk/table/MYE01T010",
+        "geog_level": "dea",
+        "last_updated": "2024-07-31",
+        "email": "census@nisra.gov.uk",
+        "title": "Mid-year population estimates",
+        "year": "2022"
+      }
+    ],
+    "LE": [
+      {
+        "table_code": "LEDEA",
+        "dataset_url": "https://data.nisra.gov.uk/table/LEDEA",
+        "geog_level": "dea",
+        "last_updated": "2024-04-11",
+        "email": "healthinequalities@health-ni.gov.uk",
+        "title": "Life expectancy at birth",
+        "year": "2020-22"
+      }
+    ],
+    "Admiss": [
+      {
+        "table_code": "ADMITDEA",
+        "dataset_url": "https://data.nisra.gov.uk/table/ADMITDEA",
+        "geog_level": "dea",
+        "last_updated": "2024-04-11",
+        "email": "statistics@health-ni.gov.uk",
+        "title": "Primary Reason for Admissions to HSC Hospitals",
+        "year": "2022"
+      }
+    ],
+    "DEN": [
+      {
+        "table_code": "FPSGDSDSDEA",
+        "dataset_url": "https://data.nisra.gov.uk/table/FPSGDSDSDEA",
+        "geog_level": "dea",
+        "last_updated": "2024-07-10",
+        "email": "info.bso@hscni.net",
+        "title": "General Dental Services Dentists and Surgeries",
+        "year": "2023/24"
+      }
+    ],
+    "DEN_REG": [
+      {
+        "table_code": "FPSGDSDRDEA",
+        "dataset_url": "https://data.nisra.gov.uk/table/FPSGDSDRDEA",
+        "geog_level": "dea",
+        "last_updated": "2024-07-10",
+        "email": "info.bso@hscni.net",
+        "title": "General Dental Services Dental Registrations",
+        "year": "2023/24"
+      }
+    ],
+    "BS": [
+      {
+        "table_code": "BSDEA",
+        "dataset_url": "https://data.nisra.gov.uk/table/BSDEA",
+        "geog_level": "dea",
+        "last_updated": "2023-07-06",
+        "email": "analyticsdivision@communities-ni.gov.uk",
+        "title": "Benefit Statistics",
+        "year": "2023"
+      }
+    ],
+    "Primary": [
+      {
+        "table_code": "DESCPDEA",
+        "dataset_url": "https://data.nisra.gov.uk/table/DESCPDEA",
+        "geog_level": "dea",
+        "last_updated": "2023-05-31",
+        "email": "statistics@education-ni.gov.uk",
+        "title": "School Census - Primary",
+        "year": "2022/23"
+      }
+    ],
+    "PostPrimary": [
+      {
+        "table_code": "DESCPPDEA",
+        "dataset_url": "https://data.nisra.gov.uk/table/DESCPPDEA",
+        "geog_level": "dea",
+        "last_updated": "2023-05-31",
+        "email": "statistics@education-ni.gov.uk",
+        "title": "School Census - Post Primary",
+        "year": "2022/23"
+      }
+    ],
+    "SEN": [
+      {
+        "table_code": "DESCSDEA",
+        "dataset_url": "https://data.nisra.gov.uk/table/DESCSDEA",
+        "geog_level": "dea",
+        "last_updated": "2023-05-31",
+        "email": "statistics@education-ni.gov.uk",
+        "title": "School Census - Special Schools",
+        "year": "2022/23"
+      }
+    ],
+    "Attainment": [
+      {
+        "table_code": "DESLSADEA",
+        "dataset_url": "https://data.nisra.gov.uk/table/DESLSADEA",
+        "geog_level": "dea",
+        "last_updated": "2024-06-27",
+        "email": "statistics@education-ni.gov.uk",
+        "title": "School Leavers Survey - Attainment",
+        "year": "2022/23"
+      }
+    ],
+    "FE": [
+      {
+        "table_code": "FEENROLDEA",
+        "dataset_url": "https://data.nisra.gov.uk/table/FEENROLDEA",
+        "geog_level": "dea",
+        "last_updated": "2024-08-22",
+        "email": "dfemail@economy-ni.gov.uk",
+        "title": "Regulated enrolments at Further Education Colleges",
+        "year": "2022/23"
+      }
+    ],
+    "HE": [
+      {
+        "table_code": "HEENROLDEA",
+        "dataset_url": "https://data.nisra.gov.uk/table/HEENROLDEA",
+        "geog_level": "dea",
+        "last_updated": "2023-06-21",
+        "email": "dfemail@economy-ni.gov.uk",
+        "title": "Enrolments at Higher Education Institutions",
+        "year": "2021/22"
+      }
+    ],
+    "Destination": [
+      {
+        "table_code": "DESLSDDEA",
+        "dataset_url": "https://data.nisra.gov.uk/table/DESLSDDEA",
+        "geog_level": "dea",
+        "last_updated": "2024-06-27",
+        "email": "statistics@education-ni.gov.uk",
+        "title": "School Leavers Survey - Destination",
+        "year": "2022/23"
+      }
+    ],
+    "crime": [
+      {
+        "table_code": "PRCDEA",
+        "dataset_url": "https://data.nisra.gov.uk/table/PRCDEA",
+        "geog_level": "dea",
+        "last_updated": "2024-07-25",
+        "email": "statistics@psni.police.uk",
+        "title": "Police Recorded Crime",
+        "year": "2023/24"
+      }
+    ],
+    "farms": [
+      {
+        "table_code": "FCDEA",
+        "dataset_url": "https://data.nisra.gov.uk/table/FCDEA",
+        "geog_level": "dea",
+        "last_updated": "2024-08-26",
+        "email": "env.stats@daera-ni.gov.uk",
+        "title": "Farm Census",
+        "year": "2023"
+      }
+    ]
+  }
+}

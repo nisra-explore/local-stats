@@ -1,0 +1,18 @@
+.DS_Store
+node_modules
+docs
+/.svelte-kit
+/package
+/build
+/data_jsons
+/data_jsons_dea
+/data_jsons_dea_2202
+/data_jsons_dea - pre0602pm
+/data_jsons_dea_per0602
+/data_jsons_lgd
+data_jsons.zip
+*.zip
+.Rproj.user
+.Rhistory
+.Ruserdata
+All NISRA Data Portal Tables*

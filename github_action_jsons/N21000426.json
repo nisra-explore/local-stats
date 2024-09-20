@@ -1,0 +1,350 @@
+{
+  "code": "N21000426",
+  "name": "Waterside_D",
+  "comment": "This JSON includes data for the area explorer app.",
+  "type": "sdz",
+  "count": 850,
+  "parents": [
+    {
+      "code": "N10000507",
+      "name": "Waterside",
+      "type": "dea"
+    },
+    {
+      "code": "N09000005",
+      "name": "Derry City and Strabane",
+      "type": "lgd"
+    },
+    {
+      "code": "N92000002",
+      "name": "Northern Ireland",
+      "type": "ctry"
+    }
+  ],
+  "children": [
+    {
+      "code": "N20001862",
+      "name": "Waterside_D1",
+      "type": "dz"
+    },
+    {
+      "code": "N20001863",
+      "name": "Waterside_D2",
+      "type": "dz"
+    },
+    {
+      "code": "N20001864",
+      "name": "Waterside_D3",
+      "type": "dz"
+    },
+    {
+      "code": "N20001865",
+      "name": "Waterside_D4",
+      "type": "dz"
+    },
+    {
+      "code": "N20001871",
+      "name": "Waterside_D5",
+      "type": "dz"
+    }
+  ],
+  "bounds": [
+    [-7.2745, 54.9925],
+    [-7.2981, 55.0009]
+  ],
+  "data": {
+    "population": {
+      "perc": {
+        "2011": {
+          "all": 100
+        },
+        "2021": {
+          "all": 100
+        }
+      },
+      "value": {
+        "2011": {
+          "all": 0
+        },
+        "change": {
+          "all": "Inf"
+        },
+        "2021": {
+          "all": 1995
+        }
+      },
+      "value_rank": {
+        "2011": {
+          "all": 0
+        },
+        "2021": {
+          "all": 538
+        }
+      }
+    },
+    "households": {
+      "perc": {
+        "2011": {
+          "all_households": 100
+        },
+        "2021": {
+          "all_households": 100
+        }
+      },
+      "value": {
+        "2011": {
+          "all_households": 0
+        },
+        "change": {
+          "all_households": "Inf"
+        },
+        "2021": {
+          "all_households": 905
+        }
+      }
+    },
+    "cob": {
+      "perc": {
+        "2011": {
+          "england": 100,
+          "northern_ireland": 100,
+          "other_cob": 100,
+          "republic_of_ireland": 100,
+          "scotland": 100,
+          "wales": 100
+        },
+        "2021": {
+          "england": 4.5568,
+          "northern_ireland": 85.8287,
+          "other_cob": 5.0576,
+          "republic_of_ireland": 3.305,
+          "scotland": 1.1517,
+          "wales": 0.1002
+        }
+      }
+    },
+    "general_health": {
+      "perc": {
+        "2011": {
+          "bad": 100,
+          "fair": 100,
+          "good": 100,
+          "very_bad": 100,
+          "very_good": 100
+        },
+        "2021": {
+          "bad": 7.5689,
+          "fair": 16.6416,
+          "good": 28.7218,
+          "very_bad": 2.807,
+          "very_good": 44.2607
+        }
+      }
+    },
+    "hh_size": {
+      "perc": {
+        "2011": {
+          "five_people": 100,
+          "four_people": 100,
+          "one_person": 100,
+          "three_people": 100,
+          "two_people": 100
+        },
+        "2021": {
+          "five_people": 5.0829,
+          "four_people": 9.8343,
+          "one_person": 34.0331,
+          "three_people": 17.2376,
+          "two_people": 33.8122
+        }
+      }
+    },
+    "highest_level_of_qualifications": {
+      "perc": {
+        "2011": {
+          "apprenticeship": 100,
+          "level_1_qualifications": 100,
+          "level_2_qualifications": 100,
+          "level_3_qualifications": 100,
+          "level_4_qualifications_and_above": 100,
+          "no_qualifications": 100,
+          "other_qualifications": 100
+        },
+        "2021": {
+          "apprenticeship": 7.0056,
+          "level_1_qualifications": 5.6417,
+          "level_2_qualifications": 13.5772,
+          "level_3_qualifications": 17.173,
+          "level_4_qualifications_and_above": 30.2542,
+          "no_qualifications": 24.2405,
+          "other_qualifications": 2.1079
+        }
+      }
+    },
+    "car_or_van": {
+      "perc": {
+        "2011": {
+          "five_or_more": 100,
+          "four": 100,
+          "none": 100,
+          "one": 100,
+          "three": 100,
+          "two": 100
+        },
+        "2021": {
+          "five_or_more": 0.221,
+          "four": 1.326,
+          "none": 19.116,
+          "one": 49.2818,
+          "three": 4.8619,
+          "two": 25.1934
+        }
+      }
+    },
+    "mainlang": {
+      "perc": {
+        "2011": {
+          "english": 100,
+          "other_languages": 100
+        },
+        "2021": {
+          "english": 97.0088,
+          "other_languages": 2.9912
+        }
+      }
+    },
+    "age": {
+      "perc": {
+        "2011": {
+          "a0to14": 100,
+          "a15to39": 100,
+          "a40to64": 100,
+          "a65plus": 100
+        },
+        "2021": {
+          "a0to14": 17.8947,
+          "a15to39": 27.7694,
+          "a40to64": 35.6892,
+          "a65plus": 18.6466
+        }
+      }
+    },
+    "provision_care": {
+      "perc": {
+        "2011": {
+          "a1to19_hours": 100,
+          "a20to49_hours": 100,
+          "a50plus_hours": 100,
+          "no_care": 100
+        },
+        "2021": {
+          "a1to19_hours": 5.1323,
+          "a20to49_hours": 3.2275,
+          "a50plus_hours": 5.5556,
+          "no_care": 86.0847
+        }
+      }
+    },
+    "religion_or_religion_brought_up_in": {
+      "perc": {
+        "2011": {
+          "catholic": 100,
+          "none": 100,
+          "other_religions": 100,
+          "protestant_and_other_christian_including_christian_related": 100
+        },
+        "2021": {
+          "catholic": 32.8321,
+          "none": 7.0175,
+          "other_religions": 1.9549,
+          "protestant_and_other_christian_including_christian_related": 58.1955
+        }
+      }
+    },
+    "renewable_energy": {
+      "perc": {
+        "2011": {
+          "any_renewable": 100,
+          "no_renewable": 100
+        },
+        "2021": {
+          "any_renewable": 3.9867,
+          "no_renewable": 96.0133
+        }
+      }
+    },
+    "sex": {
+      "perc": {
+        "2011": {
+          "females": 100,
+          "males": 100
+        },
+        "2021": {
+          "females": 51.4787,
+          "males": 48.5213
+        }
+      }
+    },
+    "BS": {
+      "value": {
+        "IS": 20,
+        "JSA": 10,
+        "RP": 320,
+        "PC": 70,
+        "AA": 60,
+        "CA": 110,
+        "DLA": 100,
+        "ESA": 160,
+        "UC": 190,
+        "PIP": 280
+      }
+    },
+    "MYETotal": {
+      "value": 2034
+    },
+    "BroadAge": {
+      "perc": {
+        "Age 0-15": 19.0265,
+        "Age 16-39": 26.7453,
+        "Age 40-64": 35.3491,
+        "Age 65+": 18.8791
+      }
+    }
+  },
+  "hectares": 58,
+  "meta_data": {
+    "MYETotal": [
+      {
+        "table_code": "MYE01T012",
+        "dataset_url": "https://data.nisra.gov.uk/table/MYE01T012",
+        "geog_level": "sdz",
+        "last_updated": "2024-07-30",
+        "email": "census@nisra.gov.uk",
+        "title": "Mid-year population estimates",
+        "year": "2022"
+      }
+    ],
+    "BroadAge": [
+      {
+        "table_code": "MYE01T012",
+        "dataset_url": "https://data.nisra.gov.uk/table/MYE01T012",
+        "geog_level": "sdz",
+        "last_updated": "2024-07-30",
+        "email": "census@nisra.gov.uk",
+        "title": "Mid-year population estimates",
+        "year": "2022"
+      }
+    ],
+    "BS": [
+      {
+        "table_code": "BSSDZ",
+        "dataset_url": "https://data.nisra.gov.uk/table/BSSDZ",
+        "geog_level": "sdz",
+        "last_updated": "2023-07-06",
+        "email": "psu@communities-ni.gov.uk",
+        "title": "Benefit Statistics",
+        "year": "2023"
+      }
+    ]
+  }
+}

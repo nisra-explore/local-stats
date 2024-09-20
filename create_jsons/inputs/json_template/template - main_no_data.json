@@ -1,0 +1,26 @@
+{
+  "code": "test_code",
+  "name": "Trial Area",
+  "comment": "THIS IS TEST data",
+  "type": "areacode",
+  "count": 999,
+  "parents": [],
+  "children": [
+    {
+      "code": "childcode1",
+      "name": "First Child",
+      "type": "geog"
+    },
+    {
+      "code": "childcode2",
+      "name": "Second Child",
+      "type": "geog"
+    }
+  ],
+  "bounds": [
+    [-10, 60],
+    [-5, 50]
+  ],
+  "data": {
+  }
+}

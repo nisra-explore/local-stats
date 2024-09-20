@@ -1,0 +1,28 @@
+{
+  "name": "local-stats",
+  "version": "0.0.1",
+  "homepage": "https://explore.nisra.gov.uk/local-stats/",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "gh-pages -d build -t true"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-static": "^1.0.0",
+    "@sveltejs/kit": "1.30.4",
+    "gh-pages": "^6.1.1",
+    "layercake": "^6.1.1",
+    "mapbox-gl": "1.x",
+    "parse-color": "^1.0.0",
+    "svelte": "^4.2.19",
+    "svelte-preprocess": "^6.0.2",
+    "vite": "^4.0.0"
+  },
+  "dependencies": {
+    "d3-dsv": "latest",
+    "d3-scale": "latest",
+    "svelte-parse": "^0.1.0"
+  },
+  "type": "module"
+}
