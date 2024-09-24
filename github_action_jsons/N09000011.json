@@ -341,16 +341,16 @@
     },
     "BS": {
       "value": {
-        "IS": 670,
-        "JSA": 420,
-        "RP": 33050,
-        "PC": 4090,
-        "AA": 5870,
-        "CA": 5460,
-        "DLA": 5210,
-        "ESA": 7190,
-        "UC": 10600,
-        "PIP": 12950
+        "IS": 550,
+        "JSA": 330,
+        "RP": 32270,
+        "PC": 4040,
+        "AA": 6390,
+        "CA": 5550,
+        "DLA": 5160,
+        "ESA": 6850,
+        "UC": 12030,
+        "PIP": 14580
       }
     },
     "PopChange": {
@@ -773,10 +773,10 @@
         "table_code": "BSLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/BSLGD",
         "geog_level": "lgd",
-        "last_updated": "2023-07-06",
+        "last_updated": "2024-09-24",
         "email": "analyticsdivision@communities-ni.gov.uk",
         "title": "Benefit Statistics",
-        "year": "2023"
+        "year": "2024"
       }
     ],
     "Primary": [
