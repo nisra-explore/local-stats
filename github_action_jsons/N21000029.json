@@ -279,14 +279,14 @@
       "value": {
         "IS": 0,
         "JSA": 0,
-        "RP": 240,
-        "PC": 0,
+        "RP": 230,
+        "PC": 10,
         "AA": 40,
         "CA": 30,
         "DLA": 40,
         "ESA": 40,
         "UC": 30,
-        "PIP": 90
+        "PIP": 100
       }
     },
     "MYETotal": {
@@ -330,10 +330,10 @@
         "table_code": "BSSDZ",
         "dataset_url": "https://data.nisra.gov.uk/table/BSSDZ",
         "geog_level": "sdz",
-        "last_updated": "2023-07-06",
-        "email": "psu@communities-ni.gov.uk",
+        "last_updated": "2024-09-25",
+        "email": "analyticsdivision@communities-ni.gov.uk",
         "title": "Benefit Statistics",
-        "year": "2023"
+        "year": "2024"
       }
     ]
   }

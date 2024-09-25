@@ -318,16 +318,16 @@
     },
     "BS": {
       "value": {
-        "IS": 70,
+        "IS": 50,
         "JSA": 20,
-        "RP": 2570,
-        "PC": 630,
-        "AA": 590,
+        "RP": 2540,
+        "PC": 610,
+        "AA": 600,
         "CA": 730,
-        "DLA": 720,
-        "ESA": 750,
-        "UC": 960,
-        "PIP": 1440
+        "DLA": 730,
+        "ESA": 730,
+        "UC": 1120,
+        "PIP": 1620
       }
     },
     "Primary": {
@@ -483,10 +483,10 @@
         "table_code": "BSDEA",
         "dataset_url": "https://data.nisra.gov.uk/table/BSDEA",
         "geog_level": "dea",
-        "last_updated": "2023-07-06",
+        "last_updated": "2024-09-25",
         "email": "analyticsdivision@communities-ni.gov.uk",
         "title": "Benefit Statistics",
-        "year": "2023"
+        "year": "2024"
       }
     ],
     "Primary": [
