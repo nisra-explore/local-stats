@@ -1,1 +1,0 @@
-var s;const a=((s=globalThis.__sveltekit_16cldz2)==null?void 0:s.base)??"/local-stats";var t;const l=((t=globalThis.__sveltekit_16cldz2)==null?void 0:t.assets)??"https://nisra-explore.github.io/local-stats";export{l as a,a as b};
