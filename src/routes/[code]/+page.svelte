@@ -538,6 +538,9 @@ function compareNIrate (value) {
 
 	}
 
+
+
+
 	function moreData (subject, place) {
 
 		// if (place.type != "ni") {
@@ -602,7 +605,7 @@ function compareNIrate (value) {
 	
 }
 
-	function compareDensity (place) {
+function compareDensity (place) {
 		
 		let pop_den = place.data.MYETotal.value / (place.hectares / 100);
 
@@ -610,11 +613,13 @@ function compareNIrate (value) {
 
 		let comparison = pop_den / ni_pop_den;
 
-		if (Math.round(comparison) == 1) {
-			comparison = 'Approximately <span class = "em" style = "background-color: lightgrey">the same density level</span> as the Northern Ireland average';
-		} else if (comparison > 1) {
+		if (comparison < 0.8 ) {
+			comparison = "Lower than the Northern Ireland average";}
+		else if (comparison.toFixed(0) > 1) {
 			comparison = 'Approximately <span class = "em" style = "background-color: lightgrey">' + comparison.toFixed(0) + " times </span> the Northern Ireland average";
-		} else {
+		} else if (comparison.toFixed(0) == 1) {
+			comparison = 'Approximately <span class = "em" style = "background-color: lightgrey">the same density level</span> as the Northern Ireland average';
+		} else {	
 			comparison = 'Approximately <span class = "em" style = "background-color: lightgrey">1/' + (1 / comparison).toFixed(0) + " </span> of the Northern Ireland average";
 		}
 
@@ -657,7 +662,7 @@ function compareNIrate (value) {
 
 					{/if}
 				</span></p>
-				<br><span class="text-big title" style = "font-size: 2.5em; line-height: 1em;">{data.place.name}</span>
+				<br><span class="text-big title" style = "font-size: 2.5em; line-height: 1em;">{data.place.name.replace(/_/g," ")}</span>
 			
 			</div>
 
@@ -755,15 +760,15 @@ function compareNIrate (value) {
 			<GreyBox
 				id = "overview" 
 				i_button = {false}
-				heading = "About {data.place.name}" 
+				heading = "About {data.place.name.replace(/_/g," ")}" 
 				place = {data.place}
 				style = "line-height: 1.3;"
 				content = {{
 							ni: "Northern Ireland has 11 Councils or Local Government Districts (LGDs),  which can be subdivided into electoral areas (District Electoral Areas DEAs), then further into Super Data Zones and Data Zones. Statistics can be viewed for these smaller areas." ,
 							lgd: data.place.name + " is one of " + data.place.count.toLocaleString() + " " + geog_types[data.place.type].pl +  ".  It includes the larger settlements of " + data.place.lgd_location_description +".",
 							dea: data.place.name + " is one of " + data.place.count.toLocaleString() + " " + geog_types[data.place.type].pl + " in Northern Ireland.  It is within " + "<a href = '" + base + "/" + data.place.parents[0].code + "/' data-sveltekit-noscroll data-sveltekit-keepfocus>" + data.place.parents[0].name + " </a>" + " and covers " + data.place.dea_location_description + ".",
-							sdz: data.place.name + " is one of " + data.place.count.toLocaleString() + " " + geog_types[data.place.type].pl + ". Super Data Zones are new statistical areas developed for census. They are broadly similar in population size and housing type.",
-							dz: data.place.name + " is one of " + data.place.count.toLocaleString() + " " + geog_types[data.place.type].pl + ".  Data Zones are smaller divisions of Super Data Zones. There are on average 4 in each Super Data Zone."							
+							sdz: data.place.name.replace(/_/g," ") + " is one of " + data.place.count.toLocaleString() + " " + geog_types[data.place.type].pl + ". Super Data Zones are new statistical areas developed for census. They are broadly similar in population size and housing type.",
+							dz: data.place.name.replace(/_/g," ") + " is one of " + data.place.count.toLocaleString() + " " + geog_types[data.place.type].pl + ".  Data Zones are smaller divisions of Super Data Zones. There are on average 4 in each Super Data Zone."							
 						  }}
 				chart_compare_type = {chart_compare_type}
 			/>
@@ -981,25 +986,54 @@ function compareNIrate (value) {
 						show: ["dz"]
 					},
 
-					box_4: {
+					box_3: {
 						id: "hhsize",
 						year: pullCensusYear("hh_size"),
 						content: "GroupChart",
 						chart_data: makeDataNICompare("hh_size")
 					},
-					box_5: {
+					box_4: {
 						id: "religion",
 						year: pullCensusYear("religion_or_religion_brought_up_in"),
 						content: "GroupChart",
 						chart_data: makeDataNICompare("religion_or_religion_brought_up_in")
 					},
 
-					box_7 :{
+					box_5 :{
 						id: "language",
 						year: pullCensusYear("mainlang"),
 						content: "GroupChart",
 						chart_data: makeDataNICompare("mainlang")
+					 }
+					,
+
+					box_6: {
+						id: "houseprices",
+						year: "Q2 2024",
+						content: "<span class='text-big'>£"+(check("houseprices.value.SP")).toLocaleString(undefined, {maximumFractionDigits: 0})+"</span>"+
+						"<p><span class='text-big'>"+((check("houseprices.value.HPI")-100)).toLocaleString(undefined, {maximumFractionDigits: 1})+"%</span> higher than Q1 2015</p>",
+						show: ["ni"]
+					},
+
+					box_6a: {
+						id: "houseprices",
+						year: "Q2 2024",
+						content: "<p><span class='text-big'>£"+(check("houseprices.value.SP")).toLocaleString(undefined, {maximumFractionDigits: 0})+"</span>"+
+						"<span style='color: #1460aa'> (NI £"+(data.ni.data.houseprices.value.SP).toLocaleString(undefined, {maximumFractionDigits: 0})+") </span></p>" +
+						"<p><span class='text-big'>"+((check("houseprices.value.HPI")-100)).toLocaleString(undefined, {maximumFractionDigits: 1})+"%</span> higher than in quarter 1 2015"+
+						"<span style='color: #1460aa'> (NI "+((data.ni.data.houseprices.value.HPI-100)).toLocaleString(undefined, {maximumFractionDigits: 1})+"%)</span></p>",
+						show: ["lgd"]
+					},
+
+					box_6b: {
+						id: "houseprices",
+						content: "Data is available for " + parentlinks(data.place,"ni, lgd"),
+						show: ["dea","sdz","dz"],
+						i_button: false,
+						title: "<span style='font-size: 0.88em'>Average house price</span>"
 					}
+
+				
 
 			}}
 			more = "More information on the size of the population is available in the latest <a href='https://www.nisra.gov.uk/publications/2022-mid-year-population-estimates-northern-ireland'>mid-year estimates release</a>, 
@@ -1456,7 +1490,7 @@ function compareNIrate (value) {
 				year: pullYear("Attainment", data.place),
 				content: "<span class='text-big'>"  + 
 				    	 (check("Attainment.value")).toLocaleString() +"%</span> "+ 
-						 "<p>of pupils left school with 5 or more GCSEs (including equivalents) at grades A*-C.</p><span class = 'text-small'>Includes GCSE English and Maths</span> <br> <span class='text-big'>"  , 
+						 "<p>of pupils left school with 5 or more GCSEs (including equivalents) at grades A*-C, including GCSE English and maths.</span> <span class='text-big'>"  , 
 				    	
 				show: ["ni"]
 			},
@@ -1465,9 +1499,9 @@ function compareNIrate (value) {
 				id: "attainment",
 				year: pullYear("Attainment", data.place),
 				content: "<span class='text-big'>"  + 
-				    	 (check("Attainment.value")).toLocaleString() +"%</span> "+ "<p>of pupils left school with 5 or more GCSEs (including equivalents) at grades A*-C.</p><span class = 'text-small'>Includes GCSE English and Maths</span> <br> "+
+				    	 (check("Attainment.value")).toLocaleString() +"%</span> "+ "<p>of pupils left school with 5 or more GCSEs (including equivalents) at grades A*-C, including GCSE English and maths.</span>"+
 						 						  (compareNIrate("Attainment.value")).toLocaleString() +
-												  "<span style='color: #1460aa'>(NI " + data.ni.data.Attainment.value.toLocaleString(undefined, {minimumFractionDigits: 1}) + "%) </span>" ,
+						"<span style='color: #1460aa'>(NI " + data.ni.data.Attainment.value.toLocaleString(undefined, {minimumFractionDigits: 1}) + "%) </span>" ,
 
 				show: ["lgd"]
 			},
@@ -1477,7 +1511,7 @@ function compareNIrate (value) {
 			content: "Data is available for " + parentlinks(data.place,"ni, lgd"),
 				show: ["dea", "sdz", "dz"],
 				i_button: false,
-				title: "<span style='font-size: 0.88em'>GCSEs for school leavers</span>"
+				title: "<span style='font-size: 0.88em'>Attainment of school leavers</span>"
 			},
 					
 			box_6: {
@@ -1768,38 +1802,38 @@ function compareNIrate (value) {
 
 			
 			
-			box_3: {
-				id: "burglary",
-				year: pullYear("crime", data.place),
-				content:  "<p><span class='text-big'>"  + 
-				    	 (check("crime.value.burglary")).toLocaleString(undefined, {maximumFractionDigits: 0, minimumFractionDigits: 0}) +" </span>recorded burglaries</p>" 
-						 ,
+			// box_3: {
+			// 	id: "burglary",
+			// 	year: pullYear("crime", data.place),
+			// 	content:  "<p><span class='text-big'>"  + 
+			// 	    	 (check("crime.value.burglary")).toLocaleString(undefined, {maximumFractionDigits: 0, minimumFractionDigits: 0}) +" </span>recorded burglaries</p>" 
+			// 			 ,
 						
-				show: ["ni"]
+			// 	show: ["ni"]
 						
-			},
+			// },
 
 
-			box_3a: {
-				id: "burglary",
-				year: pullYear("crime", data.place),
-				content:  "<p><span class='text-big'>"  + 
-				    	 (check("crime.value.burglary")).toLocaleString(undefined, {maximumFractionDigits: 0, minimumFractionDigits: 0}) +" </span> recorded burglaries</p>" +
-						 "<span style='color: #1460aa'> (NI " +(data.ni.data.crime.value.burglary).toLocaleString() +")</span></p>"
-						 ,
+			// box_3a: {
+			// 	id: "burglary",
+			// 	year: pullYear("crime", data.place),
+			// 	content:  "<p><span class='text-big'>"  + 
+			// 	    	 (check("crime.value.burglary")).toLocaleString(undefined, {maximumFractionDigits: 0, minimumFractionDigits: 0}) +" </span> recorded burglaries</p>" +
+			// 			 "<span style='color: #1460aa'> (NI " +(data.ni.data.crime.value.burglary).toLocaleString() +")</span></p>"
+			// 			 ,
 						
-				show: [ "lgd", "dea"]
+			// 	show: [ "lgd", "dea"]
 				
-			},		
+			// },		
 
-			box_3b: {
-				id: "burglary",
-				content: "Data is available for " + parentlinks(data.place,"ni, lgd, dea"),
-				show: ["sdz","dz"],
-				i_button: false,
-				title: "<span style='font-size: 0.88em'>Police recorded burglaries</span>"
+			// box_3b: {
+			// 	id: "burglary",
+			// 	content: "Data is available for " + parentlinks(data.place,"ni, lgd, dea"),
+			// 	show: ["sdz","dz"],
+			// 	i_button: false,
+			// 	title: "<span style='font-size: 0.88em'>Police recorded burglaries</span>"
 				
-			},		
+			// },		
 			
 
 			box_4: {
@@ -2029,7 +2063,7 @@ Police Ombudsmans Office for Northern Ireland</a>.</p>
 		and the 
 		<a href='https://www.daera-ni.gov.uk/articles/agricultural-statistics'>Agriculture sector</a> 
 		both produced by DAERA; 
-		<a href='https://www.infrastructure-ni.gov.uk/articles/northern-ireland-transport-statistics'>Northern Ireland travel and transport statistics</a> produced by the Department for Infrastructure, and 
+		and 
 		<a href='https://www.nisra.gov.uk/statistics/tourism/annual-and-quarterly-tourism-statistics-publications'>Tourism sector</a>
 		published by 
 		<a href='https://www.nisra.gov.uk/statistics/economy/nisra-economic-and-labour-market-statistics-elms'>Economic and Labour Market Statistics (ELMS)</a>. Interactive dashboards are available for 

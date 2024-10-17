@@ -396,16 +396,24 @@
     "crime": {
       "value": {
         "allcrime": 1059,
-        "btcd": 545,
+        "criminal": 147,
         "other": 123,
-        "person": 391,
+        "person": 351,
+        "robbery": 6,
+        "sexual": 34,
+        "theft": 335,
+        "theft_burglary": 63,
         "burglary": 63
       },
       "perc": {
         "allcrime": 100,
-        "btcd": 51.4636,
+        "criminal": 13.881,
         "other": 11.6147,
-        "person": 36.9216
+        "person": 33.1445,
+        "robbery": 0.5666,
+        "sexual": 3.2106,
+        "theft": 31.6336,
+        "theft_burglary": 5.949
       }
     },
     "farms": {

@@ -1,11 +1,16 @@
 <script>
 
-import { base } from "$app/paths";
+import { onMount } from 'svelte';
+  import { afterNavigate } from '$app/navigation';
+  import { base } from "$app/paths";
+  import { tick } from 'svelte'; // Svelte's tick function ensures updates are applied before next DOM refresh.
 
-export let id;
-export let place;
-let card;
-let row;
+  export let id;
+  export let place;
+  let card;
+  let row;
+  let i_button_info = {}; // Store the button info here
+  let isExpanded = false; // Track the expanded state
 
 function checkMeta (value) {
 
@@ -34,7 +39,9 @@ function changeAria () {
 	card.ariaHidden = !row.ariaExpanded;
 }
 
-let i_button_info = {
+function get_i_button_info () {
+
+	let info = {
 
 	// location: {
 	// 		title: "About the area",
@@ -286,13 +293,21 @@ let i_button_info = {
 
 
 			attainment: {
-			title: "GCSEs for school leavers",
+			title: "Attainment of school leavers",
 			info: 
 				  " <p class = 'pibutton'>Access data at: <a href='" + checkMeta("Attainment[0].dataset_url") + "'>" + checkMeta("Attainment[0].title") + "</a></p>"+
 				  "<p class = 'pibutton'>Last updated: " + checkMeta("Attainment[0].last_updated") + "</p>"+
 				  "<p class = 'pibutton'><a href='mailto:" + checkMeta("Attainment[0].email") + "'>Email for more information</a> </p>"  
 		},
 
+
+		houseprices: {
+			title: "Average house price",
+			info: 
+				  " <p class = 'pibutton'>Access data at: <a href='" + checkMeta("houseprices[0].dataset_url") + "'>"+ checkMeta("houseprices[0].title") +"</a></p>"+
+				  "<p class = 'pibutton'>Last updated:" + checkMeta("houseprices[0].last_updated") + ".  This refers to data that was published in August 2024.</p>"+
+				  "<p class = 'pibutton'><a href='mailto:" + checkMeta("houseprices[0].email") + "'>Email for more information</a> </p>"  
+		},
 		concern: {
 			title: "Concern about the environment",
 			info:  " <p class = 'pibutton'>Access data at: <a href='" + checkMeta("Env_concern[0].dataset_url") + "'>" + checkMeta("Env_concern[0].title") + "</a></p>"+
@@ -445,7 +460,33 @@ let i_button_info = {
 					},
 
 
-				}
+		}
+
+	return info;
+
+}
+
+// Reactive statement that re-runs get_i_button_info when id or place changes
+$: i_button_info = get_i_button_info();
+
+// Ensure that get_i_button_info runs on component mount
+onMount(() => {
+  i_button_info = get_i_button_info();
+});
+
+// Ensure that get_i_button_info runs after every navigation
+afterNavigate(() => {
+  i_button_info = get_i_button_info();
+});
+
+// Function to reload HTML on click and expand/collapse the row
+async function handleClick() {
+  isExpanded = !isExpanded; // Toggle the expanded state
+  i_button_info = get_i_button_info(); // Re-run the info update
+
+  // Wait for Svelte to apply DOM updates
+  await tick();
+}
 
 </script>
 

@@ -19,28 +19,15 @@
 		<h2>What is the app?</h2>
 		<p>Welcome to NISRA's Northern Ireland Local Statistics Explorer: a high level overview of Northern Ireland's statistical information</p>
 
-		<p>Explore the rich collection of statistical information published by the Northern Ireland Statistics and Research Agency (NISRA) with our 
-			interactive web page, the NISRA Local Statistics Explorer. 
-		It is designed to provide users with easy access to key statistics for Northern Ireland and its local areas, and offers a dynamic platform for exploration.
-		Whether you're a researcher, policymaker, educator, or citizen, 
-		NI Local Statistics Explorer is your gateway to understanding and interpreting the statistical landscape of Northern Ireland. 
-		Start exploring today and unearth the stories within the data!</p>
+		<p>Explore the collection of statistical information published by the Northern Ireland Statistics and Research Agency (NISRA) with our 
+			interactive web page, the NISRA Local Statistics Explorer. It is designed to provide users with easy access to key statistics for Northern Ireland and its local areas. </p>
 
 		<h2>Features:</h2>
 		<ul> 
-			<li>Comprehensive Data Coverage: Dive into a selection of statistical data covering various aspects of life in Northern Ireland, including demographics, economy, education, health, and more.</li>
+			<li>Comprehensive Data Coverage: a selection of statistical data covering various aspects of life in Northern Ireland, including demographics, economy, education, health, and more.</li>
 			<li>User-Friendly Interface: Navigate through the intuitive interface, designed to make exploring statistical information a seamless experience for users of all levels.</li>
-			<li>Local Area Profiles: Access profiles for local areas within Northern Ireland, providing statistics and insights into demographics, socio-economic factors, and more.</li>
-			<li>Data Downloads and Sharing: Get links to download datasets for further analysis or share statistical insights with colleagues, stakeholders, and the broader community effortlessly.</li>
+			<li>Data Downloads and Sharing: Get links to download datasets for further analysis.</li>
 		</ul>
-
-		<h2>How to Use:</h2>
-
-		<p><ul>  
-			<li>Explore by Topic: Browse through various categories such as population, employment, health, and more to discover relevant statistics.</li>
-			<li>Navigate by Geography: Drill down to specific geographical areas, including local councils to explore statistics for your area of interest.</li>
-		</ul>
-
 		
 		<h2>Sources of data</h2>
 		
@@ -145,15 +132,13 @@
 			<li><a href="https://www.youtube.com/watch?v=a6cn2yyITHU">Flexible Table Builder</a></li>
 		</ul>
 	
-		
 	
-
 	
 		<h2>Timeliness</h2>
 		<p>This web application is refreshed daily with updated data from the NISRA data portal.</p>
 
 		<h2>Versions</h2>
-		<p>This app was originally released in Octover 2024.</p>
+		<p>This app was originally released in October 2024.</p>
 		<!-- <p>In XXXX 2024, further data was added on XXXX</p> -->
 		
 		<h2>About this app</h2>

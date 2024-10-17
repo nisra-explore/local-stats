@@ -116,12 +116,11 @@
 	{#if selectedItem && !search}
 	<a id="toggle" class="selected" on:click={toggle}>
 		<span class="selection">{selectedItem[label]} {#if group}<small>{selectedItem[group]}</small>{/if}</span>
-		<span class="button close" on:click={unSelect}>&nbsp;</span>
 	</a>
 	{:else}
 	<a id="toggle" on:click={toggle} on:focus={toggle} >
 		<input on:keydown={typing} type="text" placeholder={placeholder} bind:value={filter} autocomplete="false" bind:this={input} on:keyup={doKeyup} autofocus="autofocus" onfocus="this.select()" />
-		<span class="button" class:search class:down={!search}>&nbsp;</span>
+
 	</a>
 	{/if}
 	
@@ -205,7 +204,7 @@
 	}
 	/* normalize the input elements, make them look like everything else */
 	#select input {
-		width: calc(100% - 40px);
+		width: 100%;
 		box-sizing: border-box;
 		background: transparent;
 		font-family: inherit;
@@ -254,22 +253,22 @@
 		color: #fff !important;
 		background-color: #00205b;
 	}
-	.button {
+	/* .button {
 		color: #fff;
 		background-color: #00205b;
 		background-repeat: no-repeat;
 		background-position: center;
 		display: inline-block;
 		float: right;
-	}
-	.down {
+	} */
+	/* .down {
 		background-image: url("/img/chevron-down.svg");
 		width: 30px;
-	}
-	.search {
+	} */
+	/* .search {
 		background-image: url("/img/search.svg");
 		width: 30px;
-	}
+	} */
 	.close {
 		background-image: url("/img/x-close.svg");
 		width: 30px;
@@ -277,9 +276,9 @@
 	small {
 		margin-left: 3px;
 	}
-	#toggle small {
+	/* #toggle small {
 		color: lightgrey;
-	}
+	} */
 	#dropdown small {
 		/* font-weight: bold; */
 	}

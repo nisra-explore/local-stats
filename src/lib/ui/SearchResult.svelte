@@ -63,7 +63,7 @@
 </script>
 
 {#if check_result() & storage.search_code == place.code & result_text()}
-	<div id = "search-result"><div><img src = "{assets}/img/search.svg" alt = "search-symbol">You searched for <strong>{name}</strong>.</div>
+	<div id = "search-result"><div>You searched for <strong>{name}</strong>.</div>
     {#if name.substr(0, 2).toUpperCase() == "BT" & lookupPostcode(name)}
         <div style = "margin-left: 1em">This postcode is located within the <strong>{place.name}</strong> District Electoral Area.</div>
         <div style = "margin-left: 1em">You can view more localised information for this postcode at Super Data Zone level by selecting <strong><a href = "{base}/{SDZ_code}">{SDZ_name}</a></strong> or at Data Zone level by selecting <strong><a href = "{base}/{DZ_code}">{DZ_name}</a></strong>. Note that many of the statistics produced are not broken down to these smaller geography levels.</div>

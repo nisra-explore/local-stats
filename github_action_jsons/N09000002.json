@@ -57,16 +57,24 @@
       "text": "Violent crime",
       "value": {
         "allcrime": 10110,
-        "btcd": 3801,
+        "criminal": 1485,
         "other": 1320,
-        "person": 4989,
+        "person": 4578,
+        "robbery": 31,
+        "sexual": 380,
+        "theft": 2009,
+        "theft_burglary": 307,
         "burglary": 307
       },
       "perc": {
         "allcrime": 100,
-        "btcd": 37.5964,
+        "criminal": 14.6884,
         "other": 13.0564,
-        "person": 49.3472
+        "person": 45.2819,
+        "robbery": 0.3066,
+        "sexual": 3.7587,
+        "theft": 19.8714,
+        "theft_burglary": 3.0366
       }
     },
     "env_problem": {
@@ -423,12 +431,12 @@
     },
     "crimeworry": {
       "value": {
-        "WorryC2": 6.31
+        "WorryC2": 5.8626
       }
     },
     "crimeperception": {
       "value": {
-        "ASB8": 9
+        "ASB8": 7.1304
       }
     },
     "business": {
@@ -537,6 +545,12 @@
         "IE": 6.283,
         "REU": 5.8879,
         "ROW": 4.9454
+      }
+    },
+    "houseprices": {
+      "value": {
+        "SP": 165470,
+        "HPI": 167.9
       }
     },
     "Satisfy": {
@@ -656,6 +670,17 @@
         "email": "census@nisra.gov.uk",
         "title": "Population totals",
         "year": "2022"
+      }
+    ],
+    "houseprices": [
+      {
+        "table_code": "LPSHPI01",
+        "dataset_url": "https://data.nisra.gov.uk/table/LPSHPI01",
+        "geog_level": "lgd",
+        "last_updated": "2024-10-17",
+        "email": "lps.statisticsbranch@finance-ni.gov.uk",
+        "title": "House Price Index and Standardised Price",
+        "year": "2024Q2"
       }
     ],
     "LE": [
@@ -935,24 +960,24 @@
     ],
     "crimeworry": [
       {
-        "table_code": "WORRYCRMLGD",
-        "dataset_url": "https://data.nisra.gov.uk/table/WORRYCRMLGD",
+        "table_code": "TWORRYCRMLGD",
+        "dataset_url": "https://data.nisra.gov.uk/table/TWORRYCRMLGD",
         "geog_level": "lgd",
-        "last_updated": "2024-06-12",
+        "last_updated": "2024-10-09",
         "email": "statistics.research@justice-ni.gov.uk",
-        "title": "NISCS: Worry about Crime and Personal Safety",
-        "year": "2019/20"
+        "title": "NISCTS: Worry about Crime and Personal Safety",
+        "year": "2021/22"
       }
     ],
     "crimeperception": [
       {
-        "table_code": "NISCSASBLGD",
-        "dataset_url": "https://data.nisra.gov.uk/table/NISCSASBLGD",
+        "table_code": "TNISCSASBLGD",
+        "dataset_url": "https://data.nisra.gov.uk/table/TNISCSASBLGD",
         "geog_level": "lgd",
-        "last_updated": "2024-06-12",
+        "last_updated": "2024-10-09",
         "email": "statistics.research@justice-ni.gov.uk",
-        "title": "NISCS: Perceptions of Anti-Social Behaviour",
-        "year": "2019/20"
+        "title": "NISCTS: Perceptions of Anti-Social Behaviour",
+        "year": "2021/22"
       }
     ],
     "business": [

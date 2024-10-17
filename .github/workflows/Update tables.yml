@@ -28,15 +28,15 @@ jobs:
             any::readr
 
       - name: Check out repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: createJSONs
         run: Rscript -e 'source("create_jsons/create_JSONs.R")'
 
       - name: Commit results
         run: |
-          git config --local user.email "brian.quinn@nisra.gov.uk"
-          git config --local user.name "brianq-nisra"
+          git config --local user.email " "
+          git config --local user.name "nisra-explore"
           git add github_action_jsons
           git add date_of_last_run.RDS
           git commit -m 'Data updated' || echo "No changes to commit"

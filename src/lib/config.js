@@ -201,11 +201,27 @@ export const topics = {
 				],
 
 			crime: [
-				{ category: 'person', label: 'Violence against the person, sexual offences & robbery' },
-				{ category: 'btcd', label: 'Burglary, theft & criminal damage' },
+				{ category: 'person', label: 'Violence against the person' },
+				{ category: 'sexual', label: 'Sexual offences' },
+				{ category: 'robbery', label: 'Robbery' },
+				{ category: 'theft_burglary', label: 'Theft offences - Burglary ' },
+				{ category: 'theft', label: 'Theft offences ' },
+				{ category: 'criminal', label: 'Criminal damage' },
 				{ category: 'other', label: 'Other crimes against society' }
 				
-				],
+				], 
+			
+				
+				 
+				
+				
+
+				// crime: [
+				// 	{ category: 'person', label: 'Violence against the person, sexual offences & robbery' },
+				// 	{ category: 'btcd', label: 'Burglary, theft & criminal damage' },
+				// 	{ category: 'other', label: 'Other crimes against society' }
+					
+				// 	],
 
 			niets_sales: [
 				{ category: 'NI', label: 'Northern Ireland' },

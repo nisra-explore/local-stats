@@ -15,7 +15,7 @@
 
   // GOOGLE ANALYTICS
   // Settings for page analytics. Values must be shared with <AnalyticsBanner> component
-  const analyticsId = "GTM-NK3SZVF";
+  const analyticsId = "GTM-WKK8ZWP";
   const analyticsProps = {
     "contentTitle": "Northern Ireland Local Statistics Explorer",
     "releaseDate": "20220823",
