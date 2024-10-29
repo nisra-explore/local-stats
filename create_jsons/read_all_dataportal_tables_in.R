@@ -30,7 +30,6 @@
   
   for (i in 1:length(tables_needed)) {
     
-  print(i)
     titles[i] <- data_portal$label[which(matrices == tables_needed[i])]
     updates[i] <- substr(updated[which(matrices == tables_needed[i])], 1, 10)
     id_cols[i] <- paste(data_portal$id[[which(matrices == tables_needed[i])]], collapse = "; ") %>%
@@ -346,6 +345,19 @@
   
   categories <- unlist(json_data$dimension$broadage4$category$label)
   
+  csv_data = read.csv(paste0("https://ws-data.nisra.gov.uk/public/api.restful/PxStat.Data.Cube_API.ReadDataset/",dataset_long,"/CSV/1.0/")) %>%
+    filter(`TLIST.A1.` == latest_year & Sex == "All") %>%
+    mutate(statistic = `Broad.age.band..4.cat.`) %>%
+  select(DEA2014, statistic, VALUE) %>% group_by(DEA2014, statistic) %>% 
+       summarise(VALUE = sum(VALUE, na.rm = TRUE)) %>% 
+       rename(geog_code = DEA2014, statistic = statistic) %>% 
+    group_by(geog_code) %>%
+    mutate(perc = VALUE / VALUE[statistic == "All"] *100,
+           source = dataset_short) %>% 
+    filter(statistic != "All")
+  
+    
+    
   data <- data.frame(geog_code = sort(rep(json_data$dimension$DEA2014$category$index, length(categories)))) %>%
     mutate(statistic = rep_len(categories, nrow(.)),
            VALUE = json_data$value,
@@ -354,7 +366,7 @@
     mutate(perc = VALUE / sum(VALUE) * 100) %>%
     filter(geog_code != "N92000002")
   
-  df_popage <- rbind(df_popage, data)
+  df_popage <- rbind(df_popage, csv_data)
   
   df_popage <- unique(df_popage)
   ##### population growth ####
@@ -744,6 +756,49 @@
            source = dataset_short)
   
   df_gps <- rbind(df_gps, data)
+  
+  
+  dataset_subject <- "66/GMS"
+  
+  dataset_long <- "GPPRACPATDEA"
+  latest_year <- years[[which(matrices == dataset_long)]] %>% tail(1)
+  
+  dataset_short <- "GP"
+  
+  json_data <- jsonlite::fromJSON(
+    txt = transform_URL(paste0(
+      'https://ws-data.nisra.gov.uk/public/api.restful/PxStat.Data.Cube_API.PxAPIv1/en/',
+      dataset_subject, '/', dataset_long,
+      '?query={"query": [{"code": "TLIST(A1)", "selection": {"filter": "item", "values": ["', latest_year, '"]}},',
+      '{"code": "STATISTIC", "selection": {"filter": "item", "values": ["PRACS", "GPS", "REGPAT", "PRACLIST"]}}],',
+      '"response": {"format": "json-stat2", "pivot": null}}'
+    ))
+  )
+  
+  df_meta_data <- rbind(df_meta_data, t(c(
+    dataset = dataset_short,
+    "table_code" = dataset_long, "year" = latest_year,
+    "geog_level" = "dea",
+    "dataset_url" = paste0("https://data.nisra.gov.uk/table/", json_data$extension$matrix),
+    "last_updated" = format(substring(json_data$updated, 1, 10), format = "%a"),
+    "email" = json_data$extension$contact$email,
+    "title" = json_data$label,
+    "note" = json_data$note
+  )))
+  
+  categories <- factor(json_data$dimension$STATISTIC$category$index,
+                       levels = json_data$dimension$STATISTIC$category$index)
+  
+  data <- data.frame(geog_code = rep(json_data$dimension$DEA2014$category$index, length(categories)),
+                     VALUE = json_data$value) %>%
+    mutate(statistic = sort(rep_len(categories, nrow(.))),
+           source = dataset_short)
+  
+  df_gps <- rbind(df_gps, data)
+  
+  
+  
+  
   
   df_dental <- list()
   dataset_short <- "DEN"
@@ -2004,7 +2059,7 @@
   ##### active travel #####
   
   dataset_short <- "Env_active"
-  dataset_subject <- "91/ACTTRV"
+  dataset_subject <- "72/AST"
   
   dataset_long <- "JMWCPTLGD"
   latest_year <- years[[which(matrices == dataset_long)]] %>% tail(1)

@@ -316,6 +316,14 @@
         "Dental_Registrations": 13323
       }
     },
+    "GP": {
+      "value": {
+        "PRACS": 2,
+        "GPS": 10,
+        "REGPAT": 16633,
+        "PRACLIST": 8317
+      }
+    },
     "BS": {
       "value": {
         "IS": 50,
@@ -401,10 +409,10 @@
     },
     "BroadAge": {
       "perc": {
-        "Age 0-15": 22.2222,
-        "Age 16-39": 30.7494,
-        "Age 40-64": 31.938,
-        "Age 65+": 15.0904
+        "Age 0-15": 23.7867,
+        "Age 16-39": 28.6933,
+        "Age 40-64": 31.9467,
+        "Age 65+": 15.5733
       }
     },
     "Destination": {
@@ -462,6 +470,17 @@
         "email": "statistics@health-ni.gov.uk",
         "title": "Primary Reason for Admissions to HSC Hospitals",
         "year": "2022"
+      }
+    ],
+    "GP": [
+      {
+        "table_code": "GPPRACPATDEA",
+        "dataset_url": "https://data.nisra.gov.uk/table/GPPRACPATDEA",
+        "geog_level": "dea",
+        "last_updated": "2024-10-23",
+        "email": "info.bso@hscni.net",
+        "title": "GPs Practices and Registered Patients",
+        "year": "2024"
       }
     ],
     "DEN": [

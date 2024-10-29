@@ -22,7 +22,7 @@ df_geog_codes_for_loop <- df_children %>%
     substr(code, 1, 3) == "N21" ~ "sdz"   # Super data zone
   )) %>%
   filter(type %in% geog_types_to_update) %>% # Filter only required types
- # filter(type %in% c('ctry', 'lgd')) %>% # Filter only required types
+ # filter(type %in% c('ctry', 'lgd', 'dea')) %>% # Filter only required types
   arrange(substr(code, 1, 3)) # Order by code prefix
 
 print("looping through geographies")
