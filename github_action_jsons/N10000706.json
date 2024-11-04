@@ -328,10 +328,10 @@
     },
     "GP": {
       "value": {
-        "PRACS": 0,
         "GPS": 0,
-        "REGPAT": 0,
-        "PRACLIST": 0
+        "PRACLIST": 0,
+        "PRACS": 0,
+        "REGPAT": 0
       }
     },
     "BS": {

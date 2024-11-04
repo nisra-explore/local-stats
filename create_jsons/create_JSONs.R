@@ -7,7 +7,7 @@ source("create_jsons/read_and_process_census_data.R")
 
 # Load and process data portal tables
 print("processing data portal tables")
-source("create_jsons/read_all_dataportal_tables_in.R")
+source("create_jsons/read_all_dataportal_tables_in_json_rpc.R")
 
 #### Set up loop for geographies ####
 # Select geographic codes for loop processing, based on the list 'v_geocode' and 'geog_types_to_update'

@@ -368,10 +368,10 @@
     },
     "GP": {
       "value": {
-        "PRACS": 6,
         "GPS": 39,
-        "REGPAT": 39666,
-        "PRACLIST": 6611
+        "PRACLIST": 6611,
+        "PRACS": 6,
+        "REGPAT": 39666
       }
     },
     "BS": {

@@ -323,10 +323,10 @@
     },
     "GP": {
       "value": {
-        "PRACS": 3,
         "GPS": 19,
-        "REGPAT": 23905,
-        "PRACLIST": 7968
+        "PRACLIST": 7968,
+        "PRACS": 3,
+        "REGPAT": 23905
       }
     },
     "BS": {
