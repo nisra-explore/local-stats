@@ -549,8 +549,8 @@
     },
     "houseprices": {
       "value": {
-        "SP": 165470,
-        "HPI": 167.9
+        "SP": 169407,
+        "HPI": 171.9
       }
     },
     "Satisfy": {
@@ -677,10 +677,10 @@
         "table_code": "LPSHPI01",
         "dataset_url": "https://data.nisra.gov.uk/table/LPSHPI01",
         "geog_level": "lgd",
-        "last_updated": "2024-10-17",
+        "last_updated": "2024-11-22",
         "email": "lps.statisticsbranch@finance-ni.gov.uk",
         "title": "House Price Index and Standardised Price",
-        "year": "2024Q2"
+        "year": "2024Q3"
       }
     ],
     "LE": [
