@@ -2669,7 +2669,7 @@
   
   
   csv_data = read.csv(paste0("https://ws-data.nisra.gov.uk/public/api.restful/PxStat.Data.Cube_API.ReadDataset/",dataset_long,"/CSV/1.0/")) %>%
-    filter(`TLIST.A1.` == latest_year) %>% 
+    filter(`TLIST.A1.` == latest_year & STATISTIC == "All") %>% 
     select(LGD2014, VALUE) %>% group_by(LGD2014) %>% 
     summarise(VALUE  = sum(VALUE, na.rm = TRUE)) %>% 
     rename(geog_code = LGD2014) %>% mutate(source = dataset_short, statistic = 'estab')

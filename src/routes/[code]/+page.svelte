@@ -504,6 +504,29 @@ function compareNIrate (value) {
 }
 
 
+function gps (value, place) {
+		
+		if (check(value) > 0 && place.name == "Northern Ireland") {
+			return "<p><span class='text-big'>" + (check("GP.value.PRACS")).toLocaleString() +
+				"</span> GP practices with an average of <span class='text-big'>" + 
+				(check("GP.value.PRACLIST")).toLocaleString() +
+			 			"</span> patients per practice.</p>";
+			
+		} else if (check(value) > 0 && place.name != "Northern Ireland") {
+			return "<p><span class='text-big'>" + (check("GP.value.PRACS")).toLocaleString() +
+				"</span> GP practices with an average of <span class='text-big'>" + 
+				(check("GP.value.PRACLIST")).toLocaleString() +
+			 			"</span> patients per practice.</p>"+
+						"<p>"+(compareNIrate("GP.value.PRACLIST")).toLocaleString() +
+						 "<span style='color: #1460aa'> (NI " 
+							+  data.ni.data.GP.value.PRACLIST.toLocaleString() 
+							+" patients per practice) </span></p>";
+		
+		} else {
+			return "<p><span class='text-big'>0</span> GP practices.</p>";
+		}
+
+	}
 	function pullYear (value, place) {
 		
 		if (place.meta_data.hasOwnProperty(value)) {
@@ -1009,7 +1032,7 @@ function compareDensity (place) {
 
 					box_6: {
 						id: "houseprices",
-						year: "Q2 2024",
+						year: pullYear("houseprices", data.place),
 						content: "<span class='text-big'>£"+(check("houseprices.value.SP")).toLocaleString(undefined, {maximumFractionDigits: 0})+"</span>"+
 						"<p><span class='text-big'>"+((check("houseprices.value.HPI")-100)).toLocaleString(undefined, {maximumFractionDigits: 1})+"%</span> higher than Q1 2015</p>",
 						show: ["ni"]
@@ -1017,7 +1040,7 @@ function compareDensity (place) {
 
 					box_6a: {
 						id: "houseprices",
-						year: "Q2 2024",
+						year: pullYear("houseprices", data.place),
 						content: "<p><span class='text-big'>£"+(check("houseprices.value.SP")).toLocaleString(undefined, {maximumFractionDigits: 0})+"</span>"+
 						"<span style='color: #1460aa'> (NI £"+(data.ni.data.houseprices.value.SP).toLocaleString(undefined, {maximumFractionDigits: 0})+") </span></p>" +
 						"<p><span class='text-big'>"+((check("houseprices.value.HPI")-100)).toLocaleString(undefined, {maximumFractionDigits: 1})+"%</span> higher than in quarter 1 2015"+
@@ -1160,16 +1183,12 @@ function compareDensity (place) {
 			box_6: {
 				id: "primarycare",
 				year: pullYear("GP", data.place)   ,
-				content: "<p><span class='text-big'>" + 
-						(check("GP.value.PRACS")).toLocaleString() +
-						"</span> GP practices with an average of <span class='text-big'>" + 
-						(check("GP.value.PRACLIST")).toLocaleString() +
-						"</span> patients per practice.</p>" +
+				content: gps("GP.value.PRACS", data.place)  +
 						"<p><span class='text-big'>" + 
 						 (check("DEN.value.GDSDSSurgeries")).toLocaleString() +
 						"</span> dental surgeries.  </span> <span class='text-big'>" + 
 						(check("DEN_REG.value.Dental_Registrations") / check("MYETotal.value")*100).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0, minimumFractionDigits: 0 }) +
-						"%</span> of the population are registered with a dentist.</p>"
+						"%</span> of the population are registered with a health service dentist.</p>"
 						,
 				show: ["ni"]
 			},
@@ -1177,36 +1196,30 @@ function compareDensity (place) {
 			box_6a: {
 				id: "primarycare",
 				year: pullYear("GP", data.place)   ,
-				content: "<p><span class='text-big'>" + 
-							(check("GP.value.PRACS")).toLocaleString() +
-						"</span> GP practices with an average of <span class='text-big'>" + 
-						(check("GP.value.PRACLIST")).toLocaleString() +
-						"</span> patients per practice.</p>" +
-						"<p>"+(compareNIrate("GP.value.PRACLIST")).toLocaleString() +
-						 "<span style='color: #1460aa'> (NI " +  data.ni.data.GP.value.PRACLIST.toLocaleString() +" patients per practice) </span></p>"+
+				content: gps("GP.value.PRACS", data.place) +
 						"<p><span class='text-big'>" + 
 						 (check("DEN.value.GDSDSSurgeries")).toLocaleString() +
 						"</span> dental surgeries." +
 						"</span>  <span class='text-big'>" + 
 						(check("DEN_REG.value.Dental_Registrations") / check("MYETotal.value")*100).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0, minimumFractionDigits: 0 }) +
-						"%</span> of the population are registered with a dentist. "+
+						"%</span> of the population are registered with a health service dentist. "+
 						"<span style='color: #1460aa'> (NI " + ((data.ni.data.DEN_REG.value.Dental_Registrations / data.ni.data.MYETotal.value)*100).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 }) +
 						"%)</span></p>",
-				show: [ "lgd"]
+				show: [ "lgd", "dea"]
 			},
-			box_6b: {
-				id: "primarycare",
-				year: pullYear("DEN", data.place),
-				content: "<p><span class='text-big'>" +
-					(check("DEN.value.GDSDSSurgeries")).toLocaleString() +
-					"</span> dental surgeries." +
-						"</span>  <span class='text-big'>" + 
-						(check("DEN_REG.value.Dental_Registrations") / check("MYETotal.value")*100).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 }) +
-						"%</span> of the population are registered with a dentist. "+
-						"<span style='color: #1460aa'> (NI " + ((data.ni.data.DEN_REG.value.Dental_Registrations / data.ni.data.MYETotal.value)*100).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 }) +
-						"%)</span></p>",
-				show: ["dea"]
-			},
+			// box_6b: {
+			// 	id: "primarycare",
+			// 	year: pullYear("DEN", data.place),
+			// 	content: "<p><span class='text-big'>" +
+			// 		(check("DEN.value.GDSDSSurgeries")).toLocaleString() +
+			// 		"</span> dental surgeries." +
+			// 			"</span>  <span class='text-big'>" + 
+			// 			(check("DEN_REG.value.Dental_Registrations") / check("MYETotal.value")*100).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 }) +
+			// 			"%</span> of the population are registered with a health service dentist. "+
+			// 			"<span style='color: #1460aa'> (NI " + ((data.ni.data.DEN_REG.value.Dental_Registrations / data.ni.data.MYETotal.value)*100).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 }) +
+			// 			"%)</span></p>",
+			// 	show: ["dea"]
+			// },
 
 			box_6c: {
 				id: "primarycare",

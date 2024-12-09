@@ -305,7 +305,7 @@ function get_i_button_info () {
 			title: "Average house price",
 			info: 
 				  " <p class = 'pibutton'>Access data at: <a href='" + checkMeta("houseprices[0].dataset_url") + "'>"+ checkMeta("houseprices[0].title") +"</a></p>"+
-				  "<p class = 'pibutton'>Last updated:" + checkMeta("houseprices[0].last_updated") + ".  This refers to data that was published in August 2024.</p>"+
+				  "<p class = 'pibutton'>Last updated:" + checkMeta("houseprices[0].last_updated") + ".</p>"+
 				  "<p class = 'pibutton'><a href='mailto:" + checkMeta("houseprices[0].email") + "'>Email for more information</a> </p>"  
 		},
 		concern: {
