@@ -507,44 +507,44 @@
     },
     "niets_sales": {
       "value": {
-        "ALL": 3768.3594,
-        "NI": 2153.19,
-        "GB": 781.5074,
-        "IE": 609.2686,
-        "REU": 118.8353,
-        "ROW": 105.5581,
-        "EXTERN": 1615.1694,
-        "EXPORT": 833.662,
+        "ALL": 4258.0464,
+        "NI": 2531.7006,
+        "GB": 760.3932,
+        "IE": 697.5708,
+        "REU": 142.461,
+        "ROW": 125.9207,
+        "EXTERN": 1726.3458,
+        "EXPORT": 965.9526,
         "IMPORT": null
       },
       "perc": {
         "ALL": 100,
-        "NI": 57.1387,
-        "GB": 20.7387,
-        "IE": 16.168,
-        "REU": 3.1535,
-        "ROW": 2.8012
+        "NI": 59.4569,
+        "GB": 17.8578,
+        "IE": 16.3824,
+        "REU": 3.3457,
+        "ROW": 2.9572
       }
     },
     "niets_purch": {
       "value": {
-        "ALL": 2707.6868,
-        "NI": 1772.5988,
-        "GB": 627.5322,
-        "IE": 190.1711,
-        "REU": 75.0453,
-        "ROW": 42.3394,
-        "EXTERN": 935.088,
+        "ALL": 2817.3273,
+        "NI": 1885.7856,
+        "GB": 613.7489,
+        "IE": 192.9078,
+        "REU": 73.7045,
+        "ROW": 51.1805,
+        "EXTERN": 931.5417,
         "EXPORT": null,
-        "IMPORT": 307.5558
+        "IMPORT": 317.7928
       },
       "perc": {
         "ALL": 100,
-        "NI": 65.4654,
-        "GB": 23.176,
-        "IE": 7.0234,
-        "REU": 2.7716,
-        "ROW": 1.5637
+        "NI": 66.9353,
+        "GB": 21.7848,
+        "IE": 6.8472,
+        "REU": 2.6161,
+        "ROW": 1.8166
       }
     },
     "houseprices": {
@@ -1040,10 +1040,10 @@
         "table_code": "NIETS05",
         "dataset_url": "https://data.nisra.gov.uk/table/NIETS05",
         "geog_level": "lgd",
-        "last_updated": "2024-07-02",
+        "last_updated": "2024-12-11",
         "email": "economicstats@nisra.gov.uk",
         "title": "NIETS: Trade by Local Government District",
-        "year": "2022"
+        "year": "2023"
       }
     ],
     "niets_purch": [
@@ -1051,10 +1051,10 @@
         "table_code": "NIETS05",
         "dataset_url": "https://data.nisra.gov.uk/table/NIETS05",
         "geog_level": "lgd",
-        "last_updated": "2024-07-02",
+        "last_updated": "2024-12-11",
         "email": "economicstats@nisra.gov.uk",
         "title": "NIETS: Trade by Local Government District",
-        "year": "2022"
+        "year": "2023"
       }
     ]
   }
