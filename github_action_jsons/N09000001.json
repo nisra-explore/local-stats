@@ -417,11 +417,11 @@
     },
     "Env_ghg": {
       "value": {
-        "CO2": 885.3732,
-        "CH4": 296.7377,
-        "N2O": 73.3344,
-        "GHGALL": 1255.4452,
-        "GHGALL_BASE": 1664.6151
+        "CO2": 774.2698,
+        "CH4": 304.4299,
+        "N2O": 68.9446,
+        "GHGALL": 1147.6444,
+        "GHGALL_BASE": 1565.4733
       }
     },
     "Env_active": {
@@ -930,10 +930,10 @@
         "table_code": "GHGALL",
         "dataset_url": "https://data.nisra.gov.uk/table/GHGALL",
         "geog_level": "lgd",
-        "last_updated": "2024-03-19",
+        "last_updated": "2025-01-20",
         "email": "env.stats@daera-ni.gov.uk",
         "title": "Greenhouse Gas Emissions - Full dataset",
-        "year": "2021"
+        "year": "2022"
       }
     ],
     "Env_active": [
