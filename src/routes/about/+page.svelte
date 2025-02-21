@@ -105,7 +105,7 @@
 		<p>There are 850 Super Data Zones (SDZ2021) across Northern Ireland and the 3,780 Data Zones (DZ2021) nest within this geography. These two geographies nest within the 80 District Electoral Areas (DEA2014) and 11 Local Government Districts (LGD2014).</p>
 		<p>There is more information in <a href="https://www.nisra.gov.uk/publications/census-2021-output-geography-information-papers">Census 2021 output geography information papers</a></p>	
 
-		<p>A summary of other NISRA Statistical Geographies is available in the <a href="https://www.nisra.gov.uk/sites/nisra.gov.uk/files/publications/NISRA%20Geography%20Fact%20Sheet%20-%20March%202019.pdf" >NISRA Geography FactSheet</a></p>
+		<p>A summary of other NISRA Statistical Geographies is available in the <a href="https://www.nisra.gov.uk/sites/nisra.gov.uk/files/publications/nisra-geography-fact-sheet.pdf" >NISRA Geography FactSheet</a></p>
 		
 		
 		<h4>Postcodes</h4>

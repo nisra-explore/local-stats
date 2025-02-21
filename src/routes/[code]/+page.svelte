@@ -1552,9 +1552,9 @@ function compareDensity (place) {
 	<Accordion
 	id = "environment"
 	img = "nisra-taxonomy-icon-summary-stats.png"
-	heading = "Environment"
+	heading = "Transport, environment and climate change"
 	place = {data.place}
-	sub_heading = {moreData("Environment", data.place)}
+	sub_heading = {moreData("Transport, environment and climate change", data.place)}
 	description = " "
 	chart_compare_type = {chart_compare_type}
 	boxes = {{
