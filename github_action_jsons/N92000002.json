@@ -578,13 +578,13 @@
       }
     },
     "Satisfy": {
-      "value": 7.6
+      "value": 7.8
     },
     "Happy": {
       "value": 7.6
     },
     "Lonely": {
-      "value": 19.4
+      "value": 17.8
     },
     "ASHE": {
       "value": 34378
@@ -722,10 +722,10 @@
         "table_code": "WBPERSWLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/WBPERSWLGD",
         "geog_level": "lgd",
-        "last_updated": "2024-06-12",
+        "last_updated": "2025-03-06",
         "email": "pfganalytics@executiveoffice-ni.gov.uk",
-        "title": "Personal Wellbeing",
-        "year": "2022/23"
+        "title": "Individual Wellbeing - Personal Wellbeing",
+        "year": "2023/24"
       }
     ],
     "lonely": [
@@ -733,10 +733,10 @@
         "table_code": "WBLONLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/WBLONLGD",
         "geog_level": "lgd",
-        "last_updated": "2024-06-12",
+        "last_updated": "2025-03-06",
         "email": "pfganalytics@executiveoffice-ni.gov.uk",
-        "title": "Wellbeing - Loneliness",
-        "year": "2022/23"
+        "title": "Individual Wellbeing - Loneliness",
+        "year": "2023/24"
       }
     ],
     "GP": [
