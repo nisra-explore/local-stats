@@ -755,7 +755,7 @@
         "table_code": "FPSGDSDSLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/FPSGDSDSLGD",
         "geog_level": "lgd",
-        "last_updated": "2024-07-10",
+        "last_updated": "2025-05-05",
         "email": "info.bso@hscni.net",
         "title": "General Dental Services Dentists and Surgeries",
         "year": "2023/24"
@@ -766,7 +766,7 @@
         "table_code": "FPSGDSDRLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/FPSGDSDRLGD",
         "geog_level": "lgd",
-        "last_updated": "2024-07-10",
+        "last_updated": "2025-05-05",
         "email": "info.bso@hscni.net",
         "title": "General Dental Services Dental Registrations",
         "year": "2023/24"
@@ -1085,7 +1085,7 @@
         "table_code": "ADMITDEA",
         "dataset_url": "https://data.nisra.gov.uk/table/ADMITDEA",
         "geog_level": "dea",
-        "last_updated": "2024-04-11",
+        "last_updated": "2025-05-05",
         "email": "statistics@health-ni.gov.uk",
         "title": "Primary Reason for Admissions to HSC Hospitals",
         "year": "2022"
