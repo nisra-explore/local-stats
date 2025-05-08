@@ -656,7 +656,7 @@
         "table_code": "MYE01T06",
         "dataset_url": "https://data.nisra.gov.uk/table/MYE01T06",
         "geog_level": "lgd",
-        "last_updated": "2023-09-11",
+        "last_updated": "2025-05-08",
         "email": "census@nisra.gov.uk",
         "title": "Population totals",
         "year": "2022"
@@ -667,7 +667,7 @@
         "table_code": "MA01T02",
         "dataset_url": "https://data.nisra.gov.uk/table/MA01T02",
         "geog_level": "lgd",
-        "last_updated": "2023-09-11",
+        "last_updated": "2025-05-08",
         "email": "census@nisra.gov.uk",
         "title": "Median age",
         "year": "2022"
@@ -678,7 +678,7 @@
         "table_code": "MYE01T04",
         "dataset_url": "https://data.nisra.gov.uk/table/MYE01T04",
         "geog_level": "lgd",
-        "last_updated": "2024-04-11",
+        "last_updated": "2025-05-08",
         "email": "census@nisra.gov.uk",
         "title": "Mid-year population estimates",
         "year": "2022"
@@ -689,7 +689,7 @@
         "table_code": "MYE01T06",
         "dataset_url": "https://data.nisra.gov.uk/table/MYE01T06",
         "geog_level": "lgd",
-        "last_updated": "2023-09-11",
+        "last_updated": "2025-05-08",
         "email": "census@nisra.gov.uk",
         "title": "Population totals",
         "year": "2022"
@@ -722,7 +722,7 @@
         "table_code": "WBPERSWLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/WBPERSWLGD",
         "geog_level": "lgd",
-        "last_updated": "2025-03-06",
+        "last_updated": "2025-05-08",
         "email": "pfganalytics@executiveoffice-ni.gov.uk",
         "title": "Individual Wellbeing - Personal Wellbeing",
         "year": "2023/24"
@@ -733,7 +733,7 @@
         "table_code": "WBLONLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/WBLONLGD",
         "geog_level": "lgd",
-        "last_updated": "2025-03-06",
+        "last_updated": "2025-05-08",
         "email": "pfganalytics@executiveoffice-ni.gov.uk",
         "title": "Individual Wellbeing - Loneliness",
         "year": "2023/24"
@@ -986,7 +986,7 @@
         "table_code": "TWORRYCRMLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/TWORRYCRMLGD",
         "geog_level": "lgd",
-        "last_updated": "2024-10-09",
+        "last_updated": "2025-05-08",
         "email": "statistics.research@justice-ni.gov.uk",
         "title": "NISCTS: Worry about Crime and Personal Safety",
         "year": "2021/22"
@@ -997,7 +997,7 @@
         "table_code": "TNISCSASBLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/TNISCSASBLGD",
         "geog_level": "lgd",
-        "last_updated": "2024-10-09",
+        "last_updated": "2025-05-08",
         "email": "statistics.research@justice-ni.gov.uk",
         "title": "NISCTS: Perceptions of Anti-Social Behaviour",
         "year": "2021/22"
