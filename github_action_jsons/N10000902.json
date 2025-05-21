@@ -65,7 +65,7 @@
   "data": {
     "Admiss": {
       "text": "Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified",
-      "value": 2654
+      "value": 2660
     },
     "population": {
       "perc": {
@@ -466,10 +466,10 @@
         "table_code": "ADMITDEA",
         "dataset_url": "https://data.nisra.gov.uk/table/ADMITDEA",
         "geog_level": "dea",
-        "last_updated": "2025-05-05",
+        "last_updated": "2025-05-21",
         "email": "statistics@health-ni.gov.uk",
         "title": "Primary Reason for Admissions to HSC Hospitals",
-        "year": "2022"
+        "year": "2023"
       }
     ],
     "GP": [
