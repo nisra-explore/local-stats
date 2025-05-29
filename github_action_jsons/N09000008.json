@@ -572,7 +572,7 @@
       "value": 17.6
     },
     "Attainment": {
-      "value": 74.8
+      "value": 72
     },
     "FE": {
       "value": 5825
@@ -604,11 +604,11 @@
     },
     "Destination": {
       "perc": {
-        "destHEpct": 42.5,
-        "destFEpct": 26.1,
+        "destHEpct": 43.8,
+        "destFEpct": 26,
         "destEmploypct": 13.2,
-        "destTrainpct": 11.1,
-        "destUnempUnkpct": 7.1
+        "destTrainpct": 11.6,
+        "destUnempUnkpct": 5.3
       }
     },
     "Env_concern": {
@@ -853,10 +853,10 @@
         "table_code": "DESLSALGD",
         "dataset_url": "https://data.nisra.gov.uk/table/DESLSALGD",
         "geog_level": "lgd",
-        "last_updated": "2024-06-27",
+        "last_updated": "2025-05-29",
         "email": "statistics@education-ni.gov.uk",
         "title": "School Leavers Survey - Attainment",
-        "year": "2022/23"
+        "year": "2023/24"
       }
     ],
     "FE": [
@@ -886,10 +886,10 @@
         "table_code": "DESLSDLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/DESLSDLGD",
         "geog_level": "lgd",
-        "last_updated": "2024-06-27",
+        "last_updated": "2025-05-29",
         "email": "statistics@education-ni.gov.uk",
         "title": "School Leavers Survey - Destination",
-        "year": "2022/23"
+        "year": "2023/24"
       }
     ],
     "Env_concern": [
