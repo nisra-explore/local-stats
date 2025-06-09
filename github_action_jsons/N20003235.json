@@ -279,7 +279,7 @@
       }
     },
     "MYETotal": {
-      "value": 638
+      "value": 646
     }
   },
   "hectares": 717,
@@ -289,10 +289,10 @@
         "table_code": "MYE01T011",
         "dataset_url": "https://data.nisra.gov.uk/table/MYE01T011",
         "geog_level": "dz",
-        "last_updated": "2024-07-30",
+        "last_updated": "2025-06-09",
         "email": "census@nisra.gov.uk",
         "title": "Mid-year population estimates",
-        "year": "2022"
+        "year": "2023"
       }
     ],
     "BS": [

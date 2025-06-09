@@ -644,10 +644,10 @@
         "table_code": "MA01T02",
         "dataset_url": "https://data.nisra.gov.uk/table/MA01T02",
         "geog_level": "lgd",
-        "last_updated": "2025-05-08",
+        "last_updated": "2025-06-09",
         "email": "census@nisra.gov.uk",
         "title": "Median age",
-        "year": "2022"
+        "year": "2023"
       }
     ],
     "BroadAge": [
