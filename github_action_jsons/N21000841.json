@@ -300,14 +300,14 @@
       }
     },
     "MYETotal": {
-      "value": 2443
+      "value": 2540
     },
     "BroadAge": {
       "perc": {
-        "Age 0-15": 14.4494,
-        "Age 16-39": 21.1216,
-        "Age 40-64": 35.9804,
-        "Age 65+": 28.4486
+        "Age 0-15": 14.4488,
+        "Age 16-39": 20.8268,
+        "Age 40-64": 34.5669,
+        "Age 65+": 30.1575
       }
     }
   },
@@ -318,10 +318,10 @@
         "table_code": "MYE01T012",
         "dataset_url": "https://data.nisra.gov.uk/table/MYE01T012",
         "geog_level": "sdz",
-        "last_updated": "2024-07-30",
+        "last_updated": "2025-06-10",
         "email": "census@nisra.gov.uk",
         "title": "Mid-year population estimates",
-        "year": "2022"
+        "year": "2023"
       }
     ],
     "BroadAge": [
@@ -329,10 +329,10 @@
         "table_code": "MYE01T012",
         "dataset_url": "https://data.nisra.gov.uk/table/MYE01T012",
         "geog_level": "sdz",
-        "last_updated": "2024-07-30",
+        "last_updated": "2025-06-10",
         "email": "census@nisra.gov.uk",
         "title": "Mid-year population estimates",
-        "year": "2022"
+        "year": "2023"
       }
     ],
     "BS": [
