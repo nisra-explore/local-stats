@@ -56,25 +56,25 @@
     "crime": {
       "text": "Violent crime",
       "value": {
-        "allcrime": 4359,
-        "criminal": 622,
-        "other": 711,
-        "person": 1780,
-        "robbery": 12,
-        "sexual": 204,
-        "theft": 865,
-        "theft_burglary": 165,
-        "burglary": 165
+        "allcrime": 3897,
+        "criminal": 545,
+        "other": 683,
+        "person": 1629,
+        "robbery": 9,
+        "sexual": 179,
+        "theft": 742,
+        "theft_burglary": 110,
+        "burglary": 110
       },
       "perc": {
         "allcrime": 100,
-        "criminal": 14.2693,
-        "other": 16.3111,
-        "person": 40.8351,
-        "robbery": 0.2753,
-        "sexual": 4.68,
-        "theft": 19.844,
-        "theft_burglary": 3.7853
+        "criminal": 13.9851,
+        "other": 17.5263,
+        "person": 41.8014,
+        "robbery": 0.2309,
+        "sexual": 4.5933,
+        "theft": 19.0403,
+        "theft_burglary": 2.8227
       }
     },
     "env_problem": {
@@ -384,7 +384,8 @@
         "2019": 116797,
         "2020": 116594,
         "2021": 116926,
-        "2022": 116994
+        "2022": 116994,
+        "2023": 117195
       }
     },
     "Primary": {
@@ -581,7 +582,7 @@
       "value": 4255
     },
     "MYETotal": {
-      "value": 116994
+      "value": 117195
     },
     "Median": {
       "value": 41.5
@@ -634,10 +635,10 @@
         "table_code": "MYE01T06",
         "dataset_url": "https://data.nisra.gov.uk/table/MYE01T06",
         "geog_level": "lgd",
-        "last_updated": "2025-05-08",
+        "last_updated": "2025-06-16",
         "email": "census@nisra.gov.uk",
         "title": "Population totals",
-        "year": "2022"
+        "year": "2023"
       }
     ],
     "Median": [
@@ -667,10 +668,10 @@
         "table_code": "MYE01T06",
         "dataset_url": "https://data.nisra.gov.uk/table/MYE01T06",
         "geog_level": "lgd",
-        "last_updated": "2025-05-08",
+        "last_updated": "2025-06-16",
         "email": "census@nisra.gov.uk",
         "title": "Population totals",
-        "year": "2022"
+        "year": "2023"
       }
     ],
     "houseprices": [
@@ -953,10 +954,10 @@
         "table_code": "PRCLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/PRCLGD",
         "geog_level": "lgd",
-        "last_updated": "2024-07-25",
+        "last_updated": "2025-06-16",
         "email": "statistics@psni.police.uk",
         "title": "Police Recorded Crime",
-        "year": "2023/24"
+        "year": "2024/25"
       }
     ],
     "crimeworry": [

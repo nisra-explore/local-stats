@@ -373,25 +373,25 @@
     },
     "crime": {
       "value": {
-        "allcrime": 789,
-        "criminal": 78,
-        "other": 67,
-        "person": 324,
-        "robbery": 4,
-        "sexual": 34,
-        "theft": 240,
-        "theft_burglary": 42,
-        "burglary": 42
+        "allcrime": 720,
+        "criminal": 50,
+        "other": 73,
+        "person": 222,
+        "robbery": 3,
+        "sexual": 45,
+        "theft": 295,
+        "theft_burglary": 32,
+        "burglary": 32
       },
       "perc": {
         "allcrime": 100,
-        "criminal": 9.8859,
-        "other": 8.4918,
-        "person": 41.0646,
-        "robbery": 0.507,
-        "sexual": 4.3093,
-        "theft": 30.4183,
-        "theft_burglary": 5.3232
+        "criminal": 6.9444,
+        "other": 10.1389,
+        "person": 30.8333,
+        "robbery": 0.4167,
+        "sexual": 6.25,
+        "theft": 40.9722,
+        "theft_burglary": 4.4444
       }
     },
     "farms": {
@@ -603,10 +603,10 @@
         "table_code": "PRCDEA",
         "dataset_url": "https://data.nisra.gov.uk/table/PRCDEA",
         "geog_level": "dea",
-        "last_updated": "2024-07-25",
+        "last_updated": "2025-06-16",
         "email": "statistics@psni.police.uk",
         "title": "Police Recorded Crime",
-        "year": "2023/24"
+        "year": "2024/25"
       }
     ],
     "farms": [
