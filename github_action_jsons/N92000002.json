@@ -629,10 +629,10 @@
     },
     "Destination": {
       "perc": {
-        "destHEpct": 23,
-        "destFEpct": 12.9,
-        "destEmploypct": 43.8,
-        "destTrainpct": 9.3,
+        "destHEpct": 40.3,
+        "destFEpct": 30.8,
+        "destEmploypct": 11.3,
+        "destTrainpct": 13.6,
         "destUnempUnkpct": 4.1
       }
     },
