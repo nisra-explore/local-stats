@@ -621,19 +621,18 @@
     },
     "BroadAge": {
       "perc": {
-        "Age 0-15": 10.1079,
-        "Age 16-39": 14.7836,
-        "Age 40-64": 16.1915,
-        "Age 65+": 8.917,
-        "All": 50
+        "Age 0-15": 20.2157,
+        "Age 16-39": 29.5672,
+        "Age 40-64": 32.383,
+        "Age 65+": 17.8341
       }
     },
     "Destination": {
       "perc": {
-        "destHEpct": 40.3,
-        "destFEpct": 30.8,
-        "destEmploypct": 11.3,
-        "destTrainpct": 13.6,
+        "destHEpct": 23,
+        "destFEpct": 12.9,
+        "destEmploypct": 43.8,
+        "destTrainpct": 9.3,
         "destUnempUnkpct": 4.1
       }
     },
@@ -878,7 +877,7 @@
         "table_code": "DESLSALGD",
         "dataset_url": "https://data.nisra.gov.uk/table/DESLSALGD",
         "geog_level": "lgd",
-        "last_updated": "2025-05-29",
+        "last_updated": "2025-07-09",
         "email": "statistics@education-ni.gov.uk",
         "title": "School Leavers Survey - Attainment",
         "year": "2023/24"
@@ -911,7 +910,7 @@
         "table_code": "DESLSDLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/DESLSDLGD",
         "geog_level": "lgd",
-        "last_updated": "2025-05-29",
+        "last_updated": "2025-07-09",
         "email": "statistics@education-ni.gov.uk",
         "title": "School Leavers Survey - Destination",
         "year": "2023/24"

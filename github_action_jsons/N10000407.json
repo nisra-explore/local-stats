@@ -412,11 +412,11 @@
     },
     "Destination": {
       "perc": {
-        "destHEpct": 47.1,
-        "destFEpct": 22.2,
-        "destEmploypct": 8.9,
-        "destTrainpct": 17.3,
-        "destUnempUnkpct": 4.4
+        "destHEpct": 47.1111,
+        "destFEpct": 22.2222,
+        "destEmploypct": 8.8889,
+        "destTrainpct": 17.3333,
+        "destUnempUnkpct": 0
       }
     }
   },
@@ -549,7 +549,7 @@
         "table_code": "DESLSADEA",
         "dataset_url": "https://data.nisra.gov.uk/table/DESLSADEA",
         "geog_level": "dea",
-        "last_updated": "2025-06-05",
+        "last_updated": "2025-07-09",
         "email": "statistics@education-ni.gov.uk",
         "title": "School Leavers Survey - Attainment",
         "year": "2023/24"
@@ -582,7 +582,7 @@
         "table_code": "DESLSDDEA",
         "dataset_url": "https://data.nisra.gov.uk/table/DESLSDDEA",
         "geog_level": "dea",
-        "last_updated": "2025-06-05",
+        "last_updated": "2025-07-09",
         "email": "statistics@education-ni.gov.uk",
         "title": "School Leavers Survey - Destination",
         "year": "2023/24"
