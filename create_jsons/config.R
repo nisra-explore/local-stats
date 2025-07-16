@@ -13,7 +13,8 @@ p_load("dplyr", # was going to be used for the 2 column - don't think used anymo
        "gtools",
        "httr",
        "stringr",
-       "readr") 
+       "readr",
+       "tidyr") 
 
 
 
