@@ -605,11 +605,11 @@
     },
     "Destination": {
       "perc": {
-        "destHEpct": 12.8,
-        "destFEpct": 36.4,
-        "destEmploypct": 7.7,
-        "destTrainpct": 5.3,
-        "destUnempUnkpct": 36.1
+        "destHEpct": 36.4,
+        "destFEpct": 38.6,
+        "destEmploypct": 10.1,
+        "destTrainpct": 11.4,
+        "destUnempUnkpct": 3.6
       }
     },
     "Env_concern": {
