@@ -3,6 +3,7 @@ on:
      branches: main
    schedule:
      - cron: "0 9,16 * * 1-5"
+   workflow_dispatch:
 
 jobs:
   import-data:
