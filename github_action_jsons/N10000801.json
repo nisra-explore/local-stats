@@ -409,7 +409,7 @@
       "value": 61.9
     },
     "FE": {
-      "value": 1035
+      "value": 990
     },
     "HE": {
       "value": 695
@@ -427,11 +427,11 @@
     },
     "Destination": {
       "perc": {
-        "destHEpct": 43.0189,
-        "destFEpct": 26.4151,
-        "destEmploypct": 14.717,
-        "destTrainpct": 8.6792,
-        "destUnempUnkpct": 7.1698
+        "destHEpct": 43,
+        "destFEpct": 26.4,
+        "destEmploypct": 14.7,
+        "destTrainpct": 8.7,
+        "destUnempUnkpct": 7.2
       }
     }
   },
@@ -575,10 +575,10 @@
         "table_code": "FEENROLDEA",
         "dataset_url": "https://data.nisra.gov.uk/table/FEENROLDEA",
         "geog_level": "dea",
-        "last_updated": "2024-08-22",
+        "last_updated": "2025-07-22",
         "email": "dfemail@economy-ni.gov.uk",
         "title": "Regulated enrolments at Further Education Colleges",
-        "year": "2022/23"
+        "year": "2023/24"
       }
     ],
     "HE": [
@@ -597,7 +597,7 @@
         "table_code": "DESLSDDEA",
         "dataset_url": "https://data.nisra.gov.uk/table/DESLSDDEA",
         "geog_level": "dea",
-        "last_updated": "2025-07-09",
+        "last_updated": "2025-06-05",
         "email": "statistics@education-ni.gov.uk",
         "title": "School Leavers Survey - Destination",
         "year": "2023/24"

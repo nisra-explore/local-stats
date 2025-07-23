@@ -576,7 +576,7 @@
       "value": 72.4
     },
     "FE": {
-      "value": 10355
+      "value": 9970
     },
     "HE": {
       "value": 6610
@@ -865,10 +865,10 @@
         "table_code": "FEENROLLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/FEENROLLGD",
         "geog_level": "lgd",
-        "last_updated": "2024-08-22",
+        "last_updated": "2025-07-22",
         "email": "dfemail@economy-ni.gov.uk",
         "title": "Regulated enrolments at Further Education Colleges",
-        "year": "2022/23"
+        "year": "2023/24"
       }
     ],
     "HE": [
