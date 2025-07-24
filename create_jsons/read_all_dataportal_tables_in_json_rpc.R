@@ -3364,17 +3364,14 @@ json_data <- json_data_from_rpc(
 		"class": "query",
 		"id": [
 			"STATISTIC",
-			"TLIST(A1)"
+			"TLIST(A1)",
+			"DESTINATION"
 		],
 		"dimension": {
 			"STATISTIC": {
 				"category": {
 					"index": [
-						"destHEpct",
-						"destFEpct",
-						"destEmploypct",
-						"destTrainpct",
-						"destUnempUnkpct"
+						"PercSL"
 					]
 				}
 			},
@@ -3382,6 +3379,17 @@ json_data <- json_data_from_rpc(
 				"category": {
 					"index": [
 						"', latest_year, '"
+					]
+				}
+			},
+			"DESTINATION": {
+				"category": {
+					"index": [
+						"destHE",
+						"destFE",
+						"destEmploy",
+						"destTrain",
+						"destUnempUnk"
 					]
 				}
 			}
@@ -3417,15 +3425,15 @@ df_meta_data <- rbind(df_meta_data, t(c(
 
 geog_codes <- json_data$dimension$DEA2014$category$index
 
-categories <- json_data$dimension$STATISTIC$category$index
-categories_long <- c()
-for (i in 1:length(categories)) {
-  categories_long <- c(categories_long, rep(categories[i], length(geog_codes)))
+categories <- paste0(json_data$dimension$DESTINATION$category$index, "pct")
+geog_codes_long <- c()
+for (i in 1:length(geog_codes)) {
+  geog_codes_long <- c(geog_codes_long, rep(geog_codes[i], length(categories)))
 }
 
 
-data <- data.frame(geog_code = geog_codes,
-                   statistic = categories_long,
+data <- data.frame(geog_code = geog_codes_long,
+                   statistic = categories,
                    VALUE = json_data$value,
                    source = dataset_short)
 
