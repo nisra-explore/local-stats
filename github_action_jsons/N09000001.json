@@ -400,20 +400,20 @@
     },
     "PostPrimary": {
       "value": {
-        "FSME": 2530,
-        "All": 11858
+        "FSME": 2442,
+        "All": 12155
       },
       "perc": {
-        "FSME": 21.3358,
+        "FSME": 20.0905,
         "All": 100
       }
     },
     "AllSchools": {
       "value": {
-        "SEN": 4671
+        "SEN": 4852
       },
       "perc": {
-        "SEN": 18.2276
+        "SEN": 18.7134
       }
     },
     "Env_ghg": {
@@ -821,10 +821,10 @@
         "table_code": "DESCPPLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/DESCPPLGD",
         "geog_level": "lgd",
-        "last_updated": "2023-05-31",
+        "last_updated": "2025-08-05",
         "email": "statistics@education-ni.gov.uk",
         "title": "School Census - Post Primary",
-        "year": "2022/23"
+        "year": "2024/25"
       }
     ],
     "SEN": [
@@ -832,10 +832,10 @@
         "table_code": "DESCSLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/DESCSLGD",
         "geog_level": "lgd",
-        "last_updated": "2023-05-31",
+        "last_updated": "2025-08-05",
         "email": "statistics@education-ni.gov.uk",
         "title": "School Census - Special Schools",
-        "year": "2022/23"
+        "year": "2024/25"
       }
     ],
     "ClassSize": [
