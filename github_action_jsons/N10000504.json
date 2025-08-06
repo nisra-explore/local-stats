@@ -335,11 +335,11 @@
     },
     "Primary": {
       "value": {
-        "FSME": 654,
-        "All": 1505
+        "FSME": 646,
+        "All": 1490
       },
       "perc": {
-        "FSME": 43.4551,
+        "FSME": 43.3557,
         "All": 100
       }
     },
@@ -355,10 +355,10 @@
     },
     "AllSchools": {
       "value": {
-        "SEN": 663
+        "SEN": 650
       },
       "perc": {
-        "SEN": 23.7209
+        "SEN": 23.3813
       }
     },
     "crime": {
@@ -516,10 +516,10 @@
         "table_code": "DESCPDEA",
         "dataset_url": "https://data.nisra.gov.uk/table/DESCPDEA",
         "geog_level": "dea",
-        "last_updated": "2023-05-31",
+        "last_updated": "2025-08-06",
         "email": "statistics@education-ni.gov.uk",
         "title": "School Census - Primary",
-        "year": "2022/23"
+        "year": "2024/25"
       }
     ],
     "PostPrimary": [
