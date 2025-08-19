@@ -638,8 +638,8 @@
     },
     "Env_concern": {
       "perc": {
-        "CONCERNENVI": 78,
-        "NOTCONCERNENVI": 22
+        "CONCERNENVI": 73,
+        "NOTCONCERNENVI": 27
       }
     },
     "Env_waste": {
@@ -921,10 +921,10 @@
         "table_code": "CHSCONCERNLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/CHSCONCERNLGD",
         "geog_level": "lgd",
-        "last_updated": "2024-08-20",
+        "last_updated": "2025-08-19",
         "email": "env.stats@daera-ni.gov.uk",
         "title": "Continuous Household Survey: Concern about the environment",
-        "year": "2023/24"
+        "year": "2024/25"
       }
     ],
     "Env_problem": [
