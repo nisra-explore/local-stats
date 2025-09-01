@@ -418,10 +418,10 @@
     },
     "Env_ghg": {
       "value": {
-        "CO2": 792.4889,
-        "CH4": 325.2081,
-        "N2O": 94.3219,
-        "GHGALL": 1212.019,
+        "CO2": null,
+        "CH4": null,
+        "N2O": null,
+        "GHGALL": null,
         "GHGALL_BASE": 1516.2232
       }
     },
@@ -550,8 +550,8 @@
     },
     "houseprices": {
       "value": {
-        "SP": 221029.22,
-        "HPI": 113.97
+        "SP": 219096.92,
+        "HPI": 112.97
       }
     },
     "Satisfy": {
@@ -678,10 +678,10 @@
         "table_code": "LPSHPI01",
         "dataset_url": "https://data.nisra.gov.uk/table/LPSHPI01",
         "geog_level": "lgd",
-        "last_updated": "2025-05-28",
+        "last_updated": "2025-08-21",
         "email": "lps.statisticsbranch@finance-ni.gov.uk",
         "title": "House Price Index and Standardised Price",
-        "year": "2025Q1"
+        "year": "2025Q2"
       }
     ],
     "LE": [
@@ -931,10 +931,10 @@
         "table_code": "GHGALL",
         "dataset_url": "https://data.nisra.gov.uk/table/GHGALL",
         "geog_level": "lgd",
-        "last_updated": "2025-04-29",
+        "last_updated": "2025-09-01",
         "email": "env.stats@daera-ni.gov.uk",
         "title": "Greenhouse Gas Emissions - Full dataset",
-        "year": "2022"
+        "year": "2023"
       }
     ],
     "Env_active": [
