@@ -339,12 +339,12 @@
     },
     "LMS": {
       "value": {
-        "EMPN": 72000
+        "EMPN": 70000
       },
       "perc": {
-        "EMPR": 79.5,
-        "UNEMPR": 1.4,
-        "INACTR": 19.3
+        "EMPR": 74.4,
+        "UNEMPR": 2.4,
+        "INACTR": 23.7
       }
     },
     "BS": {
@@ -755,10 +755,10 @@
         "table_code": "LMSLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/LMSLGD",
         "geog_level": "lgd",
-        "last_updated": "2025-02-04",
+        "last_updated": "2025-09-08",
         "email": "economicstats@nisra.gov.uk",
         "title": "Labour Market Status",
-        "year": "2023"
+        "year": "2024"
       }
     ],
     "ASHE": [
