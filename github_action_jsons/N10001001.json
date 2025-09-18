@@ -316,8 +316,8 @@
     },
     "LE": {
       "value": {
-        "Females": 83.6,
-        "Males": 81
+        "Females": 84.2,
+        "Males": 80.3
       }
     },
     "DEN": {
@@ -470,10 +470,10 @@
         "table_code": "LEDEA",
         "dataset_url": "https://data.nisra.gov.uk/table/LEDEA",
         "geog_level": "dea",
-        "last_updated": "2024-10-22",
+        "last_updated": "2025-09-17",
         "email": "healthinequalities@health-ni.gov.uk",
         "title": "Life expectancy at birth",
-        "year": "2020-22"
+        "year": "2021-23"
       }
     ],
     "Admiss": [

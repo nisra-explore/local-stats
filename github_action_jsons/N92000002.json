@@ -338,8 +338,8 @@
     },
     "LE": {
       "value": {
-        "Females": 82.3,
-        "Males": 78.4
+        "Females": 82.5,
+        "Males": 78.8
       }
     },
     "DEN": {
@@ -409,7 +409,8 @@
         "2020": 1900523,
         "2021": 1904564,
         "2022": 1910543,
-        "2023": 1920382
+        "2023": 1920382,
+        "2024": 1927855
       }
     },
     "Primary": {
@@ -606,10 +607,10 @@
       "value": 66100
     },
     "MYETotal": {
-      "value": 1920382
+      "value": 1927855
     },
     "Median": {
-      "value": 40.2
+      "value": 40.3
     },
     "BRES": {
       "perc": {
@@ -621,10 +622,10 @@
     },
     "BroadAge": {
       "perc": {
-        "Age 0-15": 20.2157,
-        "Age 16-39": 29.5672,
-        "Age 40-64": 32.383,
-        "Age 65+": 17.8341
+        "Age 0-15": 19.9539,
+        "Age 16-39": 29.6277,
+        "Age 40-64": 32.3053,
+        "Age 65+": 18.1131
       }
     },
     "Destination": {
@@ -657,10 +658,10 @@
         "table_code": "MYE01T06",
         "dataset_url": "https://data.nisra.gov.uk/table/MYE01T06",
         "geog_level": "lgd",
-        "last_updated": "2025-06-16",
+        "last_updated": "2025-09-17",
         "email": "census@nisra.gov.uk",
         "title": "Population totals",
-        "year": "2023"
+        "year": "2024"
       }
     ],
     "Median": [
@@ -668,10 +669,10 @@
         "table_code": "MA01T02",
         "dataset_url": "https://data.nisra.gov.uk/table/MA01T02",
         "geog_level": "lgd",
-        "last_updated": "2025-06-09",
+        "last_updated": "2025-09-17",
         "email": "census@nisra.gov.uk",
         "title": "Median age",
-        "year": "2023"
+        "year": "2024"
       }
     ],
     "BroadAge": [
@@ -679,10 +680,10 @@
         "table_code": "MYE01T04",
         "dataset_url": "https://data.nisra.gov.uk/table/MYE01T04",
         "geog_level": "lgd",
-        "last_updated": "2025-06-13",
+        "last_updated": "2025-09-18",
         "email": "census@nisra.gov.uk",
         "title": "Mid-year population estimates",
-        "year": "2023"
+        "year": "2024"
       }
     ],
     "PopChange": [
@@ -690,10 +691,10 @@
         "table_code": "MYE01T06",
         "dataset_url": "https://data.nisra.gov.uk/table/MYE01T06",
         "geog_level": "lgd",
-        "last_updated": "2025-06-16",
+        "last_updated": "2025-09-17",
         "email": "census@nisra.gov.uk",
         "title": "Population totals",
-        "year": "2023"
+        "year": "2024"
       }
     ],
     "houseprices": [
@@ -712,10 +713,10 @@
         "table_code": "LELGD",
         "dataset_url": "https://data.nisra.gov.uk/table/LELGD",
         "geog_level": "lgd",
-        "last_updated": "2024-10-22",
+        "last_updated": "2025-09-17",
         "email": "healthinequalities@health-ni.gov.uk",
         "title": "Life expectancy at birth",
-        "year": "2020-22"
+        "year": "2021-23"
       }
     ],
     "wellbeing": [
