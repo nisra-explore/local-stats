@@ -867,7 +867,7 @@ df_meta_data <- rbind(df_meta_data, t(c(
   "note" = json_data$note
 )))
 
-categories <- unlist(json_data$dimension$SEX$category$label)
+categories <- unlist(json_data$dimension$GENDER$category$label)
 
 geog_codes <- c()
 for (i in 1:length(json_data$dimension$DEA2014$category$index)) {
@@ -932,7 +932,7 @@ df_meta_data <- rbind(df_meta_data, t(c(
   "note" = json_data$note
 )))
 
-categories <- unlist(json_data$dimension$SEX$category$label)
+categories <- unlist(json_data$dimension$GENDER$category$label)
 
 geog_codes <- c()
 for (i in 1:length(json_data$dimension$LGD2014$category$index)) {
