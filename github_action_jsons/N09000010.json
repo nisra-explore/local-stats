@@ -419,11 +419,11 @@
     },
     "Env_ghg": {
       "value": {
-        "CO2": null,
-        "CH4": null,
-        "N2O": null,
-        "GHGALL": null,
-        "GHGALL_BASE": 2259.5302
+        "CO2": 951.4,
+        "CH4": 544.8,
+        "N2O": 137.5,
+        "GHGALL": 1633.7,
+        "GHGALL_BASE": 2191.2
       }
     },
     "Env_active": {
@@ -690,7 +690,7 @@
         "table_code": "LELGD",
         "dataset_url": "https://data.nisra.gov.uk/table/LELGD",
         "geog_level": "lgd",
-        "last_updated": "2025-09-17",
+        "last_updated": "2025-09-19",
         "email": "healthinequalities@health-ni.gov.uk",
         "title": "Life expectancy at birth",
         "year": "2021-23"
@@ -932,7 +932,7 @@
         "table_code": "GHGALL",
         "dataset_url": "https://data.nisra.gov.uk/table/GHGALL",
         "geog_level": "lgd",
-        "last_updated": "2025-09-01",
+        "last_updated": "2025-09-19",
         "email": "env.stats@daera-ni.gov.uk",
         "title": "Greenhouse Gas Emissions - Full dataset",
         "year": "2023"
