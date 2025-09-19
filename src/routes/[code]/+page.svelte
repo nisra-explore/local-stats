@@ -1614,34 +1614,34 @@ function compareDensity (place) {
 			},
 		
 
-		// box_3: {
-		// 	id: "ghg",
-		// 	year: pullYear("Env_ghg", data.place),
-		// 	content:  "<p><span class='text-big'>"  + (check("Env_ghg.value.GHGALL")).toLocaleString(undefined, {maximumFractionDigits: 0}) +"</span> kilotonnes of carbon dioxide equivalent (KtCO2e).</p>"+
-		// 			 "<p><span class='text-big'>" + ((check("Env_ghg.value.GHGALL")/check("Env_ghg.value.GHGALL_BASE")-1)*-100).toLocaleString(undefined, {maximumFractionDigits: 0, minimumFractionDigits: 0}) +"%</span> reduction since 2005.</p>",
+		box_3: {
+			id: "ghg",
+			year: pullYear("Env_ghg", data.place),
+			content:  "<p><span class='text-big'>"  + (check("Env_ghg.value.GHGALL")).toLocaleString(undefined, {maximumFractionDigits: 0}) +"</span> kilotonnes of carbon dioxide equivalent (KtCO2e).</p>"+
+					 "<p><span class='text-big'>" + ((check("Env_ghg.value.GHGALL")/check("Env_ghg.value.GHGALL_BASE")-1)*-100).toLocaleString(undefined, {maximumFractionDigits: 0, minimumFractionDigits: 0}) +"%</span> reduction since 2005.</p>",
 					
-		// 	show: ["ni"]
-		// },
+			show: ["ni"]
+		},
 
-		// box_3a: {
-		// 	id: "ghg",
-		// 	year: pullYear("Env_ghg", data.place),
-		// 	content:  "<p><span class='text-big'>"  + (check("Env_ghg.value.GHGALL")).toLocaleString(undefined, {maximumFractionDigits: 0, minimumFractionDigits: 0}) +"</span> kilotonnes of carbon dioxide equivalent (KtCO2e).</p>"+
-		// 			 "<p><span class='text-big'>" + ((check("Env_ghg.value.GHGALL")/check("Env_ghg.value.GHGALL_BASE")-1)*-100).toLocaleString(undefined, {maximumFractionDigits: 1, minimumFractionDigits: 1}) +"%</span> reduction since 2005.</p>"+
-		// 			 "<span style='color: #1460aa'>(NI " + ((data.ni.data.Env_ghg.value.GHGALL/data.ni.data.Env_ghg.value.GHGALL_BASE-1)*-100).toLocaleString(undefined, {maximumFractionDigits: 1, minimumFractionDigits: 1}) + "%) </span>" ,
+		box_3a: {
+			id: "ghg",
+			year: pullYear("Env_ghg", data.place),
+			content:  "<p><span class='text-big'>"  + (check("Env_ghg.value.GHGALL")).toLocaleString(undefined, {maximumFractionDigits: 0, minimumFractionDigits: 0}) +"</span> kilotonnes of carbon dioxide equivalent (KtCO2e).</p>"+
+					 "<p><span class='text-big'>" + ((check("Env_ghg.value.GHGALL")/check("Env_ghg.value.GHGALL_BASE")-1)*-100).toLocaleString(undefined, {maximumFractionDigits: 1, minimumFractionDigits: 1}) +"%</span> reduction since 2005.</p>"+
+					 "<span style='color: #1460aa'>(NI " + ((data.ni.data.Env_ghg.value.GHGALL/data.ni.data.Env_ghg.value.GHGALL_BASE-1)*-100).toLocaleString(undefined, {maximumFractionDigits: 1, minimumFractionDigits: 1}) + "%) </span>" ,
 					
-		// 	show: [ "lgd"]
-		// },
+			show: [ "lgd"]
+		},
 
 
-		// box_3c: {
-		// 		id: "ghg",
-		// 	content: "Data is available for " + parentlinks(data.place,"ni, lgd"),
-		// 		show: ["dea", "sdz", "dz"],
-		// 		i_button: false,
-		// 		title: "<span style='font-size: 0.88em'>Greenhouse gas</span>"
+		box_3c: {
+				id: "ghg",
+			content: "Data is available for " + parentlinks(data.place,"ni, lgd"),
+				show: ["dea", "sdz", "dz"],
+				i_button: false,
+				title: "<span style='font-size: 0.88em'>Greenhouse gas</span>"
 
-		// 	},
+			},
 		// box_4: {
 		// 	id: "cars",
 		// 	year: pullCensusYear("car_or_van"),
