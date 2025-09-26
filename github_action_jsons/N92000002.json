@@ -355,10 +355,10 @@
     },
     "GP": {
       "value": {
-        "PRACS": 312,
-        "GPS": 1454,
-        "REGPAT": 2054918,
-        "PRACLIST": 6586
+        "PRACS": 305,
+        "GPS": 1468,
+        "REGPAT": 2066970,
+        "PRACLIST": 6777
       }
     },
     "LMS": {
@@ -746,10 +746,10 @@
         "table_code": "GPPRACPATLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/GPPRACPATLGD",
         "geog_level": "lgd",
-        "last_updated": "2024-06-19",
+        "last_updated": "2025-09-26",
         "email": "info.bso@hscni.net",
         "title": "GPs Practices and Registered Patients",
-        "year": "2024"
+        "year": "2025"
       }
     ],
     "DEN": [
