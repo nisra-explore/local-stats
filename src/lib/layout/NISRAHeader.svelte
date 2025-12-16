@@ -11,11 +11,11 @@
 			<a href="https://www.nisra.gov.uk/">
 				<picture>
 					{#if theme.name == 'dark'}
-					<img style="width:180px;" src="{assets}/img/nisra-logo-white-bilingual-wide.png" alt="Northern Ireland Statistics and Research Agency">
+					<img style="width:180px;" src="{assets}/img/logo/nisra-only-white.svg" alt="Northern Ireland Statistics and Research Agency">
 					{:else if filled == true}
-					<img style="width:180px;" src="{assets}/img/nisra-logo-white-bilingual-wide.png" alt="Northern Ireland Statistics and Research Agency">
+					<img style="width:180px;" src="{assets}/img/logo/nisra-only-white.svg" alt="Northern Ireland Statistics and Research Agency">
 					{:else}
-					<img style="width:180px;" src="{assets}/img/nisra-logo-white-bilingual-wide.png" alt="Northern Ireland Statistics and Research Agency">
+					<img style="width:180px;" src="{assets}/img/logo/nisra-only-white.svg" alt="Northern Ireland Statistics and Research Agency">
 					{/if}
 				</picture>
 			</a>
@@ -24,69 +24,91 @@
 		</div>
 	</nav> -->
   
-	<nav  style="color: #ffffff; background-color: #00205b;">
-		<!-- <header style="color: #ffffff; background-color: #00205b;"> -->
-			<div class="col-wide" data-analytics="header">
-				<div class="grid mtb">
-					<div style = "display: flex; justify-content: left; align-items: center">
-						<a href="https://www.nisra.gov.uk/">
-							<picture>
-								{#if theme.name == 'dark'}
-									<img style="width: 300px;" src="{assets}/img/white bilingual.svg" alt="Northern Ireland Statistics and Research Agency">
-								{:else if filled == true}
-									<img style="width: 300px;" src="{assets}/img/white bilingual.svg" alt="Northern Ireland Statistics and Research Agency">
-								{:else}
-									<img style="width: 300px;" src="{assets}/img/white bilingual.svg" alt="Northern Ireland Statistics and Research Agency">
-								{/if}
-							</picture>
-						</a>
-					</div>
-					<div style = "display: flex; flex-direction:column; justify-content: right; align-items: center">
-						<h1 style="font-size: 2.5em; font-weight: bold;color: #ffffff; line-height: 1em; margin-bottom: 10px;">Northern Ireland Local Statistics Explorer</h1>
-						<span style = "font-size: 1.5em; line-height: 1em">Find out how your local area compares to NI</span>
+			<nav class="nisra-header">
+				<div class="header-inner" data-analytics="header">
+					<a class="brand" href="https://www.nisra.gov.uk/">
+					<img
+						class="logo"
+						src="{assets}/img/logo/nisra-only-white.svg"
+						alt="Northern Ireland Statistics and Research Agency"
+					/>
+					</a>
+
+					<div class="header-text">
+					<h1 class="header-title">Northern Ireland Local Statistics Explorer</h1>
+					<span class="header-subtitle">Find out how your local area compares to NI</span>
 					</div>
 				</div>
-		
-			</div>
-		<!-- </header> -->
-	</nav>
-
-
+				</nav>
 
   <style>
 
-/* header {
-		padding-bottom: 5px;
-		height: 120px;
-		 
-	}
-	 */
+.nisra-header {
+  background-color: #00205b;
+  color: #fff;
+}
 
-	  picture {
-		  position: relative;
-		  top: 12px;
-		  padding: 10px 12px;
-	  }
-	  img {
-		  width: 110px;
-		  	  }
-	  a img:hover {
-		  cursor: pointer;
-	  }
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* ✅ logo left, text right */
+  gap: 400px;
+}
 
-	  .grid {
-		display: grid;
-		width: 100%;
-		grid-gap: 30px;
-		grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
-		justify-content: stretch;
-		page-break-inside: avoid;
-	}
+.brand {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
 
-	.mtb {
-		margin-top: 10px;
-		margin-bottom: 20px;
-	}
+.logo {
+  width: 200px;
+  height: auto;
+  display: block;
+}
 
+/* Right-side text */
+.header-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;   /* ✅ right aligned on desktop */
+  text-align: right;
+  flex: 1 1 auto;
+  min-width: 0;            /* ✅ allows wrapping instead of overflow */
+}
+
+.header-title {
+  margin: 0 0 8px 0;
+  font-size: clamp(18px, 2.2vw, 28px); /* ✅ scales nicely */
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.header-subtitle {
+  font-size: clamp(14px, 1.8vw, 24px);
+  line-height: 1.3;
+}
+
+/* ✅ Mobile: stack and centre (or switch to left if you prefer) */
+@media (max-width: 700px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+	gap: 20px; /* ✅ small vertical gap on mobile */
+  }
+
+  .logo {
+    width: 170px;
+  }
+
+  .header-text {
+    align-items: flex-start;
+    text-align: left;
+    width: 100%;
+  }
+}
 	  
   </style>

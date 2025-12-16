@@ -18,7 +18,7 @@ const config = {
 		// 		entries: ["*"]
 		// },
 		paths: {
-				assets: production ? 'https://explore.nisra.gov.uk/local-stats' : '',
+				assets: production ? 'https://NISRA-Tech-Lab.github.io/local-stats' : '',
 				// to allow a prerender app to be built, the below two arguments need to be swapped
 				// base: production ? '' : '/local-stats'
 				base: production ? '/local-stats' : ''

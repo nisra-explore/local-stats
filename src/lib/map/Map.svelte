@@ -10,7 +10,7 @@
 			[-5.43279, 55.31298],
 		], // Northern Ireland
 	};
-	export let style = "https://raw.githubusercontent.com/nisra-explore/map_tiles/main/basemap_styles/style-omt.json";
+	export let style = "https://raw.githubusercontent.com/NISRA-Tech-Lab/map_tiles/main/basemap_styles/style-omt.json";
 	export let interactive = true;
 	export let minzoom = 0;
 	export let maxzoom = 20;

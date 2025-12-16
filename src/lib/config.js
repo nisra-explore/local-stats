@@ -18,16 +18,16 @@ export const themes = {
 
 export const app_inputs = {
 //	search_data: 'https://datavis.nisra.gov.uk/techlab/yalcbs/places_dz_extra.csv',
-	search_data: 'https://raw.githubusercontent.com/nisra-explore/local-stats/main/search_data/places_dz_full_postcode_JULY2024.csv',
+	search_data: 'https://raw.githubusercontent.com/NISRA-Tech-Lab/local-stats/main/search_data/places_dz_full_postcode_JULY2024.csv',
 	//search_data: '/search_data/places_dz_full_postcode.csv',
 	//postcode_data: '/search_data/cpd_light_with_lat_long_2.csv',
-	postcode_data: 'https://raw.githubusercontent.com/nisra-explore/local-stats/main/search_data/CPD_LIGHT_JULY_2024.csv',
+	postcode_data: 'https://raw.githubusercontent.com/NISRA-Tech-Lab/local-stats/main/search_data/CPD_LIGHT_JULY_2024.csv',
 	// app_json_data: 'https://datavis.nisra.gov.uk/techlab/yalcbs/',
 //	 app_json_data: '/data_jsons_dea_20240408/',
 	//app_json_data: '/alternative_jsons/',
-	 app_json_data: "https://raw.githubusercontent.com/nisra-explore/local-stats/main/github_action_jsons/",
+	 app_json_data: "https://raw.githubusercontent.com/NISRA-Tech-Lab/local-stats/main/github_action_jsons/",
 	//app_json_data: "/jsons_nogroup/",
-	base: 'https://explore.nisra.gov.uk/local-stats/'
+	base: 'https://NISRA-Tech-Lab.github.io/local-stats/'
 };
 
 export const geog_types = {
@@ -247,7 +247,7 @@ export const topics = {
 
 
 
-export const mapStyle = 'https://raw.githubusercontent.com/nisra-explore/map_tiles/main/basemap_styles/style-omt.json';
+export const mapStyle = 'https://raw.githubusercontent.com/NISRA-Tech-Lab/map_tiles/main/basemap_styles/style-omt.json';
 
 
 export const mapSources = {
@@ -255,14 +255,14 @@ export const mapSources = {
 		id: 'lgd',
 		promoteId: 'lgd_code',
 		type: 'vector',
-		url: 'https://raw.githubusercontent.com/nisra-explore/map_tiles/main/lgd2014/{z}/{x}/{y}.pbf',
+		url: 'https://raw.githubusercontent.com/NISRA-Tech-Lab/map_tiles/main/lgd2014/{z}/{x}/{y}.pbf',
 		maxzoom: 12
 	},
 	dea: {
 		id: 'dea',
 		promoteId: 'dea_code',
 		type: 'vector',
-		url: 'https://raw.githubusercontent.com/nisra-explore/map_tiles/main/dea_2014/{z}/{x}/{y}.pbf',
+		url: 'https://raw.githubusercontent.com/NISRA-Tech-Lab/map_tiles/main/dea_2014/{z}/{x}/{y}.pbf',
 		minzoom: 6,
 		maxzoom: 12
 	},
@@ -270,7 +270,7 @@ export const mapSources = {
 		id: 'sdz',
 		promoteId: 'sdz_code',
 		type: 'vector',
-		url: 'https://raw.githubusercontent.com/nisra-explore/map_tiles/main/sdz_2021/{z}/{x}/{y}.pbf',
+		url: 'https://raw.githubusercontent.com/NISRA-Tech-Lab/map_tiles/main/sdz_2021/{z}/{x}/{y}.pbf',
 //		url: '/data/map_tiles/soa21/{z}/{x}/{y}.pbf',
 		minzoom: 6,
 		maxzoom: 12
@@ -279,7 +279,7 @@ export const mapSources = {
 		id: 'dz',
 		promoteId: 'dz_code',
 		type: 'vector',
-		url: 'https://raw.githubusercontent.com/nisra-explore/map_tiles/main/dz_2021/{z}/{x}/{y}.pbf',
+		url: 'https://raw.githubusercontent.com/NISRA-Tech-Lab/map_tiles/main/dz_2021/{z}/{x}/{y}.pbf',
 //		url: '/data/map_tiles/sa/{z}/{x}/{y}.pbf',
  		minzoom: 6,
 		maxzoom: 12, 
@@ -289,7 +289,7 @@ export const mapSources = {
 	// 	id: 'ward',
 	// 	promoteId: 'ward_Code',
 	// 	type: 'vector',
-	// 	url: 'https://raw.githubusercontent.com/nisra-explore/map_tiles/main/ward2014/{z}/{x}/{y}.pbf',
+	// 	url: 'https://raw.githubusercontent.com/NISRA-Tech-Lab/map_tiles/main/ward2014/{z}/{x}/{y}.pbf',
 	// 	minzoom: 6,
 	// 	maxzoom: 12
 	//} 

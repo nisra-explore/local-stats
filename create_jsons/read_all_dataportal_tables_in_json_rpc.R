@@ -867,9 +867,7 @@ df_meta_data <- rbind(df_meta_data, t(c(
   "note" = json_data$note
 )))
 
-category_names <- names(json_data$dimension)
-
-categories <- unlist(json_data$dimension[[if ("SEX" %in% category_names) "SEX" else "GENDER"]]$category$label)
+categories <- unlist(json_data$dimension$SEX$category$label)
 
 geog_codes <- c()
 for (i in 1:length(json_data$dimension$DEA2014$category$index)) {
@@ -934,9 +932,7 @@ df_meta_data <- rbind(df_meta_data, t(c(
   "note" = json_data$note
 )))
 
-category_names <- names(json_data$dimension)
-
-categories <- unlist(json_data$dimension[[if ("SEX" %in% category_names) "SEX" else "GENDER"]]$category$label)
+categories <- unlist(json_data$dimension$SEX$category$label)
 
 geog_codes <- c()
 for (i in 1:length(json_data$dimension$LGD2014$category$index)) {
@@ -3369,13 +3365,13 @@ json_data <- json_data_from_rpc(
 		"id": [
 			"STATISTIC",
 			"TLIST(A1)",
-			"DESTINATION"
+			"FSME"
 		],
 		"dimension": {
 			"STATISTIC": {
 				"category": {
 					"index": [
-						"PercSL"
+						"NumSL"
 					]
 				}
 			},
@@ -3386,14 +3382,11 @@ json_data <- json_data_from_rpc(
 					]
 				}
 			},
-			"DESTINATION": {
+			"FSME": {
 				"category": {
 					"index": [
-						"destHE",
-						"destFE",
-						"destEmploy",
-						"destTrain",
-						"destUnempUnk"
+						"1",
+						"2"
 					]
 				}
 			}
@@ -3408,7 +3401,7 @@ json_data <- json_data_from_rpc(
 				"type": "JSON-stat",
 				"version": "2.0"
 			},
-			"matrix": "', dataset_long, '"
+			"matrix": "', dataset_long,'"
 		},
 		"version": "2.0"
 	}
@@ -3427,19 +3420,39 @@ df_meta_data <- rbind(df_meta_data, t(c(
   "note" = json_data$note
 )))
 
-geog_codes <- json_data$dimension$DEA2014$category$index
+categories <- json_data$dimension$DESTINATION$category$index
 
-categories <- paste0(json_data$dimension$DESTINATION$category$index, "pct")
-geog_codes_long <- c()
-for (i in 1:length(geog_codes)) {
-  geog_codes_long <- c(geog_codes_long, rep(geog_codes[i], length(categories)))
+fsme <- unlist(json_data$dimension$FSME$category$label)
+
+geog_codes <- c()
+for (i in 1:length(json_data$dimension$DEA2014$category$index)) {
+  geog_codes <- c(geog_codes, rep(json_data$dimension$DEA2014$category$index[i], length(categories) * length(fsme)))
+}
+
+categories_long <- c()
+for (i in 1:length(categories)) {
+  categories_long <- c(categories_long, rep(categories[i], length(fsme)))
 }
 
 
-data <- data.frame(geog_code = geog_codes_long,
-                   statistic = categories,
-                   VALUE = json_data$value,
-                   source = dataset_short)
+data <- data.frame(geog_code = geog_codes,
+                   statistic = rep_len(categories_long, length(json_data$value)),
+                   fsme = rep_len(fsme, length(json_data$value)),
+                   VALUE = json_data$value) %>% 
+  group_by(geog_code, statistic) %>% 
+  summarise(VALUE = sum(VALUE, na.rm = TRUE),
+            .groups = "drop") %>% 
+  pivot_wider(id_cols = "geog_code", names_from = "statistic", values_from = "VALUE") %>% 
+  mutate(
+    destHEpct = (destHE / SchoolLeavers) * 100,
+    destFEpct = (destFE / SchoolLeavers) * 100,
+    destEmploypct = (destEmploy / SchoolLeavers) * 100,
+    destTrainpct = (destTrain / SchoolLeavers) * 100,
+    destUnempUnkpct = (destUnempUnk / SchoolLeavers) * 100
+  ) %>% 
+  select(geog_code, destHEpct:destUnempUnkpct) %>% 
+  pivot_longer(cols = destHEpct:destUnempUnkpct, names_to = "statistic", values_to = "VALUE") %>% 
+  mutate(source = dataset_short)
 
 df_school_destination <- unique(rbind(df_school_destination, data))
 

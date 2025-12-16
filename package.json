@@ -1,7 +1,7 @@
 {
   "name": "local-stats",
   "version": "0.0.1",
-  "homepage": "https://explore.nisra.gov.uk/local-stats/",
+  "homepage": "https://NISRA-Tech-Lab.github.io/local-stats/",
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",

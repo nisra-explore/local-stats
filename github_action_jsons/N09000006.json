@@ -314,8 +314,8 @@
     },
     "LE": {
       "value": {
-        "Females": 83.1,
-        "Males": 79.6
+        "Females": 82.8,
+        "Males": 79
       }
     },
     "DEN": {
@@ -332,19 +332,19 @@
     "GP": {
       "value": {
         "PRACS": 19,
-        "GPS": 71,
-        "REGPAT": 125666,
-        "PRACLIST": 6614
+        "GPS": 67,
+        "REGPAT": 125254,
+        "PRACLIST": 6592
       }
     },
     "LMS": {
       "value": {
-        "EMPN": 58000
+        "EMPN": 53000
       },
       "perc": {
-        "EMPR": 75,
-        "UNEMPR": 1.7,
-        "INACTR": 23.6
+        "EMPR": 70.6,
+        "UNEMPR": 4.6,
+        "INACTR": 26
       }
     },
     "BS": {
@@ -385,45 +385,44 @@
         "2020": 116594,
         "2021": 116926,
         "2022": 116994,
-        "2023": 117195,
-        "2024": 117687
+        "2023": 117195
       }
     },
     "Primary": {
       "value": {
-        "FSME": 2287,
-        "All": 11452
+        "FSME": 2598,
+        "All": 11490
       },
       "perc": {
-        "FSME": 19.9703,
+        "FSME": 22.611,
         "All": 100
       }
     },
     "PostPrimary": {
       "value": {
-        "FSME": 1861,
-        "All": 9948
+        "FSME": 2237,
+        "All": 10017
       },
       "perc": {
-        "FSME": 18.7073,
+        "FSME": 22.332,
         "All": 100
       }
     },
     "AllSchools": {
       "value": {
-        "SEN": 4526
+        "SEN": 4548
       },
       "perc": {
-        "SEN": 20.8274
+        "SEN": 20.8328
       }
     },
     "Env_ghg": {
       "value": {
-        "CO2": 966.5,
-        "CH4": 921.9,
-        "N2O": 213.1,
-        "GHGALL": 2101.4,
-        "GHGALL_BASE": 3051.1
+        "CO2": 1112.6825,
+        "CH4": 918.9877,
+        "N2O": 234.9434,
+        "GHGALL": 2266.6136,
+        "GHGALL_BASE": 3121.3537
       }
     },
     "Env_active": {
@@ -551,8 +550,8 @@
     },
     "houseprices": {
       "value": {
-        "SP": 181304.3,
-        "HPI": 115.59
+        "SP": 175758.55,
+        "HPI": 112.05
       }
     },
     "Satisfy": {
@@ -565,10 +564,10 @@
       "value": 21.2
     },
     "ASHE": {
-      "value": 36825
+      "value": 32771
     },
     "ASHE_weekly": {
-      "value": 572.5
+      "value": 506.8
     },
     "ClassSize": {
       "value": 17
@@ -577,16 +576,16 @@
       "value": 77
     },
     "FE": {
-      "value": 6775
+      "value": 6630
     },
     "HE": {
       "value": 4255
     },
     "MYETotal": {
-      "value": 117687
+      "value": 117195
     },
     "Median": {
-      "value": 41.8
+      "value": 41.5
     },
     "BRES": {
       "perc": {
@@ -598,10 +597,10 @@
     },
     "BroadAge": {
       "perc": {
-        "Age 0-15": 20.8477,
-        "Age 16-39": 26.7676,
-        "Age 40-64": 32.6629,
-        "Age 65+": 19.7218
+        "Age 0-15": 21.0384,
+        "Age 16-39": 26.9747,
+        "Age 40-64": 32.6678,
+        "Age 65+": 19.3191
       }
     },
     "Destination": {
@@ -615,8 +614,8 @@
     },
     "Env_concern": {
       "perc": {
-        "CONCERNENVI": 68,
-        "NOTCONCERNENVI": 32
+        "CONCERNENVI": 64,
+        "NOTCONCERNENVI": 36
       }
     },
     "Env_waste": {
@@ -635,10 +634,10 @@
         "table_code": "MYE01T06",
         "dataset_url": "https://data.nisra.gov.uk/table/MYE01T06",
         "geog_level": "lgd",
-        "last_updated": "2025-09-17",
+        "last_updated": "2025-06-16",
         "email": "census@nisra.gov.uk",
         "title": "Population totals",
-        "year": "2024"
+        "year": "2023"
       }
     ],
     "Median": [
@@ -646,10 +645,10 @@
         "table_code": "MA01T02",
         "dataset_url": "https://data.nisra.gov.uk/table/MA01T02",
         "geog_level": "lgd",
-        "last_updated": "2025-09-17",
+        "last_updated": "2025-06-09",
         "email": "census@nisra.gov.uk",
         "title": "Median age",
-        "year": "2024"
+        "year": "2023"
       }
     ],
     "BroadAge": [
@@ -657,10 +656,10 @@
         "table_code": "MYE01T04",
         "dataset_url": "https://data.nisra.gov.uk/table/MYE01T04",
         "geog_level": "lgd",
-        "last_updated": "2025-09-18",
+        "last_updated": "2025-06-13",
         "email": "census@nisra.gov.uk",
         "title": "Mid-year population estimates",
-        "year": "2024"
+        "year": "2023"
       }
     ],
     "PopChange": [
@@ -668,10 +667,10 @@
         "table_code": "MYE01T06",
         "dataset_url": "https://data.nisra.gov.uk/table/MYE01T06",
         "geog_level": "lgd",
-        "last_updated": "2025-09-17",
+        "last_updated": "2025-06-16",
         "email": "census@nisra.gov.uk",
         "title": "Population totals",
-        "year": "2024"
+        "year": "2023"
       }
     ],
     "houseprices": [
@@ -679,10 +678,10 @@
         "table_code": "LPSHPI01",
         "dataset_url": "https://data.nisra.gov.uk/table/LPSHPI01",
         "geog_level": "lgd",
-        "last_updated": "2025-08-21",
+        "last_updated": "2025-05-28",
         "email": "lps.statisticsbranch@finance-ni.gov.uk",
         "title": "House Price Index and Standardised Price",
-        "year": "2025Q2"
+        "year": "2025Q1"
       }
     ],
     "LE": [
@@ -690,10 +689,10 @@
         "table_code": "LELGD",
         "dataset_url": "https://data.nisra.gov.uk/table/LELGD",
         "geog_level": "lgd",
-        "last_updated": "2025-09-19",
+        "last_updated": "2024-10-22",
         "email": "healthinequalities@health-ni.gov.uk",
         "title": "Life expectancy at birth",
-        "year": "2021-23"
+        "year": "2020-22"
       }
     ],
     "wellbeing": [
@@ -723,10 +722,10 @@
         "table_code": "GPPRACPATLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/GPPRACPATLGD",
         "geog_level": "lgd",
-        "last_updated": "2025-09-26",
+        "last_updated": "2024-06-19",
         "email": "info.bso@hscni.net",
         "title": "GPs Practices and Registered Patients",
-        "year": "2025"
+        "year": "2024"
       }
     ],
     "DEN": [
@@ -756,10 +755,10 @@
         "table_code": "LMSLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/LMSLGD",
         "geog_level": "lgd",
-        "last_updated": "2025-09-08",
+        "last_updated": "2025-02-04",
         "email": "economicstats@nisra.gov.uk",
         "title": "Labour Market Status",
-        "year": "2024"
+        "year": "2023"
       }
     ],
     "ASHE": [
@@ -767,10 +766,10 @@
         "table_code": "GAPLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/GAPLGD",
         "geog_level": "lgd",
-        "last_updated": "2025-10-29",
+        "last_updated": "2024-10-29",
         "email": "economicstats@nisra.gov.uk",
         "title": "Gross Annual Pay",
-        "year": "2025"
+        "year": "2024"
       }
     ],
     "ASHE_weekly": [
@@ -778,10 +777,10 @@
         "table_code": "GHWPLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/GHWPLGD",
         "geog_level": "lgd",
-        "last_updated": "2025-10-29",
+        "last_updated": "2024-10-29",
         "email": "economicstats@nisra.gov.uk",
         "title": "Gross Hourly (excluding overtime) and Weekly Pay",
-        "year": "2025"
+        "year": "2024"
       }
     ],
     "BRES": [
@@ -811,10 +810,10 @@
         "table_code": "DESCPLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/DESCPLGD",
         "geog_level": "lgd",
-        "last_updated": "2025-08-06",
+        "last_updated": "2023-05-31",
         "email": "statistics@education-ni.gov.uk",
         "title": "School Census - Primary",
-        "year": "2024/25"
+        "year": "2022/23"
       }
     ],
     "PostPrimary": [
@@ -822,10 +821,10 @@
         "table_code": "DESCPPLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/DESCPPLGD",
         "geog_level": "lgd",
-        "last_updated": "2025-08-05",
+        "last_updated": "2023-05-31",
         "email": "statistics@education-ni.gov.uk",
         "title": "School Census - Post Primary",
-        "year": "2024/25"
+        "year": "2022/23"
       }
     ],
     "SEN": [
@@ -833,10 +832,10 @@
         "table_code": "DESCSLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/DESCSLGD",
         "geog_level": "lgd",
-        "last_updated": "2025-08-05",
+        "last_updated": "2023-05-31",
         "email": "statistics@education-ni.gov.uk",
         "title": "School Census - Special Schools",
-        "year": "2024/25"
+        "year": "2022/23"
       }
     ],
     "ClassSize": [
@@ -866,10 +865,10 @@
         "table_code": "FEENROLLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/FEENROLLGD",
         "geog_level": "lgd",
-        "last_updated": "2025-07-22",
+        "last_updated": "2024-08-22",
         "email": "dfemail@economy-ni.gov.uk",
         "title": "Regulated enrolments at Further Education Colleges",
-        "year": "2023/24"
+        "year": "2022/23"
       }
     ],
     "HE": [
@@ -899,10 +898,10 @@
         "table_code": "CHSCONCERNLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/CHSCONCERNLGD",
         "geog_level": "lgd",
-        "last_updated": "2025-08-19",
+        "last_updated": "2024-08-20",
         "email": "env.stats@daera-ni.gov.uk",
         "title": "Continuous Household Survey: Concern about the environment",
-        "year": "2024/25"
+        "year": "2023/24"
       }
     ],
     "Env_problem": [
@@ -932,10 +931,10 @@
         "table_code": "GHGALL",
         "dataset_url": "https://data.nisra.gov.uk/table/GHGALL",
         "geog_level": "lgd",
-        "last_updated": "2025-09-19",
+        "last_updated": "2025-04-29",
         "email": "env.stats@daera-ni.gov.uk",
         "title": "Greenhouse Gas Emissions - Full dataset",
-        "year": "2023"
+        "year": "2022"
       }
     ],
     "Env_active": [

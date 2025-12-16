@@ -10,7 +10,7 @@
 <!-- svelte-ignore missing-declaration -->
 <Section column="wide">
 <div class="block" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); justify-content: stretch;">
-<!-- <div style="margin-left:16px; padding-right:16px;">
+<div style="margin-left:16px; padding-right:16px;">
 	<h3 style="margin-bottom:10px; line-height: 1.78;">Download</h3>
 	<li style="margin: 0px; display: block; line-height: 20px; padding-bottom: 5px">
 		 <a href="https://www.nisra.gov.uk/publications/census-area-explorer-2021-and-2011-data" class="link"><strong>Download</strong> Census 2011 and 2021 data from this app</a>
@@ -44,138 +44,228 @@
 		
   </div>
 
-  </div> -->
+  </div>
 </Section>
   
-<footer style="color: #ffffff; background-color: #00205b;">
-	<div class="col-wide" data-analytics="footer">
-		<div class="row">
-			<div class="column left">
-				<h3 style="padding-top: 0px">Links</h3><br>
-				<ul>
-					<li><a href="https://data.nisra.gov.uk/" class="link" style="color: #ffffff">NISRA Data Portal</a></li>
-					<li><a href="https://build.nisra.gov.uk/" class="link" style="color: #ffffff">Census Flexible Table Builder</a></li>
-					<li><a href="https://www.opendatani.gov.uk/" class="link" style="color: #ffffff">OpenDataNI</a></li>
-					<li><a href="https://www.nidirect.gov.uk" class="link" style="color: #ffffff">NIDirect</a></li>
-					<li><a href="https://www.gov.uk/" class="link" style="color: #ffffff">GOV.UK</a></li>
-				</ul>
-			</div>	
-			<div class="column right">
-				<h3>Follow NISRA</h3><br>
-				<ul> 
-					<li><a href="https://www.facebook.com/nisra.gov.uk" class="link" style="color: #ffffff">Facebook</a></li>
-					<li><a href="https://twitter.com/NISRA" class="link" style="color: #ffffff">X (Twitter)</a></li>
-					<li><a href="https://www.youtube.com/user/nisrastats" class="link" style="color: #ffffff">YouTube</a></li>
-				</ul>
-			</div>
-		</div>
+<footer class="nisra-footer">
+  <div class="footer-container">
+    <div class="footer-row">
 
-		<div class="flex-list">
-			<ul>
-				<li><a href="https://www.nisra.gov.uk/crown-copyright" class="link" style="color: #ffffff">&copy Crown Copyright</a></li>
-				<li><a href="https://www.nisra.gov.uk/contact" class="link" style="color: #ffffff">Contact us</a></li>
-				<li><a href="https://www.nisra.gov.uk/terms-and-conditions" class="link" style="color: #ffffff">Terms and conditions</a></li>
-				<li><a href="https://www.nisra.gov.uk/cookies" class="link" style="color: #ffffff">Cookies</a></li>
-				<li><a href="https://www.nisra.gov.uk/nisra-privacy-notice" class="link" style="color: #ffffff">Privacy</a></li>
-				<li><a href="https://www.nisra.gov.uk/accessibility-statement-nisra" class="link" style="color: #ffffff">Accessibility Statement</a></li>
-			</ul>
-		</div>
-	</div>
+      <!-- Data Tools Column -->
+      <div class="footer-col">
+        <h3 style="color: #fff; font-size: 15px; font-weight: normal; margin-top: 0;">Data Tools</h3>
+        <ul class="footer-list">
+          <li><a href="https://explore.nisra.gov.uk/local-stats/">Local Statistics Explorer</a></li>
+          <li><a href="https://data.nisra.gov.uk">Data Portal</a></li>
+          <li><a href="https://build.nisra.gov.uk/en/">Census Flexible Table Builder</a></li>
+        </ul>
+      </div>
+
+      <!-- Corporate Column -->
+      <div class="footer-col">
+        <h3 style="color: #fff; font-size: 15px; font-weight: normal; margin-top: 0;">Corporate</h3>
+        <ul class="footer-list">
+          <li><a href="https://www.nisra.gov.uk/">NISRA Website</a></li>
+          <li><a href="https://www.nisra.gov.uk/statistics/about-nisra/careers">Careers</a></li>
+          <li><a href="https://www.nisra.gov.uk/contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Follow NISRA Column -->
+      <div class="footer-col">
+        <h3 style="color: #fff; font-size: 15px; font-weight: normal; margin-top: 0;">Follow NISRA</h3>
+        <ul class="footer-social">
+          <li>
+            <a href="https://www.facebook.com/nisra.gov.uk">
+              <img src="img/logo/facebook-brands-solid-full.svg" title="Facebook" role="img" class="img" />
+            </a>
+          </li>
+          <li>
+            <a href="https://x.com/NISRA/">
+              <img src="img/logo/x-twitter-brands-solid-full.svg" title="Twitter/X" role="img" class="img" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/user/nisrastats">
+              <img src="img/logo/youtube-brands-solid-full.svg" title="YouTube" role="img" class="img" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/company/northern-ireland-statistics-and-research-agency/">
+              <img src="img/logo/linkedin-in-brands-solid-full.svg" title="LinkedIn" role="img" class="img" />
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Horizontal list with separators -->
+    <ul class="footer-links">
+      <li><a href="https://www.nisra.gov.uk/crown-copyright">© Crown Copyright</a></li>
+      <li>|</li>
+      <li><a href="https://www.nisra.gov.uk/terms-and-conditions">Terms and conditions</a></li>
+      <li>|</li>
+      <li><a href="https://www.nisra.gov.uk/cookies">Cookies</a></li>
+      <li>|</li>
+      <li><a href="https://www.nisra.gov.uk/nisra-privacy-notice">Privacy</a></li>
+      <li>|</li>
+      <li>
+        <a href="https://datavis.nisra.gov.uk/dissemination/accessibility-statement-visualisations.html" 
+           rel="noopener external">Accessibility Statement</a>
+      </li>
+    </ul>
+
+  </div>
 </footer>
 
 <style>
-	footer {
-		padding-bottom: 32px;
-		font-size: 18px;
-	}
-	footer a.link {
-		-webkit-box-sizing: border-box;
-		box-sizing: border-box;
-		text-decoration: none;
-		display: inline-block;
-	}
-	footer a.link:hover {
-		text-decoration: underline;
-	}
-	footer a.link:active {
-		outline: 3px solid transparent;
-		background-color: #fd0;
-		-webkit-box-shadow: 0 -2px #fd0, 0 4px #222;
-		box-shadow: 0 -2px #fd0, 0 4px #222;
-		color: #222;
-		text-decoration: none;
-	}
- 	ul {
-		padding: 0;
-		margin: 0;
-	}
-	li {
-		margin-right: 18px;
-		list-style-type: none;
-	}
-/* 	.logo-img {
-		margin-bottom: 2px;
-		width: 120px;
-	} */
-/* 	.ogl-img {
-		margin: 0 0.5rem 0.2rem 0;
-		width: 59px;
-		height: 24px;
-		vertical-align: middle;
-	} */
-/* 	.license {
-		vertical-align: top;
-	} */
-/* 	a img:hover {
-		cursor: pointer;
-	} */
-		.column {
-  		float: left;
-  		padding-left: 40px;
-  		padding-right: 40px;
-		padding-top: 10px;
-  		padding-bottom: 10px;
-  		
-	}
-	.left {
-		max-width: 30%;
-		padding-top: 0px;
-  		padding-bottom: 10px;
-	}
-	.right {
-		max-width: 70%;
-		padding-top: 0px;
-  		padding-bottom: 10px;	}
-	.row:after {
-		content: "";
-		display: table;
-		clear: both;
-		
-	}
-	.flex-list {
-		position: relative;
-		margin: 0em;
-		overflow: hidden;
-		padding-top: 10px;
-  		padding-bottom: 0px;
+/* ===========================
+   Footer Wrapper
+   =========================== */
+.nisra-footer {
+  background-color: #00205B;
+  color: #fff;
+  border-top: 4px solid #3878c5;
+  padding: 2rem 0 2.5rem; /* extra bottom padding for Back to top bar */
+  margin-top: 1rem;
+  font-family: Arial, sans-serif;
+}
 
+/* Container */
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
-	}
-	.flex-list ul {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		margin-left: -1px;
-	}
-	.flex-list li {
-		flex-grow: 1;
-		flex-basis: auto;
-		margin: .25em 0;
-		padding: 0 1em;
-		text-align: center;
-		border-left: 1px solid #ccc;
-		background-color: #00205b;
-		font-size: 14px;
-	}
+/* ===========================
+   Columns Row
+   =========================== */
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;   /* 🔹 keep the whole group centered */
+  gap: 2rem 11rem;            /* row-gap | column-gap */
+  margin-bottom: 2rem;
+}
+
+/* Columns: centred, fixed-ish width so spacing is consistent */
+.footer-col {
+  flex: 0 1 50px;           /* max ~260px wide, can shrink if needed */
+  min-width: 250px;          /* but don't get too tiny */
+}
+
+/* Phones — stack vertically */
+@media (max-width: 600px) {
+  .footer-row {
+    flex-direction: column;
+    align-items: flex-start; /* left-align content on small screens */
+    gap: 1.5rem;
+  }
+
+  .footer-col {
+    flex: 1 1 100%;
+  }
+
+  .nisra-footer {
+    padding-bottom: 5rem;    /* extra for Back to top bar on tiny screens */
+  }
+}
+
+/* ===========================
+   Headings
+   =========================== */
+.footer-col h3 {
+  margin: 0 0 1rem 0;
+  font-size: 15px;
+  font-weight: normal;
+  color: #fff;
+}
+
+/* ===========================
+   Lists
+   =========================== */
+.nisra-footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-list li {
+  margin: 0 0 0.75rem 0;
+}
+
+.footer-list a {
+  font-size: 18px;
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ===========================
+   Social Icons
+   =========================== */
+.footer-social {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-social img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  transition: box-shadow 0.2s ease, border 0.2s ease;
+}
+
+.footer-social img:hover {
+  border: 2px solid #fff;
+  box-shadow: 0 0 4px rgba(255,255,255,0.6);
+  border-radius: 4px;
+}
+
+/* ===========================
+   Bottom Links
+   =========================== */
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;       /* one line on larger screens */
+  gap: 0.75rem;
+  font-size: 18px;
+  margin: 1.5rem 0 0;
+  padding: 0;
+}
+
+.footer-links li {
+  white-space: nowrap;
+}
+
+.footer-links a {
+  color: #fff;
+  font-size: 18px;
+  text-decoration: underline;
+}
+
+/* Tablets — allow wrapping if needed */
+@media (max-width: 900px) {
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* Small phones — normal text wrapping, left aligned */
+@media (max-width: 480px) {
+  .footer-links {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .footer-links li {
+    white-space: normal;
+  }
+}
 </style>

@@ -291,8 +291,8 @@
     },
     "LE": {
       "value": {
-        "Females": 83.5,
-        "Males": 82.3
+        "Females": 83.1,
+        "Males": 80.7
       }
     },
     "DEN": {
@@ -309,9 +309,9 @@
     "GP": {
       "value": {
         "GPS": 6,
-        "PRACLIST": 8564,
+        "PRACLIST": 8440,
         "PRACS": 1,
-        "REGPAT": 8564
+        "REGPAT": 8440
       }
     },
     "BS": {
@@ -330,30 +330,30 @@
     },
     "Primary": {
       "value": {
-        "FSME": 184,
-        "All": 1485
+        "FSME": 215,
+        "All": 1498
       },
       "perc": {
-        "FSME": 12.3906,
+        "FSME": 14.3525,
         "All": 100
       }
     },
     "PostPrimary": {
       "value": {
-        "FSME": 182,
+        "FSME": 202,
         "All": 1260
       },
       "perc": {
-        "FSME": 14.4444,
+        "FSME": 16.0317,
         "All": 100
       }
     },
     "AllSchools": {
       "value": {
-        "SEN": 624
+        "SEN": 570
       },
       "perc": {
-        "SEN": 22.7322
+        "SEN": 20.6672
       }
     },
     "crime": {
@@ -389,7 +389,7 @@
       "value": 75.7
     },
     "FE": {
-      "value": 850
+      "value": 815
     },
     "HE": {
       "value": 540
@@ -407,11 +407,11 @@
     },
     "Destination": {
       "perc": {
-        "destHEpct": 48.1,
-        "destFEpct": 28.1,
-        "destEmploypct": null,
-        "destTrainpct": 16.2,
-        "destUnempUnkpct": null
+        "destHEpct": 48.0952,
+        "destFEpct": 28.0952,
+        "destEmploypct": 4.2857,
+        "destTrainpct": 16.1905,
+        "destUnempUnkpct": 0
       }
     }
   },
@@ -445,10 +445,10 @@
         "table_code": "LEDEA",
         "dataset_url": "https://data.nisra.gov.uk/table/LEDEA",
         "geog_level": "dea",
-        "last_updated": "2025-09-19",
+        "last_updated": "2024-10-22",
         "email": "healthinequalities@health-ni.gov.uk",
         "title": "Life expectancy at birth",
-        "year": "2021-23"
+        "year": "2020-22"
       }
     ],
     "Admiss": [
@@ -467,10 +467,10 @@
         "table_code": "GPPRACPATDEA",
         "dataset_url": "https://data.nisra.gov.uk/table/GPPRACPATDEA",
         "geog_level": "dea",
-        "last_updated": "2025-09-26",
+        "last_updated": "2024-10-23",
         "email": "info.bso@hscni.net",
         "title": "GPs Practices and Registered Patients",
-        "year": "2025"
+        "year": "2024"
       }
     ],
     "DEN": [
@@ -511,10 +511,10 @@
         "table_code": "DESCPDEA",
         "dataset_url": "https://data.nisra.gov.uk/table/DESCPDEA",
         "geog_level": "dea",
-        "last_updated": "2025-08-06",
+        "last_updated": "2023-05-31",
         "email": "statistics@education-ni.gov.uk",
         "title": "School Census - Primary",
-        "year": "2024/25"
+        "year": "2022/23"
       }
     ],
     "PostPrimary": [
@@ -522,10 +522,10 @@
         "table_code": "DESCPPDEA",
         "dataset_url": "https://data.nisra.gov.uk/table/DESCPPDEA",
         "geog_level": "dea",
-        "last_updated": "2025-08-05",
+        "last_updated": "2023-05-31",
         "email": "statistics@education-ni.gov.uk",
         "title": "School Census - Post Primary",
-        "year": "2024/25"
+        "year": "2022/23"
       }
     ],
     "SEN": [
@@ -533,10 +533,10 @@
         "table_code": "DESCSDEA",
         "dataset_url": "https://data.nisra.gov.uk/table/DESCSDEA",
         "geog_level": "dea",
-        "last_updated": "2025-08-05",
+        "last_updated": "2023-05-31",
         "email": "statistics@education-ni.gov.uk",
         "title": "School Census - Special Schools",
-        "year": "2024/25"
+        "year": "2022/23"
       }
     ],
     "Attainment": [
@@ -555,10 +555,10 @@
         "table_code": "FEENROLDEA",
         "dataset_url": "https://data.nisra.gov.uk/table/FEENROLDEA",
         "geog_level": "dea",
-        "last_updated": "2025-07-22",
+        "last_updated": "2024-08-22",
         "email": "dfemail@economy-ni.gov.uk",
         "title": "Regulated enrolments at Further Education Colleges",
-        "year": "2023/24"
+        "year": "2022/23"
       }
     ],
     "HE": [
@@ -577,7 +577,7 @@
         "table_code": "DESLSDDEA",
         "dataset_url": "https://data.nisra.gov.uk/table/DESLSDDEA",
         "geog_level": "dea",
-        "last_updated": "2025-07-23",
+        "last_updated": "2025-07-09",
         "email": "statistics@education-ni.gov.uk",
         "title": "School Leavers Survey - Destination",
         "year": "2023/24"
