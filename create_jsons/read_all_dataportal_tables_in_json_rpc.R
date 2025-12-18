@@ -3364,8 +3364,7 @@ json_data <- json_data_from_rpc(
 		"class": "query",
 		"id": [
 			"STATISTIC",
-			"TLIST(A1)",
-			"FSME"
+			"TLIST(A1)"
 		],
 		"dimension": {
 			"STATISTIC": {
@@ -3379,14 +3378,6 @@ json_data <- json_data_from_rpc(
 				"category": {
 					"index": [
 						"', latest_year, '"
-					]
-				}
-			},
-			"FSME": {
-				"category": {
-					"index": [
-						"1",
-						"2"
 					]
 				}
 			}
@@ -3426,18 +3417,11 @@ fsme <- unlist(json_data$dimension$FSME$category$label)
 
 geog_codes <- c()
 for (i in 1:length(json_data$dimension$DEA2014$category$index)) {
-  geog_codes <- c(geog_codes, rep(json_data$dimension$DEA2014$category$index[i], length(categories) * length(fsme)))
+  geog_codes <- c(geog_codes, rep(json_data$dimension$DEA2014$category$index[i], length(categories)))
 }
-
-categories_long <- c()
-for (i in 1:length(categories)) {
-  categories_long <- c(categories_long, rep(categories[i], length(fsme)))
-}
-
 
 data <- data.frame(geog_code = geog_codes,
-                   statistic = rep_len(categories_long, length(json_data$value)),
-                   fsme = rep_len(fsme, length(json_data$value)),
+                   statistic = rep_len(categories, length(json_data$value)),
                    VALUE = json_data$value) %>% 
   group_by(geog_code, statistic) %>% 
   summarise(VALUE = sum(VALUE, na.rm = TRUE),
