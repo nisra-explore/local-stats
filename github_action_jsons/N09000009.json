@@ -433,12 +433,12 @@
     },
     "crimeworry": {
       "value": {
-        "WorryC2": 6.3218
+        "WorryC2": 2.6718
       }
     },
     "crimeperception": {
       "value": {
-        "ASB8": 2.1277
+        "ASB8": 3.1873
       }
     },
     "business": {
@@ -965,10 +965,10 @@
         "table_code": "TWORRYCRMLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/TWORRYCRMLGD",
         "geog_level": "lgd",
-        "last_updated": "2025-05-08",
+        "last_updated": "2026-01-12",
         "email": "statistics.research@justice-ni.gov.uk",
         "title": "NISCTS: Worry about Crime and Personal Safety",
-        "year": "2021/22"
+        "year": "2023/24"
       }
     ],
     "crimeperception": [
@@ -976,10 +976,10 @@
         "table_code": "TNISCSASBLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/TNISCSASBLGD",
         "geog_level": "lgd",
-        "last_updated": "2025-05-08",
+        "last_updated": "2026-01-12",
         "email": "statistics.research@justice-ni.gov.uk",
         "title": "NISCTS: Perceptions of Anti-Social Behaviour",
-        "year": "2021/22"
+        "year": "2023/24"
       }
     ],
     "business": [
