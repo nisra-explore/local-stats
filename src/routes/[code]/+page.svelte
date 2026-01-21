@@ -412,6 +412,9 @@
 
 		}
 
+		if (rtn_value === null) {
+			rtn_value = 0;
+		}
 		return rtn_value;
 
 	}
