@@ -562,7 +562,7 @@
       "value": 7.5
     },
     "Lonely": {
-      "value": 19.3
+      "value": 16.2
     },
     "ASHE": {
       "value": 37256
@@ -712,10 +712,10 @@
         "table_code": "WBLONLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/WBLONLGD",
         "geog_level": "lgd",
-        "last_updated": "2025-05-08",
+        "last_updated": "2026-01-21",
         "email": "pfganalytics@executiveoffice-ni.gov.uk",
         "title": "Individual Wellbeing - Loneliness",
-        "year": "2023/24"
+        "year": "2024/25"
       }
     ],
     "GP": [
