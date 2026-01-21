@@ -1,0 +1,1 @@
+var s;const t=((s=globalThis.__sveltekit_fvzla0)==null?void 0:s.base)??"/local-stats";var a;const l=((a=globalThis.__sveltekit_fvzla0)==null?void 0:a.assets)??"https://explore.nisra.gov.uk/local-stats";export{l as a,t as b};
