@@ -621,9 +621,9 @@
     },
     "Env_waste": {
       "perc": {
-        "LACMWR": 53.6,
-        "LACMWL": 7,
-        "LACMWER": 36.3
+        "LACMWR": 54.1,
+        "LACMWL": 5.2,
+        "LACMWER": 37.7
       }
     }
   },
@@ -921,10 +921,10 @@
         "table_code": "WASTELGD",
         "dataset_url": "https://data.nisra.gov.uk/table/WASTELGD",
         "geog_level": "lgd",
-        "last_updated": "2024-02-26",
+        "last_updated": "2026-01-30",
         "email": "env.stats@daera-ni.gov.uk",
         "title": "Northern Ireland Local Authority Collected Waste Statistics",
-        "year": "2022/23"
+        "year": "2024/25"
       }
     ],
     "Env_ghg": [
