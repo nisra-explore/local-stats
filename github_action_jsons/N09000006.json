@@ -551,8 +551,8 @@
     },
     "houseprices": {
       "value": {
-        "SP": 181304.3,
-        "HPI": 115.59
+        "SP": 194970,
+        "HPI": 124.3
       }
     },
     "Satisfy": {
@@ -679,10 +679,10 @@
         "table_code": "LPSHPI01",
         "dataset_url": "https://data.nisra.gov.uk/table/LPSHPI01",
         "geog_level": "lgd",
-        "last_updated": "2025-08-21",
+        "last_updated": "2026-02-19",
         "email": "lps.statisticsbranch@finance-ni.gov.uk",
         "title": "House Price Index and Standardised Price",
-        "year": "2025Q2"
+        "year": "2025Q4"
       }
     ],
     "LE": [
@@ -866,9 +866,9 @@
         "table_code": "FEENROLLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/FEENROLLGD",
         "geog_level": "lgd",
-        "last_updated": "2025-07-22",
+        "last_updated": "2026-03-05",
         "email": "dfemail@economy-ni.gov.uk",
-        "title": "Regulated enrolments at Further Education Colleges",
+        "title": "Regulated enrolments at further education colleges",
         "year": "2023/24"
       }
     ],
