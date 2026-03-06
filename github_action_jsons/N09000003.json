@@ -947,9 +947,9 @@
         "table_code": "GHGALL",
         "dataset_url": "https://data.nisra.gov.uk/table/GHGALL",
         "geog_level": "lgd",
-        "last_updated": "2025-09-19",
+        "last_updated": "2026-03-06",
         "email": "env.stats@daera-ni.gov.uk",
-        "title": "Greenhouse Gas Emissions - Full dataset",
+        "title": "Greenhouse gas emissions - full dataset",
         "year": "2023"
       }
     ],
@@ -991,9 +991,9 @@
         "table_code": "TNISCSASBLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/TNISCSASBLGD",
         "geog_level": "lgd",
-        "last_updated": "2026-01-15",
+        "last_updated": "2026-03-06",
         "email": "statistics.research@justice-ni.gov.uk",
-        "title": "NISCTS: Perceptions of Anti-Social Behaviour",
+        "title": "NISCTS: Perceptions of anti-social behaviour",
         "year": "2023/24"
       }
     ],
