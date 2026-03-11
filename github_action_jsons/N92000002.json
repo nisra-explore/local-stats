@@ -75,7 +75,7 @@
   "data": {
     "Admiss": {
       "text": "Diseases of the respiratory system",
-      "value": 260596
+      "value": 260621
     },
     "crime": {
       "text": "Violent crime",
@@ -533,23 +533,23 @@
     },
     "niets_sales": {
       "value": {
-        "ALL": 82218.8467,
-        "EXPORT": 14763.3691,
-        "EXTERN": 29408.4611,
-        "GB": 14645.092,
-        "IE": 8090.4964,
+        "ALL": 91518.2697,
+        "EXPORT": 17445.474,
+        "EXTERN": 34857.5054,
+        "GB": 17412.0314,
+        "IE": 9719.9302,
         "IMPORT": 0,
-        "NI": 52810.3856,
-        "REU": 2294.8693,
-        "ROW": 4378.0033
+        "NI": 56660.7643,
+        "REU": 2948.8954,
+        "ROW": 4776.6483
       },
       "perc": {
         "ALL": 100,
-        "GB": 17.8123,
-        "IE": 9.8402,
-        "NI": 64.2315,
-        "REU": 2.7912,
-        "ROW": 5.3248
+        "GB": 19.0257,
+        "IE": 10.6208,
+        "NI": 61.912,
+        "REU": 3.2222,
+        "ROW": 5.2193
       }
     },
     "niets_purch": {
@@ -977,9 +977,9 @@
         "table_code": "PRCLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/PRCLGD",
         "geog_level": "lgd",
-        "last_updated": "2025-06-16",
+        "last_updated": "2026-03-11",
         "email": "statistics@psni.police.uk",
-        "title": "Police Recorded Crime",
+        "title": "Police recorded crime",
         "year": "2024/25"
       }
     ],
@@ -1065,10 +1065,10 @@
         "table_code": "NIETS05",
         "dataset_url": "https://data.nisra.gov.uk/table/NIETS05",
         "geog_level": "lgd",
-        "last_updated": "2024-12-11",
+        "last_updated": "2026-03-11",
         "email": "economicstats@nisra.gov.uk",
         "title": "NIETS: Trade by Local Government District",
-        "year": "2023"
+        "year": "2024"
       }
     ],
     "niets_purch": [
@@ -1076,10 +1076,10 @@
         "table_code": "NIETS05",
         "dataset_url": "https://data.nisra.gov.uk/table/NIETS05",
         "geog_level": "lgd",
-        "last_updated": "2024-12-11",
+        "last_updated": "2026-03-11",
         "email": "economicstats@nisra.gov.uk",
         "title": "NIETS: Trade by Local Government District",
-        "year": "2023"
+        "year": "2024"
       }
     ],
     "Admiss": [
@@ -1087,7 +1087,7 @@
         "table_code": "ADMITDEA",
         "dataset_url": "https://data.nisra.gov.uk/table/ADMITDEA",
         "geog_level": "dea",
-        "last_updated": "2026-02-17",
+        "last_updated": "2026-03-11",
         "email": "statistics@health-ni.gov.uk",
         "title": "Primary Reason for Admissions to HSC Hospitals",
         "year": "2024"

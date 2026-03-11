@@ -509,23 +509,23 @@
     },
     "niets_sales": {
       "value": {
-        "ALL": 4241.848,
-        "NI": 3158.8538,
-        "GB": 378.2657,
-        "IE": 381.0995,
-        "REU": 59.6988,
-        "ROW": 263.9302,
-        "EXTERN": 1082.9942,
-        "EXPORT": 704.7285,
+        "ALL": 5003.0982,
+        "NI": 3661.6832,
+        "GB": 533.858,
+        "IE": 457.8051,
+        "REU": 71.0384,
+        "ROW": 278.7134,
+        "EXTERN": 1341.415,
+        "EXPORT": 807.557,
         "IMPORT": null
       },
       "perc": {
         "ALL": 100,
-        "NI": 74.4688,
-        "GB": 8.9175,
-        "IE": 8.9843,
-        "REU": 1.4074,
-        "ROW": 6.2221
+        "NI": 73.1883,
+        "GB": 10.6705,
+        "IE": 9.1504,
+        "REU": 1.4199,
+        "ROW": 5.5708
       }
     },
     "niets_purch": {
@@ -954,9 +954,9 @@
         "table_code": "PRCLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/PRCLGD",
         "geog_level": "lgd",
-        "last_updated": "2025-06-16",
+        "last_updated": "2026-03-11",
         "email": "statistics@psni.police.uk",
-        "title": "Police Recorded Crime",
+        "title": "Police recorded crime",
         "year": "2024/25"
       }
     ],
@@ -1042,10 +1042,10 @@
         "table_code": "NIETS05",
         "dataset_url": "https://data.nisra.gov.uk/table/NIETS05",
         "geog_level": "lgd",
-        "last_updated": "2024-12-11",
+        "last_updated": "2026-03-11",
         "email": "economicstats@nisra.gov.uk",
         "title": "NIETS: Trade by Local Government District",
-        "year": "2023"
+        "year": "2024"
       }
     ],
     "niets_purch": [
@@ -1053,10 +1053,10 @@
         "table_code": "NIETS05",
         "dataset_url": "https://data.nisra.gov.uk/table/NIETS05",
         "geog_level": "lgd",
-        "last_updated": "2024-12-11",
+        "last_updated": "2026-03-11",
         "email": "economicstats@nisra.gov.uk",
         "title": "NIETS: Trade by Local Government District",
-        "year": "2023"
+        "year": "2024"
       }
     ]
   }

@@ -125,7 +125,7 @@
   "data": {
     "Admiss": {
       "text": "Diseases of the respiratory system",
-      "value": 7221
+      "value": 7241
     },
     "population": {
       "perc": {
@@ -526,7 +526,7 @@
         "table_code": "ADMITDEA",
         "dataset_url": "https://data.nisra.gov.uk/table/ADMITDEA",
         "geog_level": "dea",
-        "last_updated": "2026-02-17",
+        "last_updated": "2026-03-11",
         "email": "statistics@health-ni.gov.uk",
         "title": "Primary Reason for Admissions to HSC Hospitals",
         "year": "2024"
@@ -658,9 +658,9 @@
         "table_code": "PRCDEA",
         "dataset_url": "https://data.nisra.gov.uk/table/PRCDEA",
         "geog_level": "dea",
-        "last_updated": "2025-06-16",
+        "last_updated": "2026-03-11",
         "email": "statistics@psni.police.uk",
-        "title": "Police Recorded Crime",
+        "title": "Police recorded crime",
         "year": "2024/25"
       }
     ],
