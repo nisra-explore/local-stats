@@ -977,7 +977,7 @@
         "table_code": "PRCLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/PRCLGD",
         "geog_level": "lgd",
-        "last_updated": "2026-03-11",
+        "last_updated": "2026-03-13",
         "email": "statistics@psni.police.uk",
         "title": "Police recorded crime",
         "year": "2024/25"
@@ -988,7 +988,7 @@
         "table_code": "TWORRYCRMLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/TWORRYCRMLGD",
         "geog_level": "lgd",
-        "last_updated": "2026-03-10",
+        "last_updated": "2026-03-13",
         "email": "statistics.research@justice-ni.gov.uk",
         "title": "NISCTS: Worry about crime and personal safety",
         "year": "2023/24"
@@ -999,7 +999,7 @@
         "table_code": "TNISCSASBLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/TNISCSASBLGD",
         "geog_level": "lgd",
-        "last_updated": "2026-03-06",
+        "last_updated": "2026-03-13",
         "email": "statistics.research@justice-ni.gov.uk",
         "title": "NISCTS: Perceptions of anti-social behaviour",
         "year": "2023/24"
