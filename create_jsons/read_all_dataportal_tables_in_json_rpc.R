@@ -2559,7 +2559,7 @@ json_data <- json_data_from_rpc(
 						"FSME",
 						"SENNonStatemented",
 						"SENStatement",
-						"ALL"
+						"All"
 					]
 				}
 			},
@@ -2610,9 +2610,7 @@ for (i in 1:length(json_data$dimension$STATISTIC$category$index)) {
 data <- data.frame(geog_code = rep(geog_codes, length(unique(categories))),
                    VALUE = json_data$value,
                    statistic = categories,
-                   source = dataset_short) %>%
-  mutate(statistic = case_when(statistic == "ALL" ~ "All",
-                               TRUE ~ statistic)) %>% 
+                   source = dataset_short) %>% 
   group_by(geog_code)
 
 data_value <- data %>%
@@ -2642,7 +2640,7 @@ json_data <- json_data_from_rpc(
 						"FSME",
 						"SENNonStatemented",
 						"SENStatement",
-						"ALL"
+						"All"
 					]
 				}
 			},
@@ -2693,9 +2691,7 @@ for (i in 1:length(json_data$dimension$STATISTIC$category$index)) {
 data <- data.frame(geog_code = rep(geog_codes, length(unique(categories))),
                    VALUE = json_data$value,
                    statistic = categories,
-                   source = dataset_short) %>%
-  mutate(statistic = case_when(statistic == "ALL" ~ "All",
-                               TRUE ~ statistic)) %>% 
+                   source = dataset_short) %>% 
   group_by(geog_code)
 
 data_value <- data %>%
