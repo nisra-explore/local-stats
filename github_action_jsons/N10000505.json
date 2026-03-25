@@ -531,9 +531,9 @@
         "table_code": "DESCPDEA",
         "dataset_url": "https://data.nisra.gov.uk/table/DESCPDEA",
         "geog_level": "dea",
-        "last_updated": "2025-08-06",
+        "last_updated": "2026-03-24",
         "email": "statistics@education-ni.gov.uk",
-        "title": "School Census - Primary",
+        "title": "School census - primary",
         "year": "2024/25"
       }
     ],
@@ -542,7 +542,7 @@
         "table_code": "DESCPPDEA",
         "dataset_url": "https://data.nisra.gov.uk/table/DESCPPDEA",
         "geog_level": "dea",
-        "last_updated": "2026-03-23",
+        "last_updated": "2026-03-24",
         "email": "statistics@education-ni.gov.uk",
         "title": "School census - post primary",
         "year": "2024/25"
@@ -553,9 +553,9 @@
         "table_code": "DESCSDEA",
         "dataset_url": "https://data.nisra.gov.uk/table/DESCSDEA",
         "geog_level": "dea",
-        "last_updated": "2025-08-05",
+        "last_updated": "2026-03-24",
         "email": "statistics@education-ni.gov.uk",
-        "title": "School Census - Special Schools",
+        "title": "School census - special schools",
         "year": "2024/25"
       }
     ],
@@ -564,9 +564,9 @@
         "table_code": "DESLSADEA",
         "dataset_url": "https://data.nisra.gov.uk/table/DESLSADEA",
         "geog_level": "dea",
-        "last_updated": "2025-07-09",
+        "last_updated": "2026-03-25",
         "email": "statistics@education-ni.gov.uk",
-        "title": "School Leavers Survey - Attainment",
+        "title": "School Leavers Survey - attainment",
         "year": "2023/24"
       }
     ],
@@ -597,9 +597,9 @@
         "table_code": "DESLSDDEA",
         "dataset_url": "https://data.nisra.gov.uk/table/DESLSDDEA",
         "geog_level": "dea",
-        "last_updated": "2025-07-23",
+        "last_updated": "2026-03-25",
         "email": "statistics@education-ni.gov.uk",
-        "title": "School Leavers Survey - Destination",
+        "title": "School Leavers Survey - destination",
         "year": "2023/24"
       }
     ],

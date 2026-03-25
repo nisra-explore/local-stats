@@ -811,9 +811,9 @@
         "table_code": "DESCPLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/DESCPLGD",
         "geog_level": "lgd",
-        "last_updated": "2025-08-06",
+        "last_updated": "2026-03-24",
         "email": "statistics@education-ni.gov.uk",
-        "title": "School Census - Primary",
+        "title": "School census - primary",
         "year": "2024/25"
       }
     ],
@@ -822,7 +822,7 @@
         "table_code": "DESCPPLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/DESCPPLGD",
         "geog_level": "lgd",
-        "last_updated": "2026-03-23",
+        "last_updated": "2026-03-24",
         "email": "statistics@education-ni.gov.uk",
         "title": "School census - post primary",
         "year": "2024/25"
@@ -833,9 +833,9 @@
         "table_code": "DESCSLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/DESCSLGD",
         "geog_level": "lgd",
-        "last_updated": "2025-08-05",
+        "last_updated": "2026-03-24",
         "email": "statistics@education-ni.gov.uk",
-        "title": "School Census - Special Schools",
+        "title": "School census - special schools",
         "year": "2024/25"
       }
     ],
@@ -844,9 +844,9 @@
         "table_code": "DETNPTRLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/DETNPTRLGD",
         "geog_level": "lgd",
-        "last_updated": "2023-06-29",
+        "last_updated": "2026-03-24",
         "email": "statistics@education-ni.gov.uk",
-        "title": "Pupil Teacher Ratios in Northern Ireland",
+        "title": "Pupil teacher ratios in Northern Ireland",
         "year": "2022/23"
       }
     ],
@@ -855,9 +855,9 @@
         "table_code": "DESLSALGD",
         "dataset_url": "https://data.nisra.gov.uk/table/DESLSALGD",
         "geog_level": "lgd",
-        "last_updated": "2025-07-09",
+        "last_updated": "2026-03-25",
         "email": "statistics@education-ni.gov.uk",
-        "title": "School Leavers Survey - Attainment",
+        "title": "School Leavers Survey - attainment",
         "year": "2023/24"
       }
     ],
@@ -888,9 +888,9 @@
         "table_code": "DESLSDLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/DESLSDLGD",
         "geog_level": "lgd",
-        "last_updated": "2025-07-09",
+        "last_updated": "2026-03-25",
         "email": "statistics@education-ni.gov.uk",
-        "title": "School Leavers Survey - Destination",
+        "title": "School Leavers Survey - destination",
         "year": "2023/24"
       }
     ],
@@ -1042,7 +1042,7 @@
         "table_code": "NIETS05",
         "dataset_url": "https://data.nisra.gov.uk/table/NIETS05",
         "geog_level": "lgd",
-        "last_updated": "2026-03-11",
+        "last_updated": "2026-03-24",
         "email": "economicstats@nisra.gov.uk",
         "title": "NIETS: Trade by Local Government District",
         "year": "2024"
@@ -1053,7 +1053,7 @@
         "table_code": "NIETS05",
         "dataset_url": "https://data.nisra.gov.uk/table/NIETS05",
         "geog_level": "lgd",
-        "last_updated": "2026-03-11",
+        "last_updated": "2026-03-24",
         "email": "economicstats@nisra.gov.uk",
         "title": "NIETS: Trade by Local Government District",
         "year": "2024"
