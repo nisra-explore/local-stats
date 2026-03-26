@@ -1,92 +1,118 @@
 <script>
-    import { onMount } from "svelte"
+  import { onMount } from "svelte";
 
-    export let analyticsId; // Required. Google analytics/tag manager ID
-    export let analyticsProps = {}; // Optional props to describe the content
-    export let usageCookies = false; // True if usage cookies are allowed (to be read from parent component)
-    export let page = null; // Pass Svelte Kit's $page to track navigation in multi-page apps
+  export let analyticsId;
+  export let analyticsProps = {};
+  export let usageCookies = false;
+  export let page = null;
 
-    let live; // Don't run analytics unless page is live on ONS site (re-set in the onMount function)
+  let live;
+  let showBanner = false;
+  let showConfirm = false;
+  let message = "";
+  let location = null;
 
-    let showBanner = false;
-    let showConfirm = false;
-    let message = "";
-    let location = null; // For keeping track of navigation multi-page apps
+  const SHARED_DOMAIN = ".nisra.gov.uk";
+  const DATA_EXPLORER_COOKIE = "cookie-agreed";
+  const ACCEPTED = "2";
+  const REJECTED = "0";
 
-    function hasCookiesPreferencesSet() {
-        return -1 < document.cookie.indexOf("cookies_preferences_set=true")
+  function getCookie(name) {
+    const match = document.cookie.match(
+      new RegExp("(^|; )" + name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "=([^;]*)")
+    );
+    return match ? decodeURIComponent(match[2]) : null;
+  }
+
+  function hasCookiesPreferencesSet() {
+    return document.cookie.indexOf("cookies_preferences_set=true") > -1;
+  }
+
+  function getUsageCookieValue() {
+    const cookiesPolicyCookie = document.cookie.match(
+      new RegExp("(^|;) ?cookies_policy=([^;]*)(;|$)")
+    );
+
+    if (cookiesPolicyCookie) {
+      const decodedCookie = decodeURIComponent(cookiesPolicyCookie[2]);
+      const cookieValue = JSON.parse(decodedCookie);
+      return cookieValue.usage;
     }
 
-    // Check if usage cookies are allowed (for Google Analytics + Hotjar)
-    function getUsageCookieValue() {
-        var cookiesPolicyCookie = document.cookie.match(new RegExp("(^|;) ?cookies_policy=([^;]*)(;|$)"));
-        if (cookiesPolicyCookie) {
-        var decodedCookie = decodeURIComponent(cookiesPolicyCookie[2]);
-        var cookieValue = JSON.parse(decodedCookie);
-        return cookieValue.usage;
-        }
-        return false;
+    return false;
+  }
+
+  function setCookie(option, silent = false) {
+    const oneYearInSeconds = 60 * 60 * 24 * 365;
+    const cookiesDomain = SHARED_DOMAIN;
+    const cookiesPreference = true;
+    const encodedCookiesPolicy =
+      `%7B%22essential%22%3Atrue%2C%22usage%22%3A${option === "all" ? "true" : "false"}%7D`;
+    const cookiesPath = "/";
+
+    document.cookie =
+      `cookies_preferences_set=${cookiesPreference};max-age=${oneYearInSeconds};domain=${cookiesDomain};path=${cookiesPath};Secure;SameSite=Lax`;
+    document.cookie =
+      `cookies_policy=${encodedCookiesPolicy};max-age=${oneYearInSeconds};domain=${cookiesDomain};path=${cookiesPath};Secure;SameSite=Lax`;
+
+    usageCookies = option === "all";
+
+    if (!silent) {
+      message = option === "all" ? "all" : "only essential";
+      showConfirm = true;
     }
 
-    // Set site cookie with 'all' or 'essential' cookies
-    function setCookie(option) {
-        let oneYearInSeconds = 60 * 60 * 24 * 365;
-        let cookiesDomain = ".nisra.gov.uk";
-        let cookiesPreference = !0;
-        let encodedCookiesPolicy = `%7B%22essential%22%3Atrue%2C%22usage%22%3A${option == 'all' ? 'true' : 'false'}%7D`;
-        let cookiesPath = "/";
-        
-        document.cookie = `cookies_preferences_set=${cookiesPreference};max-age=${oneYearInSeconds};domain=${cookiesDomain};path=${cookiesPath};`;
-        document.cookie = `cookies_policy=${encodedCookiesPolicy};max-age=${oneYearInSeconds};domain=${cookiesDomain};path=${cookiesPath};`;
+    if (option === "all") initAnalytics();
+  }
 
-        message = option == "all" ? "all" : "only essential";
-        if (option == "all") usageCookies = true;
-        showConfirm = true;
+  function initAnalytics() {
+    console.log("initialising analytics");
 
-        if (option == "all") initAnalytics();
+    window.dataLayer = [{
+      analyticsOptOut: false,
+      "gtm.whitelist": ["google", "hjtc", "lcl"],
+      "gtm.blacklist": ["customScripts", "sp", "adm", "awct", "k", "d", "j"],
+      ...analyticsProps
+    }];
+
+    if (page) location = $page.url.hostname + $page.url.pathname + $page.url.searchParams;
+
+    (function(w,d,s,l,i){
+      w[l]=w[l]||[];
+      w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),
+          dl=l!='dataLayer' ? '&l=' + l : '';
+      j.async=true;
+      j.src='https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j,f);
+    })(window, document, "script", "dataLayer", analyticsId);
+  }
+
+  onMount(() => {
+    live = true;
+
+    const sharedConsent = getCookie(DATA_EXPLORER_COOKIE);
+
+    if (sharedConsent === ACCEPTED) {
+      setCookie("all", true);
+      showBanner = false;
+      return;
     }
 
-    // Initialise analytics and 'window.dataLayer' (which can be used throughout the app)
-    function initAnalytics() {
-        console.log('initialising analytics');
-        window.dataLayer = [{
-        "analyticsOptOut": false,
-        "gtm.whitelist": ["google","hjtc","lcl"],
-        "gtm.blacklist": ["customScripts","sp","adm","awct","k","d","j"],
-        ...analyticsProps
-        }];
-        if (page) location =  $page.url.hostname + $page.url.pathname + $page.url.searchParams;
-
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                new Date().getTime(),event:'gtm.js'});var f=d.head,
-                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.appendChild(j);
-            })(window,document,'script','dataLayer',analyticsId);
-    };
-
-    // This code is only relevant for multi-page Svelte Kit apps. It sends an analytics event when the URL changes
-    $: if (live && usageCookies && page) {
-        let newlocation = $page.url.hostname + $page.url.pathname + $page.url.searchParams;
-        if (newlocation !== location) {
-        location = newlocation;
-
-        window.dataLayer.push({
-            event: "pageView",
-            page_path : $page.url.pathname,
-            page_location: location,
-            page_title: document ? document.title : null
-        });
-        console.log('navigated to ' + location);
-        }
+    if (sharedConsent === REJECTED) {
+      setCookie("reject", true);
+      showBanner = false;
+      return;
     }
 
-    onMount(() => {
-        live = true;
-        //live = window.location.hostname == "www.ons.gov.uk" || window.location.hostname == "cy.ons.gov.uk";
-        showBanner = !hasCookiesPreferencesSet();
-        usageCookies = getUsageCookieValue();
-        if (usageCookies && live) initAnalytics();
-    });
+    showBanner = !hasCookiesPreferencesSet();
+    usageCookies = getUsageCookieValue();
+
+    if (usageCookies) {
+      initAnalytics();
+    }
+  });
 </script>
 
 {#if showBanner}
