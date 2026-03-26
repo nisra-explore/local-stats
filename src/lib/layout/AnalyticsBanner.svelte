@@ -31,7 +31,7 @@
     // Set site cookie with 'all' or 'essential' cookies
     function setCookie(option) {
         let oneYearInSeconds = 60 * 60 * 24 * 365;
-        let cookiesDomain = window.location.hostname;
+        let cookiesDomain = ".nisra.gov.uk";
         let cookiesPreference = !0;
         let encodedCookiesPolicy = `%7B%22essential%22%3Atrue%2C%22usage%22%3A${option == 'all' ? 'true' : 'false'}%7D`;
         let cookiesPath = "/";
