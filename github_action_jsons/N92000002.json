@@ -1044,7 +1044,7 @@
         "dataset_url": "https://data.nisra.gov.uk/table/EJOBSLGD",
         "geog_level": "lgd",
         "last_updated": "2023-04-21",
-        "email": "Joanne.henderson@nisra.gov.uk",
+        "email": "sinead.toner@nisra.gov.uk",
         "title": "Employee Jobs",
         "year": "2019"
       }
@@ -1055,7 +1055,7 @@
         "dataset_url": "https://data.nisra.gov.uk/table/CASLGD",
         "geog_level": "lgd",
         "last_updated": "2023-04-21",
-        "email": "Joanne.henderson@nisra.gov.uk",
+        "email": "sinead.toner@nisra.gov.uk",
         "title": "Certified Accommodation Stock",
         "year": "2019"
       }
