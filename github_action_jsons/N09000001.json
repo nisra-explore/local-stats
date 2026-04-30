@@ -314,8 +314,8 @@
     },
     "LE": {
       "value": {
-        "Females": 82.7,
-        "Males": 79.2
+        "Females": 82.5378,
+        "Males": 79.2655
       }
     },
     "DEN": {
@@ -690,10 +690,10 @@
         "table_code": "LELGD",
         "dataset_url": "https://data.nisra.gov.uk/table/LELGD",
         "geog_level": "lgd",
-        "last_updated": "2026-04-01",
+        "last_updated": "2026-04-30",
         "email": "healthinequalities@health-ni.gov.uk",
         "title": "Life expectancy at birth",
-        "year": "2021-23"
+        "year": "2022-24"
       }
     ],
     "wellbeing": [
@@ -1021,7 +1021,7 @@
         "dataset_url": "https://data.nisra.gov.uk/table/EJOBSLGD",
         "geog_level": "lgd",
         "last_updated": "2023-04-21",
-        "email": "Joanne.henderson@nisra.gov.uk",
+        "email": "sinead.toner@nisra.gov.uk",
         "title": "Employee Jobs",
         "year": "2019"
       }
@@ -1032,7 +1032,7 @@
         "dataset_url": "https://data.nisra.gov.uk/table/CASLGD",
         "geog_level": "lgd",
         "last_updated": "2023-04-21",
-        "email": "Joanne.henderson@nisra.gov.uk",
+        "email": "sinead.toner@nisra.gov.uk",
         "title": "Certified Accommodation Stock",
         "year": "2019"
       }

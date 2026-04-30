@@ -338,8 +338,8 @@
     },
     "LE": {
       "value": {
-        "Females": 82.5,
-        "Males": 78.8
+        "Females": 82.6291,
+        "Males": 78.8035
       }
     },
     "DEN": {
@@ -713,10 +713,10 @@
         "table_code": "LELGD",
         "dataset_url": "https://data.nisra.gov.uk/table/LELGD",
         "geog_level": "lgd",
-        "last_updated": "2026-04-01",
+        "last_updated": "2026-04-30",
         "email": "healthinequalities@health-ni.gov.uk",
         "title": "Life expectancy at birth",
-        "year": "2021-23"
+        "year": "2022-24"
       }
     ],
     "wellbeing": [
