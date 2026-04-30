@@ -42,3 +42,4 @@ jobs:
           git add create_jsons/date_of_last_run.RDS
           git commit -m 'Data updated' || echo "No changes to commit"
           git push origin || echo "No changes to commit"
+          
