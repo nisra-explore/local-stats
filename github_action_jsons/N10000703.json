@@ -461,9 +461,9 @@
         "table_code": "ADMITDEA",
         "dataset_url": "https://data.nisra.gov.uk/table/ADMITDEA",
         "geog_level": "dea",
-        "last_updated": "2026-03-11",
+        "last_updated": "2026-05-13",
         "email": "statistics@health-ni.gov.uk",
-        "title": "Primary Reason for Admissions to HSC Hospitals",
+        "title": "Primary reason for admissions to HSC hospitals",
         "year": "2024"
       }
     ],
@@ -494,9 +494,9 @@
         "table_code": "FPSGDSDRDEA",
         "dataset_url": "https://data.nisra.gov.uk/table/FPSGDSDRDEA",
         "geog_level": "dea",
-        "last_updated": "2025-06-30",
+        "last_updated": "2026-05-13",
         "email": "info.bso@hscni.net",
-        "title": "General Dental Services Dental Registrations",
+        "title": "General dental services dental registrations",
         "year": "2024/25"
       }
     ],

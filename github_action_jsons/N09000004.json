@@ -509,44 +509,44 @@
     },
     "niets_sales": {
       "value": {
-        "ALL": 5572.2508,
-        "NI": 3682.8223,
-        "GB": 844.3418,
-        "IE": 833.5416,
-        "REU": 109.5,
-        "ROW": 102.0451,
-        "EXTERN": 1889.4285,
-        "EXPORT": 1045.0867,
-        "IMPORT": null
+        "ALL": 629.8171,
+        "NI": 878.1377,
+        "GB": 3587.9535,
+        "IE": 5003.0982,
+        "REU": 1215.6348,
+        "ROW": 104.271,
+        "EXTERN": 1774.6343,
+        "EXPORT": null,
+        "IMPORT": 2515.5263
       },
       "perc": {
         "ALL": 100,
-        "NI": 66.0922,
-        "GB": 15.1526,
-        "IE": 14.9588,
-        "REU": 1.9651,
-        "ROW": 1.8313
+        "NI": 139.4274,
+        "GB": 569.6819,
+        "IE": 794.3732,
+        "REU": 193.014,
+        "ROW": 16.5558
       }
     },
     "niets_purch": {
       "value": {
-        "ALL": 2893.503,
-        "NI": 1775.4779,
-        "GB": 780.8052,
-        "IE": 172.9978,
-        "REU": 85.7569,
-        "ROW": 78.4652,
-        "EXTERN": 1118.0252,
-        "EXPORT": null,
-        "IMPORT": 337.2199
+        "ALL": 297.8333,
+        "NI": 160.8787,
+        "GB": null,
+        "IE": 2478.6515,
+        "REU": 613.7489,
+        "ROW": 210.8112,
+        "EXTERN": 1077.2776,
+        "EXPORT": 1896.7581,
+        "IMPORT": 889.0287
       },
       "perc": {
         "ALL": 100,
-        "NI": 61.3608,
-        "GB": 26.9848,
-        "IE": 5.9788,
-        "REU": 2.9638,
-        "ROW": 2.7118
+        "NI": 54.0164,
+        "GB": null,
+        "IE": 832.2277,
+        "REU": 206.0713,
+        "ROW": 70.7816
       }
     },
     "houseprices": {
@@ -745,9 +745,9 @@
         "table_code": "FPSGDSDRLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/FPSGDSDRLGD",
         "geog_level": "lgd",
-        "last_updated": "2025-06-30",
+        "last_updated": "2026-05-13",
         "email": "info.bso@hscni.net",
-        "title": "General Dental Services Dental Registrations",
+        "title": "General dental services dental registrations",
         "year": "2024/25"
       }
     ],
@@ -987,9 +987,9 @@
         "table_code": "BUSINESSBIGLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/BUSINESSBIGLGD",
         "geog_level": "lgd",
-        "last_updated": "2024-03-20",
+        "last_updated": "2026-05-12",
         "email": "economicstats@nisra.gov.uk",
-        "title": "Number of Businesses",
+        "title": "Number of businesses",
         "year": "2023"
       }
     ],
@@ -998,9 +998,9 @@
         "table_code": "BUSINESSBANDLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/BUSINESSBANDLGD",
         "geog_level": "lgd",
-        "last_updated": "2024-03-19",
+        "last_updated": "2026-05-12",
         "email": "economicstats@nisra.gov.uk",
-        "title": "Number of Businesses: Activity, Size and Location",
+        "title": "Number of businesses: Activity, size and location",
         "year": "2023"
       }
     ],
@@ -1042,7 +1042,7 @@
         "table_code": "NIETS05",
         "dataset_url": "https://data.nisra.gov.uk/table/NIETS05",
         "geog_level": "lgd",
-        "last_updated": "2026-03-24",
+        "last_updated": "2026-05-12",
         "email": "economicstats@nisra.gov.uk",
         "title": "NIETS: Trade by Local Government District",
         "year": "2024"
@@ -1053,7 +1053,7 @@
         "table_code": "NIETS05",
         "dataset_url": "https://data.nisra.gov.uk/table/NIETS05",
         "geog_level": "lgd",
-        "last_updated": "2026-03-24",
+        "last_updated": "2026-05-12",
         "email": "economicstats@nisra.gov.uk",
         "title": "NIETS: Trade by Local Government District",
         "year": "2024"

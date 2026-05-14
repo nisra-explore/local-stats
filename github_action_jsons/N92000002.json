@@ -533,44 +533,44 @@
     },
     "niets_sales": {
       "value": {
-        "ALL": 91518.2697,
-        "EXPORT": 17445.474,
-        "EXTERN": 34857.5054,
-        "GB": 17412.0314,
-        "IE": 9719.9302,
-        "IMPORT": 0,
-        "NI": 56660.7643,
-        "REU": 2948.8954,
-        "ROW": 4776.6483
+        "ALL": 35307.1084,
+        "EXPORT": 27593.4912,
+        "EXTERN": 26496.2146,
+        "GB": 24172.4301,
+        "IE": 15089.6836,
+        "IMPORT": 11325.5746,
+        "NI": 54784.4551,
+        "REU": 20772.9069,
+        "ROW": 19797.6541
       },
       "perc": {
         "ALL": 100,
-        "GB": 19.0257,
-        "IE": 10.6208,
-        "NI": 61.912,
-        "REU": 3.2222,
-        "ROW": 5.2193
+        "GB": 68.4634,
+        "IE": 42.7384,
+        "NI": 155.1655,
+        "REU": 58.8349,
+        "ROW": 56.0727
       }
     },
     "niets_purch": {
       "value": {
-        "ALL": 48378.8399,
-        "EXPORT": 0,
-        "EXTERN": 19826.7098,
-        "GB": 11294.6833,
-        "IE": 2889.8395,
-        "IMPORT": 8532.0265,
-        "NI": 28552.1301,
-        "REU": 2691.81,
-        "ROW": 2950.377
+        "ALL": 20074.3553,
+        "EXPORT": 15255.777,
+        "EXTERN": 14316.1147,
+        "GB": 13317.517,
+        "IE": 7413.0029,
+        "IMPORT": 4627.3925,
+        "NI": 27094.4213,
+        "REU": 10954.1234,
+        "ROW": 12063.7119
       },
       "perc": {
         "ALL": 100,
-        "GB": 23.3463,
-        "IE": 5.9734,
-        "NI": 59.0178,
-        "REU": 5.564,
-        "ROW": 6.0985
+        "GB": 66.3409,
+        "IE": 36.9277,
+        "NI": 134.9703,
+        "REU": 54.5677,
+        "ROW": 60.0951
       }
     },
     "houseprices": {
@@ -768,9 +768,9 @@
         "table_code": "FPSGDSDRLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/FPSGDSDRLGD",
         "geog_level": "lgd",
-        "last_updated": "2025-06-30",
+        "last_updated": "2026-05-13",
         "email": "info.bso@hscni.net",
-        "title": "General Dental Services Dental Registrations",
+        "title": "General dental services dental registrations",
         "year": "2024/25"
       }
     ],
@@ -1010,9 +1010,9 @@
         "table_code": "BUSINESSBIGLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/BUSINESSBIGLGD",
         "geog_level": "lgd",
-        "last_updated": "2024-03-20",
+        "last_updated": "2026-05-12",
         "email": "economicstats@nisra.gov.uk",
-        "title": "Number of Businesses",
+        "title": "Number of businesses",
         "year": "2023"
       }
     ],
@@ -1021,9 +1021,9 @@
         "table_code": "BUSINESSBANDLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/BUSINESSBANDLGD",
         "geog_level": "lgd",
-        "last_updated": "2024-03-19",
+        "last_updated": "2026-05-12",
         "email": "economicstats@nisra.gov.uk",
-        "title": "Number of Businesses: Activity, Size and Location",
+        "title": "Number of businesses: Activity, size and location",
         "year": "2023"
       }
     ],
@@ -1065,7 +1065,7 @@
         "table_code": "NIETS05",
         "dataset_url": "https://data.nisra.gov.uk/table/NIETS05",
         "geog_level": "lgd",
-        "last_updated": "2026-03-24",
+        "last_updated": "2026-05-12",
         "email": "economicstats@nisra.gov.uk",
         "title": "NIETS: Trade by Local Government District",
         "year": "2024"
@@ -1076,7 +1076,7 @@
         "table_code": "NIETS05",
         "dataset_url": "https://data.nisra.gov.uk/table/NIETS05",
         "geog_level": "lgd",
-        "last_updated": "2026-03-24",
+        "last_updated": "2026-05-12",
         "email": "economicstats@nisra.gov.uk",
         "title": "NIETS: Trade by Local Government District",
         "year": "2024"
@@ -1087,9 +1087,9 @@
         "table_code": "ADMITDEA",
         "dataset_url": "https://data.nisra.gov.uk/table/ADMITDEA",
         "geog_level": "dea",
-        "last_updated": "2026-03-11",
+        "last_updated": "2026-05-13",
         "email": "statistics@health-ni.gov.uk",
-        "title": "Primary Reason for Admissions to HSC Hospitals",
+        "title": "Primary reason for admissions to HSC hospitals",
         "year": "2024"
       }
     ]
