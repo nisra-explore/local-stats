@@ -4361,7 +4361,7 @@ json_data <- json_data_from_rpc(
 		"class": "query",
 		"id": [
 			"TLIST(A1)",
-			"BIG"
+			"BroadIndustryGroup"
 		],
 		"dimension": {
 			"TLIST(A1)": {
@@ -4371,7 +4371,7 @@ json_data <- json_data_from_rpc(
 					]
 				}
 			},
-			"BIG": {
+			"BroadIndustryGroup": {
 				"category": {
 					"index": [
 						"All"
@@ -4455,7 +4455,7 @@ json_data <- json_data_from_rpc(
   )
 )
 
-categories <- json_data$dimension$BIG$category$index
+categories <- json_data$dimension$BroadIndustryGroup$category$index
 
 geog_codes <- c()
 for (i in 1:length(json_data$dimension$LGD2014$category$index)) {
@@ -4490,7 +4490,7 @@ json_data_E <- json_data_from_rpc(
 		"class": "query",
 		"id": [
 			"TLIST(A1)",
-			"BIG",
+			"BroadIndustryGroup",
 			"TOBAND"
 		],
 		"dimension": {
@@ -4501,7 +4501,7 @@ json_data_E <- json_data_from_rpc(
 					]
 				}
 			},
-			"BIG": {
+			"BroadIndustryGroup": {
 				"category": {
 					"index": [
 						"All"
@@ -4571,7 +4571,7 @@ json_data_T <- json_data_from_rpc(
 		"class": "query",
 		"id": [
 			"TLIST(A1)",
-			"BIG",
+			"BroadIndustryGroup",
 			"EMPBAND"
 		],
 		"dimension": {
@@ -4582,7 +4582,7 @@ json_data_T <- json_data_from_rpc(
 					]
 				}
 			},
-			"BIG": {
+			"BroadIndustryGroup": {
 				"category": {
 					"index": [
 						"All"
