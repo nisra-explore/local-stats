@@ -482,9 +482,9 @@
         "table_code": "GPPRACPATDEA",
         "dataset_url": "https://data.nisra.gov.uk/table/GPPRACPATDEA",
         "geog_level": "dea",
-        "last_updated": "2025-09-26",
+        "last_updated": "2026-05-19",
         "email": "info.bso@hscni.net",
-        "title": "GPs Practices and Registered Patients",
+        "title": "GPs practices and registered patients",
         "year": "2025"
       }
     ],
@@ -493,9 +493,9 @@
         "table_code": "FPSGDSDSDEA",
         "dataset_url": "https://data.nisra.gov.uk/table/FPSGDSDSDEA",
         "geog_level": "dea",
-        "last_updated": "2025-06-30",
+        "last_updated": "2026-05-19",
         "email": "info.bso@hscni.net",
-        "title": "General Dental Services Dentists and Surgeries",
+        "title": "General dental services dentists and surgeries",
         "year": "2024/25"
       }
     ],
