@@ -401,7 +401,7 @@
       }
     },
     "Attainment": {
-      "value": 67.9
+      "value": 72
     },
     "FE": {
       "value": 1010
@@ -422,11 +422,11 @@
     },
     "Destination": {
       "perc": {
-        "destHEpct": 33.2061,
-        "destFEpct": 30.1527,
-        "destEmploypct": 14.1221,
-        "destTrainpct": 11.8321,
-        "destUnempUnkpct": 10.687
+        "destHEpct": 32.0896,
+        "destFEpct": 44.403,
+        "destEmploypct": 9.7015,
+        "destTrainpct": 8.9552,
+        "destUnempUnkpct": 4.8507
       }
     }
   },
@@ -559,10 +559,10 @@
         "table_code": "DESLSADEA",
         "dataset_url": "https://data.nisra.gov.uk/table/DESLSADEA",
         "geog_level": "dea",
-        "last_updated": "2026-03-25",
+        "last_updated": "2026-06-03",
         "email": "statistics@education-ni.gov.uk",
         "title": "School Leavers Survey - attainment",
-        "year": "2023/24"
+        "year": "2024/25"
       }
     ],
     "FE": [
@@ -592,10 +592,10 @@
         "table_code": "DESLSDDEA",
         "dataset_url": "https://data.nisra.gov.uk/table/DESLSDDEA",
         "geog_level": "dea",
-        "last_updated": "2026-03-25",
+        "last_updated": "2026-06-03",
         "email": "statistics@education-ni.gov.uk",
         "title": "School Leavers Survey - destination",
-        "year": "2023/24"
+        "year": "2024/25"
       }
     ],
     "crime": [
