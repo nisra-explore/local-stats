@@ -406,8 +406,8 @@
     },
     "farms": {
       "value": {
-        "F": 703,
-        "FA": 1083
+        "F": 691,
+        "FA": 1086
       }
     },
     "Attainment": {
@@ -624,10 +624,10 @@
         "table_code": "FCDEA",
         "dataset_url": "https://data.nisra.gov.uk/table/FCDEA",
         "geog_level": "dea",
-        "last_updated": "2025-03-04",
+        "last_updated": "2026-06-19",
         "email": "env.stats@daera-ni.gov.uk",
         "title": "Farm Census",
-        "year": "2024"
+        "year": "2025"
       }
     ]
   }
