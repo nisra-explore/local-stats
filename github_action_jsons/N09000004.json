@@ -320,13 +320,13 @@
     },
     "DEN": {
       "value": {
-        "GDSDSDentists": 92.86,
+        "GDSDSDentists": 89.45,
         "GDSDSSurgeries": 25
       }
     },
     "DEN_REG": {
       "value": {
-        "Dental_Registrations": 92245
+        "Dental_Registrations": 80339
       }
     },
     "GP": {
@@ -734,10 +734,10 @@
         "table_code": "FPSGDSDSLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/FPSGDSDSLGD",
         "geog_level": "lgd",
-        "last_updated": "2026-05-19",
+        "last_updated": "2026-06-22",
         "email": "info.bso@hscni.net",
         "title": "General dental services dentists and surgeries",
-        "year": "2024/25"
+        "year": "2025/26"
       }
     ],
     "DEN_REG": [
@@ -745,10 +745,10 @@
         "table_code": "FPSGDSDRLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/FPSGDSDRLGD",
         "geog_level": "lgd",
-        "last_updated": "2026-05-13",
+        "last_updated": "2026-06-22",
         "email": "info.bso@hscni.net",
         "title": "General dental services dental registrations",
-        "year": "2024/25"
+        "year": "2025/26"
       }
     ],
     "LMS": [
