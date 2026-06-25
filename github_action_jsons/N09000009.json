@@ -56,25 +56,25 @@
     "crime": {
       "text": "Violent crime",
       "value": {
-        "allcrime": 4583,
-        "criminal": 710,
-        "other": 764,
-        "person": 2028,
-        "robbery": 18,
-        "sexual": 185,
-        "theft": 733,
-        "theft_burglary": 145,
-        "burglary": 145
+        "allcrime": 4479,
+        "criminal": 693,
+        "other": 791,
+        "person": 2002,
+        "robbery": 15,
+        "sexual": 218,
+        "theft": 655,
+        "theft_burglary": 105,
+        "burglary": 105
       },
       "perc": {
         "allcrime": 100,
-        "criminal": 15.492,
-        "other": 16.6703,
-        "person": 44.2505,
-        "robbery": 0.3928,
-        "sexual": 4.0367,
-        "theft": 15.9939,
-        "theft_burglary": 3.1639
+        "criminal": 15.4722,
+        "other": 17.6602,
+        "person": 44.6975,
+        "robbery": 0.3349,
+        "sexual": 4.8672,
+        "theft": 14.6238,
+        "theft_burglary": 2.3443
       }
     },
     "env_problem": {
@@ -954,10 +954,10 @@
         "table_code": "PRCLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/PRCLGD",
         "geog_level": "lgd",
-        "last_updated": "2026-03-13",
+        "last_updated": "2026-06-25",
         "email": "statistics@psni.police.uk",
         "title": "Police recorded crime",
-        "year": "2024/25"
+        "year": "2025/26"
       }
     ],
     "crimeworry": [

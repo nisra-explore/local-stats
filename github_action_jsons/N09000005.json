@@ -56,25 +56,25 @@
     "crime": {
       "text": "Car Crime",
       "value": {
-        "allcrime": 9753,
-        "criminal": 1413,
-        "other": 1282,
-        "person": 4777,
-        "robbery": 46,
-        "sexual": 395,
-        "theft": 1601,
-        "theft_burglary": 239,
-        "burglary": 239
+        "allcrime": 9336,
+        "criminal": 1414,
+        "other": 1250,
+        "person": 4472,
+        "robbery": 34,
+        "sexual": 407,
+        "theft": 1552,
+        "theft_burglary": 207,
+        "burglary": 207
       },
       "perc": {
         "allcrime": 100,
-        "criminal": 14.4878,
-        "other": 13.1447,
-        "person": 48.9798,
-        "robbery": 0.4716,
-        "sexual": 4.05,
-        "theft": 16.4155,
-        "theft_burglary": 2.4505
+        "criminal": 15.1457,
+        "other": 13.389,
+        "person": 47.9006,
+        "robbery": 0.3642,
+        "sexual": 4.3595,
+        "theft": 16.6238,
+        "theft_burglary": 2.2172
       }
     },
     "env_problem": {
@@ -954,10 +954,10 @@
         "table_code": "PRCLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/PRCLGD",
         "geog_level": "lgd",
-        "last_updated": "2026-03-13",
+        "last_updated": "2026-06-25",
         "email": "statistics@psni.police.uk",
         "title": "Police recorded crime",
-        "year": "2024/25"
+        "year": "2025/26"
       }
     ],
     "crimeworry": [
