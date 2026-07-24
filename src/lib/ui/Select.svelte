@@ -119,7 +119,7 @@
 	</a>
 	{:else}
 	<a id="toggle" on:click={toggle} on:focus={toggle} >
-		<input on:keydown={typing} type="text" placeholder={placeholder} bind:value={filter} autocomplete="false" bind:this={input} on:keyup={doKeyup} autofocus="autofocus" onfocus="this.select()" />
+		<input on:keydown={typing} type="text" placeholder={placeholder} bind:value={filter} autocomplete="false" bind:this={input} on:keyup={doKeyup} autofocus="autofocus" on:focus={(e) => e.currentTarget.select()} />
 
 	</a>
 	{/if}

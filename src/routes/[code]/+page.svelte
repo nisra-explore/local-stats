@@ -31,7 +31,6 @@
     import AnalyticsBanner from "$lib/layout/AnalyticsBanner.svelte";
     import ScrollToTop from "$lib/ui/scroll.svelte";
     import { LayerCake } from "layercake";
-    import { text } from "svelte/internal";
 	import IButton from "$lib/layout/IButton.svelte";
 	import Accordion from "$lib/layout/Accordion.svelte";
 	import GreyBox from "$lib/layout/GreyBox.svelte";  
@@ -754,14 +753,17 @@ function compareDensity (place) {
 							class="btn"
 							style="width: 33%"
 							alt="Opens the About page"
-							onclick="window.location.href='{base}/about';"
+							on:click={() => window.location.href = `${base}/about`}
 							>About
 						</button>
 						<button
 							class="btn"
 							style="width: 33%"
 							title="Click to print this page to pdf or printer"
-							onclick="window.print();return false;"
+							on:click={() => {
+								window.print();
+								return false;
+							}}
 							>Print / PDF
 						</button>
 						<button
