@@ -332,9 +332,9 @@
     "GP": {
       "value": {
         "PRACS": 16,
-        "GPS": 99,
-        "REGPAT": 137874,
-        "PRACLIST": 8617
+        "GPS": 98,
+        "REGPAT": 139169,
+        "PRACLIST": 8698
       }
     },
     "LMS": {
@@ -419,11 +419,11 @@
     },
     "Env_ghg": {
       "value": {
-        "CO2": 706.6,
-        "CH4": 314.8,
-        "N2O": 73.4,
-        "GHGALL": 1094.7,
-        "GHGALL_BASE": 1536.9
+        "CO2": 728.9,
+        "CH4": 313.4,
+        "N2O": 70.54,
+        "GHGALL": 1112.9,
+        "GHGALL_BASE": 1524.1
       }
     },
     "Env_active": {
@@ -723,10 +723,10 @@
         "table_code": "GPPRACPATLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/GPPRACPATLGD",
         "geog_level": "lgd",
-        "last_updated": "2026-05-19",
+        "last_updated": "2026-07-31",
         "email": "info.bso@hscni.net",
         "title": "GPs practices and registered patients",
-        "year": "2025"
+        "year": "2026"
       }
     ],
     "DEN": [

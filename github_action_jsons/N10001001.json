@@ -334,9 +334,9 @@
     "GP": {
       "value": {
         "GPS": 11,
-        "PRACLIST": 5342,
+        "PRACLIST": 5392,
         "PRACS": 3,
-        "REGPAT": 16026
+        "REGPAT": 16177
       }
     },
     "BS": {
@@ -481,7 +481,7 @@
         "table_code": "ADMITDEA",
         "dataset_url": "https://data.nisra.gov.uk/table/ADMITDEA",
         "geog_level": "dea",
-        "last_updated": "2026-05-13",
+        "last_updated": "2026-07-31",
         "email": "statistics@health-ni.gov.uk",
         "title": "Primary reason for admissions to HSC hospitals",
         "year": "2024"
@@ -492,10 +492,10 @@
         "table_code": "GPPRACPATDEA",
         "dataset_url": "https://data.nisra.gov.uk/table/GPPRACPATDEA",
         "geog_level": "dea",
-        "last_updated": "2026-05-19",
+        "last_updated": "2026-07-31",
         "email": "info.bso@hscni.net",
-        "title": "GPs practices and registered patients",
-        "year": "2025"
+        "title": "GPs Practices and Registered Patients",
+        "year": "2026"
       }
     ],
     "DEN": [
