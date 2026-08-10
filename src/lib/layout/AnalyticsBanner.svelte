@@ -1,5 +1,6 @@
 <script>
     import { onMount } from "svelte"
+    import { initCookieConsent } from "$lib/cookies";
 
     export let analyticsId; // Required. Google analytics/tag manager ID
     export let analyticsProps = {}; // Optional props to describe the content
@@ -27,6 +28,14 @@
         }
         return false;
     }
+
+    function applyConsentDecision(option) {
+    if (option === "all") {
+        setCookie("all");
+    } else {
+        setCookie("reject");
+    }
+}
 
     // Set site cookie with 'all' or 'essential' cookies
     function setCookie(option) {
@@ -86,6 +95,12 @@
         showBanner = !hasCookiesPreferencesSet();
         usageCookies = getUsageCookieValue();
         if (usageCookies && live) initAnalytics();
+
+        initCookieConsent({
+            bannerId: 'cookie-banner',
+            gtmId: 'GTM-WKK8ZWP',
+            cookieDomain: window.location.hostname
+});
     });
 </script>
 
@@ -113,7 +128,9 @@
             <button
               class="btn btn--full-width btn--primary btn--focus margin-right--2 font-weight-700 font-size--17 text-wrap"
               data-gtm-accept-cookies="true" type="submit"
-              on:click|preventDefault={() => setCookie('all')}>
+              on:click|preventDefault={() => {
+                applyConsentDecision("all");
+              }}>
               Accept cookies
             </button>
           </div>
@@ -121,7 +138,9 @@
             <button
               class="btn btn--full-width btn--secondary btn--focus font-weight-700 font-size--17 text-wrap"
               data-gtm-accept-cookies="true"
-              on:click|preventDefault={() => setCookie('reject')}>
+              on:click|preventDefault={() => {
+                applyConsentDecision("reject");
+              }}>
               Reject cookies
               </button>
           </div>

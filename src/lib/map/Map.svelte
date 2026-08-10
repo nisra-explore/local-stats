@@ -1,6 +1,7 @@
 <script>
 	import { onMount, setContext } from "svelte";
-	import { Map, NavigationControl, GeolocateControl } from "mapbox-gl";
+	import mapboxgl from "mapbox-gl";
+	const { Map, NavigationControl, GeolocateControl } = mapboxgl;
 
 	export let map;
 	export let id = "map";
@@ -112,3 +113,4 @@
 		height: 100%;
 	}
 </style>
+

@@ -1,6 +1,6 @@
 <script>
     export let place;
-    export let storage = localStorage;
+    export let storage;
 
     import { base, assets } from "$app/paths";
     import { onMount } from "svelte";
@@ -8,7 +8,7 @@
     let name;
 
     function check_result() {
-        return storage.hasOwnProperty("search_name");
+        return storage ? storage.hasOwnProperty("search_name") : false;
     }
 
     function result_text () {
@@ -23,6 +23,7 @@
     let DZ_code;
 
     onMount(() => {
+        storage = localStorage;
         setInterval(function() {
             if (check_result() & storage.search_code == place.code) {
                 name = storage.search_name;
@@ -35,7 +36,7 @@
 
         let search_code = postcode.replaceAll(" ", "");
 
-        fetch("https://raw.githubusercontent.com/nisra-explore/local-stats/main/search_data/CPD_LIGHT_JULY_2024.csv")
+        fetch("https://raw.githubusercontent.com/NISRA-Tech-Lab/local-stats/main/search_data/CPD_LIGHT_JULY_2024.csv")
             .then((response) => response.text())
             .then((data) => {
                 const rows = data.split("\n");
@@ -62,9 +63,9 @@
     
 </script>
 
-{#if check_result() & storage.search_code == place.code & result_text()}
+{#if check_result() && storage.search_code == place.code && result_text()}
 	<div id = "search-result"><div>You searched for <strong>{name}</strong>.</div>
-    {#if name.substr(0, 2).toUpperCase() == "BT" & lookupPostcode(name)}
+    {#if name.substr(0, 2).toUpperCase() == "BT" && lookupPostcode(name)}
         <div style = "margin-left: 1em">This postcode is located within the <strong>{place.name}</strong> District Electoral Area.</div>
         <div style = "margin-left: 1em">You can view more localised information for this postcode at Super Data Zone level by selecting <strong><a href = "{base}/{SDZ_code}">{SDZ_name}</a></strong> or at Data Zone level by selecting <strong><a href = "{base}/{DZ_code}">{DZ_name}</a></strong>. Note that many of the statistics produced are not broken down to these smaller geography levels.</div>
     {/if}

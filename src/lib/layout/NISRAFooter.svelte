@@ -2,7 +2,7 @@
  // import { assets } from "$app/paths";
 	import { getContext } from 'svelte';
 	import Section from "$lib/layout/Section.svelte";
-
+  import { asset } from "$app/paths";
 
 //	export let theme = getContext('theme');
 </script>
@@ -11,32 +11,7 @@
 <Section column="wide">
 <div class="block" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); justify-content: stretch;">
 <div style="margin-left:16px; padding-right:16px;">
-	<h3 style="margin-bottom:10px; line-height: 1.78;">Download</h3>
-	<li style="margin: 0px; display: block; line-height: 20px; padding-bottom: 5px">
-		 <a href="https://www.nisra.gov.uk/publications/census-area-explorer-2021-and-2011-data" class="link"><strong>Download</strong> Census 2011 and 2021 data from this app</a>
-	</li>
-  </div>
-  
-  <div style="margin-left:16px; padding-right:16px;">
-	<h3 style="margin-bottom:10px; line-height: 1.78;">Contact and further resources</h3>
-	<li style="margin: 0px; display: block; line-height: 20px; padding-bottom: 5px">
-		<a href="https://www.nisra.gov.uk/contacts/census-customer-services">Contact Census</a>
-  	</li>
-	<li style="margin: 0px; display: block; line-height: 20px; padding-bottom: 5px">
-		<a href="https://www.nisra.gov.uk/statistics/census/2021-census">Census 2021</a>
-  	</li>
-	<li style="margin: 0px; display: block; line-height: 20px; padding-bottom: 5px">
-		<a href="https://www.nisra.gov.uk/statistics/2021-census/results">Census 2021 results</a>
-  	</li>
-	<li style="margin: 0px; display: block; line-height: 20px; padding-bottom: 5px">
-		<a href="https://www.nisra.gov.uk/publications/census-2021-statistical-bulletins">Statistical Bulletins</a>
-  	</li>
-	  <li style="margin: 0px; display: block; line-height: 20px; padding-bottom: 5px">
-		<a href="https://www.nisra.gov.uk/publications/census-2021-infographics">Infographics</a>
-  	</li>
 	
-  </div>
-
   <div style="margin-left:16px;">
 	<h3 style="margin-bottom:10px; line-height: 1.78;">About this app</h3>
 	This web application is based on and inspired by the <a href="https://github.com/ONSvisual">ONS Digital Content team prototypes</a>. 
@@ -45,6 +20,7 @@
   </div>
 
   </div>
+</div>
 </Section>
   
 <footer class="nisra-footer">
@@ -77,23 +53,28 @@
         <ul class="footer-social">
           <li>
             <a href="https://www.facebook.com/nisra.gov.uk">
-              <img src="img/logo/facebook-brands-solid-full.svg" title="Facebook" role="img" class="img" />
-            </a>
+               <img src={asset("/img/logo/facebook-brands-solid-full.svg")} alt="NISRA on Facebook" role="img" class="img-50"/>
+             </a>
           </li>
           <li>
-            <a href="https://x.com/NISRA/">
-              <img src="img/logo/x-twitter-brands-solid-full.svg" title="Twitter/X" role="img" class="img" />
-            </a>
+             <a href="https://x.com/NISRA/">
+               <img src={asset("/img/logo/x-twitter-brands-solid-full.svg")} alt="NISRA on Twitter/X" role="img" class="img-50"/>
+             </a>
           </li>
           <li>
-            <a href="https://www.youtube.com/user/nisrastats">
-              <img src="img/logo/youtube-brands-solid-full.svg" title="YouTube" role="img" class="img" />
-            </a>
+             <a href="https://www.youtube.com/user/nisrastats">
+               <img src={asset("/img/logo/youtube-brands-solid-full.svg")} alt="NISRA on YouTube" role="img" class="img-50"/>
+             </a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/company/northern-ireland-statistics-and-research-agency/">
-              <img src="img/logo/linkedin-in-brands-solid-full.svg" title="LinkedIn" role="img" class="img" />
-            </a>
+             <a href="https://www.linkedin.com/company/northern-ireland-statistics-and-research-agency/">
+               <img src={asset("/img/logo/linkedin-in-brands-solid-full.svg")} alt="NISRA on LinkedIn" role="img" class="img-50"/>
+             </a>
+          </li>
+          <li>
+             <a href="https://www.instagram.com/nisra.gov.uk/">
+               <img src={asset("/img/logo/instagram-brands-solid-full.svg")} alt="NISRA on Instagram" role="img" class="img-50"/>
+             </a>
           </li>
         </ul>
       </div>

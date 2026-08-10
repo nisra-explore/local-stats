@@ -1,5 +1,5 @@
 <script>
-    import { base } from "$app/paths";
+    import { base, resolve } from "$app/paths";
     import { goto } from "$app/navigation";
     import { 
       adjectify,
@@ -28,7 +28,6 @@
     import GroupChart from "$lib/chart/GroupChart.svelte";
     import BarChart from "$lib/chart/BarChart.svelte";
     import ProfileChart from "$lib/chart/ProfileChart.svelte";
-    import AnalyticsBanner from "$lib/layout/AnalyticsBanner.svelte";
     import ScrollToTop from "$lib/ui/scroll.svelte";
     import { LayerCake } from "layercake";
 	import IButton from "$lib/layout/IButton.svelte";
@@ -563,11 +562,12 @@ function gps (value, place) {
 
 	}
 
-
-
+	function areaUrl(code) {
+		return resolve(`/${code}/`);
+	}
 
 	function moreData (subject, place) {
-
+		
 		// if (place.type != "ni") {
 		// 	return "You can also explore " + subject + " data for <a href = '" + base + "/" + place.parents[0].code + "/' data-sveltekit-noscroll data-sveltekit-keepfocus>" + place.parents[0].name + " </a>";
 		// } else {
@@ -577,19 +577,19 @@ function gps (value, place) {
 		if (place.type == "ni") {
 			return "";
 		} else if (place.type == "lgd") {
-			return "You can also explore " + subject + " data for <a href = '" + base + "/" + place.parents[0].code + "/' data-sveltekit-noscroll data-sveltekit-keepfocus>" + place.parents[0].name + "</a>";
+			return "You can also explore " + subject + " data for <a href = '" + areaUrl(place.parents[0].code) + "' data-sveltekit-noscroll data-sveltekit-keepfocus>" + place.parents[0].name + "</a>";
 		} else if (place.type == "dea") {
-			return "You can also explore " + subject + " data for <a href = '" + base + "/" + place.parents[0].code + "/' data-sveltekit-noscroll data-sveltekit-keepfocus>" + place.parents[0].name + "</a>"+
-			" and <a href = '" + base + "/" + place.parents[1].code + "/' data-sveltekit-noscroll data-sveltekit-keepfocus>" + place.parents[1].name + "</a>";
+			return "You can also explore " + subject + " data for <a href = '" + areaUrl(place.parents[0].code) + "' data-sveltekit-noscroll data-sveltekit-keepfocus>" + place.parents[0].name + "</a>"+
+			" and <a href = '" + areaUrl(place.parents[1].code) + "' data-sveltekit-noscroll data-sveltekit-keepfocus>" + place.parents[1].name + "</a>";
 		} else if (place.type == "sdz") {
-			return "You can also explore " + subject + " data for <a href = '" + base + "/" + place.parents[0].code + "/' data-sveltekit-noscroll data-sveltekit-keepfocus>" + place.parents[0].name + "</a>"+
-			", <a href = '" + base + "/" + place.parents[1].code + "/' data-sveltekit-noscroll data-sveltekit-keepfocus>" + place.parents[1].name + "</a>"+
-			" and <a href = '" + base + "/" + place.parents[2].code + "/' data-sveltekit-noscroll data-sveltekit-keepfocus>" + place.parents[2].name + "</a>";
+			return "You can also explore " + subject + " data for <a href = '" + areaUrl(place.parents[0].code) + "' data-sveltekit-noscroll data-sveltekit-keepfocus>" + place.parents[0].name + "</a>"+
+			", <a href = '" + areaUrl(place.parents[1].code) + "' data-sveltekit-noscroll data-sveltekit-keepfocus>" + place.parents[1].name + "</a>"+
+			" and <a href = '" + areaUrl(place.parents[2].code) + "' data-sveltekit-noscroll data-sveltekit-keepfocus>" + place.parents[2].name + "</a>";
 		} else if (place.type == "dz") {
-			return "You can also explore " + subject + " data for <a href = '" + base + "/" + place.parents[0].code + "/' data-sveltekit-noscroll data-sveltekit-keepfocus>" + place.parents[0].name + "</a>"+
-		", <a href = '" + base + "/" + place.parents[1].code + "/' data-sveltekit-noscroll data-sveltekit-keepfocus>" + place.parents[1].name + "</a>"+
-		", <a href = '" + base + "/" + place.parents[2].code + "/' data-sveltekit-noscroll data-sveltekit-keepfocus>" + place.parents[2].name + "</a>"+
-			" and <a href = '" + base + "/" + place.parents[3].code + "/' data-sveltekit-noscroll data-sveltekit-keepfocus>" + place.parents[3].name + "</a>";
+			return "You can also explore " + subject + " data for <a href = '" + areaUrl(place.parents[0].code) + "' data-sveltekit-noscroll data-sveltekit-keepfocus>" + place.parents[0].name + "</a>"+
+			", <a href = '" + areaUrl(place.parents[1].code) + "' data-sveltekit-noscroll data-sveltekit-keepfocus>" + place.parents[1].name + "</a>"+
+			", <a href = '" + areaUrl(place.parents[2].code) + "' data-sveltekit-noscroll data-sveltekit-keepfocus>" + place.parents[2].name + "</a>"+
+			" and <a href = '" + areaUrl(place.parents[3].code) + "' data-sveltekit-noscroll data-sveltekit-keepfocus>" + place.parents[3].name + "</a>";
 		}
 
 	}
@@ -720,32 +720,6 @@ function compareDensity (place) {
 							inputc.parentNode.removeChild(inputc);
 							alert("URL Copied.");
 						}
-
-						(function (win, doc) {
-							const testButton = doc.createElement("button");
-							testButton.setAttribute("type", "share");
-							if (testButton.type != "share") {
-								win.addEventListener("click", function (ev) {
-									ev = ev || win.event;
-									let target = ev.target;
-									let button = target.closest(
-										'button[type="share"]',
-									);
-									if (button) {
-										const title = "Share URL";
-										const url = win.location.href;
-										if (navigator.share) {
-											navigator.share({
-												title: title,
-												url: url,
-											});
-										} else {
-											copyToClipboard();
-										}
-									}
-								});
-							}
-						})(this, this.document);
 					</script>
 
 					<div width="100%">
@@ -760,17 +734,23 @@ function compareDensity (place) {
 							class="btn"
 							style="width: 33%"
 							title="Click to print this page to pdf or printer"
-							on:click={() => {
-								window.print();
-								return false;
-							}}
+							on:click={() => window.print()}
 							>Print / PDF
 						</button>
 						<button
 							class="btn"
 							style="width: 30%"
-							type="share"
 							alt="Share this page"
+							on:click={async () => {
+								const title = "Share URL";
+								const url = window.location.href;
+
+								if (navigator.share) {
+									await navigator.share({ title, url });
+								} else {
+									copyToClipboard();
+								}
+							}}
 							>Share
 						</button>
 					</div>
@@ -1919,7 +1899,7 @@ function compareDensity (place) {
 		NISRA statisticians within the
 		<a href='https://www.psni.police.uk/inside-psni/Statistics/'>Police Service of Northern Ireland</a>.
 		 Statistical information is available on 
-		 <a href='https://www.psni.police.uk/about-us/our-publications-and-reports/official-statistics/police-recorded-crime-statistics'>Police Recorded Crime Statistics</a>, <a href='https://www.psni.police.uk/about-us/our-publications-and-reports/official-statistics/anti-social-behaviour-statistics'>Anti-Social Behaviour Statistics</a>, <a href='https://www.psni.police.uk/about-us/our-publications-and-reports/official-statistics/domestic-abuse-statistics'>Domestic Abuse Statistics</a>, <a href='https://www.psni.police.uk/about-us/our-publications-and-reports/official-statistics/hate-motivation-statistics'>Hate Motivation Statistics</a>, <a href='https://www.psni.police.uk/official-statistics/drug-seizure-statistics'>Drug Seizure Statistics</a>, <a href='https://www.psni.police.uk/about-us/our-publications-and-reports/official-statistics/road-traffic-collision-statistics'>Road Traffic Collision Statistics</a>, <a href='https://www.psni.police.uk/official-statistics/security-situation-statistics'>Security Situation Statistics</a>, <a href='https://www.psni.police.uk/about-us/our-publications-and-reports/official-statistics/stop-and-search-statistics'>Stop and Search Statistics</a>, <a href='https://www.psni.police.uk/about-us/our-publications-and-reports/official-statistics/statistics-police-use-force'>Statistics on Police Use of Force</a>, <a href='https://www.psni.police.uk/about-us/our-publications-and-reports/official-statistics/motoring-offence-statistics'>Motoring Offence Statistics</a> and <a href='https://www.psni.police.uk/about-us/our-publications-and-reports/official-statistics/police-and-criminal-evidence-pace-order'>Police and Criminal Evidence (PACE) Order Statistics</a>.  Statistics on the <a href='https://www.nisra.gov.uk/statistics/ni-road-safety-partnership/ni-road-safety-partnership-statistics'>Road Safety Partnership (RSP)</a> detections for speeding or red light running are also published by NISRA PSNI statisticians.</p>
+		 <a href='https://www.psni.police.uk/about-us/our-publications-and-reports/official-statistics/police-recorded-crime-statistics'>Police Recorded Crime Statistics</a>, <a href='https://www.psni.police.uk/about-us/our-publications-and-reports/official-statistics/anti-social-behaviour-statistics'>Anti-Social Behaviour Statistics</a>, <a href='https://www.psni.police.uk/about-us/our-publications-and-reports/official-statistics/domestic-abuse-statistics'>Domestic Abuse Statistics</a>, <a href='https://www.psni.police.uk/about-us/our-publications-and-reports/official-statistics/hate-motivation-statistics'>Hate Motivation Statistics</a>, <a href='https://www.psni.police.uk/official-statistics/drug-seizure-statistics'>Drug Seizure Statistics</a>, <a href='https://www.psni.police.uk/about-us/our-publications-and-reports/official-statistics/road-traffic-collision-statistics'>Road Traffic Collision Statistics</a>, <a href='https://www.psni.police.uk/official-statistics/security-situation-statistics'>Security Situation Statistics</a>, <a href='https://www.psni.police.uk/about-us/our-publications-and-reports/official-statistics/stop-and-search-statistics'>Stop and Search Statistics</a>, <a href='https://www.psni.police.uk/about-us/our-publications-and-reports/official-statistics/statistics-police-use-force'>Statistics on Police Use of Force</a>, <a href='https://www.psni.police.uk/about-us/our-publications-and-reports/official-statistics/motoring-offence-statistics'>Motoring Offence Statistics</a> and <a href='https://www.psni.police.uk/about-us/our-publications-and-reports/official-statistics/police-and-criminal-evidence-pace-order'>Police and Criminal Evidence (PACE) Order Statistics</a>.  Statistics on the <a href='https://www.psni.police.uk/northern-ireland-road-safety-partnership/statistics'>Road Safety Partnership (RSP)</a> detections for speeding or red light running are also published by NISRA PSNI statisticians.</p>
 
 		 <p>Statistics on the police complaints system are published by
 <a href='https://www.policeombudsman.org/Statistics-and-Research'>

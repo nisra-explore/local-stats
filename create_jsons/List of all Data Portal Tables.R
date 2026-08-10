@@ -12,6 +12,7 @@ time <- unlist(data_portal$role$time)
 years <- data_portal$dimension$`TLIST(A1)`$category$index
 quarters <- data_portal$dimension$`TLIST(Q1)`$category$index
 months <- data_portal$dimension$`TLIST(M1)`$category$index
+weeks <- data_portal$dimension$`TLIST(W1)`$category$index
 year_range <- c()
 
 categories <- data_portal$id
@@ -26,12 +27,15 @@ for (i in 1:length(years)) {
       if (length(quarters[[i]]) == 1) quarters[[i]][1] else paste(quarters[[i]][1], "-", tail(quarters[[i]], 1))
     } else if (time[i] == "TLIST(M1)") {
       if (length(months[[i]]) == 1) months[[i]][1] else paste(months[[i]][1], "-", tail(months[[i]], 1))
+    } else if (time[i] == "TLIST(W1)") {
+      if (length(weeks[[i]]) == 1) weeks[[i]][1] else paste(weeks[[i]][1], "-", tail(weeks[[i]], 1))
     }
   
   cat_column[i] <- paste(categories[[i]], collapse = "; ") %>%
     gsub("TLIST(A1); ", "", ., fixed = TRUE) %>%
     gsub("TLIST(Q1); ", "", ., fixed = TRUE) %>%
     gsub("TLIST(M1); ", "", ., fixed = TRUE) %>%
+    gsub("TLIST(W1); ", "", ., fixed = TRUE) %>%
     gsub("STATISTIC; ", "", ., fixed = TRUE)
   
 }

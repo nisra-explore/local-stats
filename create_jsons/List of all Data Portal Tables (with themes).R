@@ -15,6 +15,7 @@ time <- unlist(data_portal$role$time)
 years <- data_portal$dimension$`TLIST(A1)`$category$index
 quarters <- data_portal$dimension$`TLIST(Q1)`$category$index
 months <- data_portal$dimension$`TLIST(M1)`$category$index
+weeks <- data_portal$dimension$`TLIST(W1)`$category$index
 
 subject <- c()
 product <- c()
@@ -34,12 +35,16 @@ for (i in 1:length(matrices)) {
   } else if (time[i] == "TLIST(M1)") {
     latest_date <- tail(months[[i]], 1)
     year_range[i] <- if (length(months[[i]]) == 1) latest_date else paste(months[[i]][1], "-", latest_date)
+  } else if (time[i] == "TLIST(M1)") {
+    latest_date <- tail(weeks[[i]], 1)
+    year_range[i] <- if (length(weeks[[i]]) == 1) latest_date else paste(weeks[[i]][1], "-", latest_date)
   }
   
   cat_column[i] <- paste(categories[[i]], collapse = "; ") %>%
     gsub("TLIST(A1); ", "", ., fixed = TRUE) %>%
     gsub("TLIST(Q1); ", "", ., fixed = TRUE) %>%
     gsub("TLIST(M1); ", "", ., fixed = TRUE) %>%
+    gsub("TLIST(W1); ", "", ., fixed = TRUE) %>%
     gsub("STATISTIC; ", "", ., fixed = TRUE)
   
   fetch_error <- TRUE
