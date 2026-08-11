@@ -1,5 +1,5 @@
 <script>
-    import { base } from "$app/paths";
+    import { asset } from "$app/paths";
     import GreyBox from "$lib/layout/GreyBox.svelte";
 
     export let id;
@@ -36,7 +36,7 @@
         >
             <span class="accordion-button-title">
                 <img
-                    src="{base}/img/{img}"
+                    src={asset(`/img/${img}`)}
                     alt="logo"
                     height="40"
                     class="accordion-dept-logo"

@@ -2,7 +2,7 @@
 
 import { onMount } from 'svelte';
   import { afterNavigate } from '$app/navigation';
-  import { base } from "$app/paths";
+  import { asset } from "$app/paths";
   import { tick } from 'svelte'; // Svelte's tick function ensures updates are applied before next DOM refresh.
 
   export let id;
@@ -389,7 +389,7 @@ function get_i_button_info () {
 			info: "<p>From Census 2021 data - "+ "<a href='https://explore.nisra.gov.uk/area-explorer-2021/'><strong>Census Area Explorer</strong></a></p>"+
 			"Person's main language as declared in the Census." + 
 					"Statistics for all language questions are restricted" + 
-					"to persons aged 3 and over. <a" + 
+					"to persons aged 3 and over. <a " + 
 					"href='https://www.nisra.gov.uk/publications/census-2021-statistical-bulletins'" + 
 					"><strong>Statistical bulletins</strong></a>"},
 			
@@ -499,7 +499,7 @@ async function handleClick() {
 	bind:this={row}
 >
 	<div class="blocktitle" on:click={changeAria}>
-		{i_button_info[id].title} <img class = "i-button" src = "{base}\img\i-button.svg" alt = "Information button">
+		{i_button_info[id].title} <img class="i-button" src={asset("/img/i-button.svg")} alt="Information button">
 	</div>
 </div>
 <div class="collapse" id="{id}-info">
