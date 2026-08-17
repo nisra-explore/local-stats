@@ -747,7 +747,7 @@
         "dataset_url": "https://data.nisra.gov.uk/table/GPPRACPATLGD",
         "geog_level": "lgd",
         "last_updated": "2026-07-31",
-        "email": "info.bso@hscni.net",
+        "email": "BSO_PrimaryCare.Statistics@hscni.net",
         "title": "GPs practices and registered patients",
         "year": "2026"
       }
@@ -758,7 +758,7 @@
         "dataset_url": "https://data.nisra.gov.uk/table/FPSGDSDSLGD",
         "geog_level": "lgd",
         "last_updated": "2026-06-22",
-        "email": "info.bso@hscni.net",
+        "email": "BSO_PrimaryCare.Statistics@hscni.net",
         "title": "General dental services dentists and surgeries",
         "year": "2025/26"
       }
@@ -769,7 +769,7 @@
         "dataset_url": "https://data.nisra.gov.uk/table/FPSGDSDRLGD",
         "geog_level": "lgd",
         "last_updated": "2026-06-22",
-        "email": "info.bso@hscni.net",
+        "email": "BSO_PrimaryCare.Statistics@hscni.net",
         "title": "General dental services dental registrations",
         "year": "2025/26"
       }
