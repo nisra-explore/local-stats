@@ -615,8 +615,8 @@
     },
     "Env_concern": {
       "perc": {
-        "CONCERNENVI": 68,
-        "NOTCONCERNENVI": 32
+        "CONCERNENVI": 61,
+        "NOTCONCERNENVI": 39
       }
     },
     "Env_waste": {
@@ -724,7 +724,7 @@
         "dataset_url": "https://data.nisra.gov.uk/table/GPPRACPATLGD",
         "geog_level": "lgd",
         "last_updated": "2026-07-31",
-        "email": "info.bso@hscni.net",
+        "email": "BSO_PrimaryCare.Statistics@hscni.net",
         "title": "GPs practices and registered patients",
         "year": "2026"
       }
@@ -735,7 +735,7 @@
         "dataset_url": "https://data.nisra.gov.uk/table/FPSGDSDSLGD",
         "geog_level": "lgd",
         "last_updated": "2026-06-22",
-        "email": "info.bso@hscni.net",
+        "email": "BSO_PrimaryCare.Statistics@hscni.net",
         "title": "General dental services dentists and surgeries",
         "year": "2025/26"
       }
@@ -746,7 +746,7 @@
         "dataset_url": "https://data.nisra.gov.uk/table/FPSGDSDRLGD",
         "geog_level": "lgd",
         "last_updated": "2026-06-22",
-        "email": "info.bso@hscni.net",
+        "email": "BSO_PrimaryCare.Statistics@hscni.net",
         "title": "General dental services dental registrations",
         "year": "2025/26"
       }
@@ -899,10 +899,10 @@
         "table_code": "CHSCONCERNLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/CHSCONCERNLGD",
         "geog_level": "lgd",
-        "last_updated": "2025-08-19",
+        "last_updated": "2026-08-19",
         "email": "env.stats@daera-ni.gov.uk",
         "title": "Continuous Household Survey: Concern about the environment",
-        "year": "2024/25"
+        "year": "2025/26"
       }
     ],
     "Env_problem": [
