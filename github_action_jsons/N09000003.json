@@ -507,8 +507,8 @@
     },
     "farms": {
       "value": {
-        "F": 102,
-        "FA": 138
+        "F": 111,
+        "FA": 146
       }
     },
     "tourism": {
@@ -566,8 +566,8 @@
     },
     "houseprices": {
       "value": {
-        "SP": 181033.24,
-        "HPI": 121.18
+        "SP": 184768.0532,
+        "HPI": 123.6807
       }
     },
     "Satisfy": {
@@ -694,10 +694,10 @@
         "table_code": "LPSHPI01",
         "dataset_url": "https://data.nisra.gov.uk/table/LPSHPI01",
         "geog_level": "lgd",
-        "last_updated": "2026-06-10",
+        "last_updated": "2026-08-21",
         "email": "lps.statisticsbranch@finance-ni.gov.uk",
         "title": "House Price Index and Standardised Price",
-        "year": "2026Q1"
+        "year": "2026Q2"
       }
     ],
     "LE": [
@@ -1024,10 +1024,10 @@
         "table_code": "FCLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/FCLGD",
         "geog_level": "lgd",
-        "last_updated": "2026-06-19",
+        "last_updated": "2026-08-21",
         "email": "env.stats@daera-ni.gov.uk",
         "title": "Farm Census",
-        "year": "2025"
+        "year": "2024"
       }
     ],
     "tourism": [

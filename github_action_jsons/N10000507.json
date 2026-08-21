@@ -503,7 +503,7 @@
         "dataset_url": "https://data.nisra.gov.uk/table/GPPRACPATDEA",
         "geog_level": "dea",
         "last_updated": "2026-07-31",
-        "email": "info.bso@hscni.net",
+        "email": "BSO_PrimaryCare.Statistics@hscni.net",
         "title": "GPs Practices and Registered Patients",
         "year": "2026"
       }
@@ -514,7 +514,7 @@
         "dataset_url": "https://data.nisra.gov.uk/table/FPSGDSDSDEA",
         "geog_level": "dea",
         "last_updated": "2026-06-22",
-        "email": "info.bso@hscni.net",
+        "email": "BSO_PrimaryCare.Statistics@hscni.net",
         "title": "General dental services dentists and surgeries",
         "year": "2025/26"
       }
@@ -525,7 +525,7 @@
         "dataset_url": "https://data.nisra.gov.uk/table/FPSGDSDRDEA",
         "geog_level": "dea",
         "last_updated": "2026-06-22",
-        "email": "info.bso@hscni.net",
+        "email": "BSO_PrimaryCare.Statistics@hscni.net",
         "title": "General dental services dental registrations",
         "year": "2025/26"
       }
@@ -634,10 +634,10 @@
         "table_code": "FCDEA",
         "dataset_url": "https://data.nisra.gov.uk/table/FCDEA",
         "geog_level": "dea",
-        "last_updated": "2026-06-19",
+        "last_updated": "2026-08-21",
         "email": "env.stats@daera-ni.gov.uk",
         "title": "Farm Census",
-        "year": "2025"
+        "year": "2024"
       }
     ]
   }
