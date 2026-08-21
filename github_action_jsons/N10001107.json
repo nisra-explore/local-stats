@@ -431,8 +431,8 @@
     },
     "farms": {
       "value": {
-        "F": 49,
-        "FA": 82
+        "F": 45,
+        "FA": 78
       }
     },
     "Attainment": {
@@ -652,7 +652,7 @@
         "last_updated": "2026-08-21",
         "email": "env.stats@daera-ni.gov.uk",
         "title": "Farm Census",
-        "year": "2024"
+        "year": "2025"
       }
     ]
   }

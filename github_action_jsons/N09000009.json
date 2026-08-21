@@ -492,7 +492,7 @@
     },
     "farms": {
       "value": {
-        "F": 4442,
+        "F": 4388,
         "FA": 6752
       }
     },
@@ -1012,7 +1012,7 @@
         "last_updated": "2026-08-21",
         "email": "env.stats@daera-ni.gov.uk",
         "title": "Farm Census",
-        "year": "2024"
+        "year": "2025"
       }
     ],
     "tourism": [
