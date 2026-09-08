@@ -2,6 +2,7 @@
 	import Section from "$lib/layout/Section.svelte";
 	import { base } from "$app/paths";
 	import { app_inputs} from "$lib/config";
+	import { asset } from "$app/paths";
 
 	let searchInput;
 	let resultTable;
@@ -111,7 +112,7 @@
 					placeholder="Enter postcode..."
 					bind:this={searchInput}
 				>
-				<button on:click={search}><img src = "{base}/img/search.svg" alt = "Search button" width="40px"></button>
+				<button on:click={search}><img src = "{asset("/img/search.svg")}" alt = "Search button" width="40px"></button>
 				</form>
 				<div bind:this={resultTable}></div>
 			</div>
