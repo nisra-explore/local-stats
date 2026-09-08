@@ -811,6 +811,98 @@ data <- data.frame(geog_code = rep(json_data$dimension$LGD2014$category$index, l
 
 df_lps = rbind(df_lps, data)
 
+##### housing stock #####
+df_housingstock <- list()
+
+dataset_short <- "HousingStock"
+dataset_long <- "NIHSLGD"
+
+latest_year <- data_portal$dimension$`TLIST(A1)`$category$index[[which(matrices == dataset_long)]] %>% tail(1)
+
+json_data <- json_data_from_rpc(
+  query = paste0(
+    '{
+  "jsonrpc": "2.0",
+  "method": "PxStat.Data.Cube_API.ReadDataset",
+  "params": {
+    "class": "query",
+    "id": [
+      "TLIST(A1)",
+      "ACCTYPE"
+    ],
+    "dimension": {
+      "TLIST(A1)": {
+        "category": {
+          "index": [
+            "', latest_year, '"
+          ]
+        }
+      },
+      "ACCTYPE": {
+        "category": {
+          "index": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        }
+      }
+    },
+    "extension": {
+      "pivot": null,
+      "codes": false,
+      "language": {
+        "code": "en"
+      },
+      "format": {
+        "type": "JSON-stat",
+        "version": "2.0"
+      },
+      "matrix": "', dataset_long, '"
+    },
+    "version": "2.0"
+  }
+}')
+)
+
+df_meta_data <- rbind(df_meta_data, t(c(
+  dataset = dataset_short,
+  "table_code" = dataset_long,
+  "year" = latest_year,
+  "geog_level" = "lgd",
+  "dataset_url" = paste0("https://data.nisra.gov.uk/table/", dataset_long),
+  "last_updated" = format(substring(updated[which(matrices == dataset_long)], 1, 10), format = "%a"),
+  "email" = json_data$extension$contact$email,
+  "title" = data_portal$label[which(matrices == dataset_long)],
+  "note" = json_data$note
+)))
+
+categories <- unlist(json_data$dimension$ACCTYPE$category$label)
+
+geog_codes <- c()
+
+for (i in 1:length(json_data$dimension$LGD2014$category$index)) {
+  geog_codes <- c(
+    geog_codes,
+    rep(json_data$dimension$LGD2014$category$index[i], length(categories))
+  )
+}
+
+data <- data.frame(geog_code = geog_codes) %>%
+  mutate(
+    statistic = rep_len(categories, nrow(.)),
+    VALUE = json_data$value
+  ) %>%
+  group_by(geog_code) %>%
+  mutate(
+    perc = VALUE / sum(VALUE) * 100,
+    source = dataset_short
+  ) %>%
+  arrange(geog_code, statistic)
+
+df_housingstock <- rbind(df_housingstock, data)
+
 #### Health ####
 ##### LE #####
 ###### LE by DEA ######
@@ -2610,7 +2702,7 @@ for (i in 1:length(json_data$dimension$STATISTIC$category$index)) {
 data <- data.frame(geog_code = rep(geog_codes, length(unique(categories))),
                    VALUE = json_data$value,
                    statistic = categories,
-                   source = dataset_short) %>% 
+                   source = dataset_short) %>%
   group_by(geog_code)
 
 data_value <- data %>%
@@ -2691,7 +2783,7 @@ for (i in 1:length(json_data$dimension$STATISTIC$category$index)) {
 data <- data.frame(geog_code = rep(geog_codes, length(unique(categories))),
                    VALUE = json_data$value,
                    statistic = categories,
-                   source = dataset_short) %>% 
+                   source = dataset_short) %>%
   group_by(geog_code)
 
 data_value <- data %>%
@@ -5167,7 +5259,8 @@ df_dp_all_values <- unique(bind_rows(
 
 df_dp_all_text <- bind_rows(df_admissions_top, df_crime_text, df_env_problems)
 
-df_dp_all_perc <- unique(rbind( df_lmr_perc, df_indust, df_school_perc, df_popage, 
+df_dp_all_perc <- unique(rbind( df_lmr_perc, df_indust, df_school_perc, df_popage,
+                                df_housingstock, 
                                 df_school_destination_perc, df_env_perc, df_business_perc, 
                                 df_crime_perc, df_business_perc_niets))
 
