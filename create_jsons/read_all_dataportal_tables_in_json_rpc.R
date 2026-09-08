@@ -51,7 +51,7 @@ date_of_last_run <- readRDS("create_jsons/date_of_last_run.RDS")
 tables_with_updates <- updates_table %>%
   filter(updated >= date_of_last_run$date)
 
-geog_types_to_update <- c("ctry")
+geog_types_to_update <- c("ctry", "lgd")
 
 for (geog_type in c("dea", "lgd", "sdz", "dz")) {
   
