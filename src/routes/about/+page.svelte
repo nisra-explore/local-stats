@@ -2,7 +2,16 @@
 	import Section from "$lib/layout/Section.svelte";
 	import { base } from "$app/paths";
 
-  </script>
+	export let data;
+
+	function formatLastUpdated(value) {
+		if (!value) return value;
+		const numbers = String(value).split("-");
+		return numbers.length === 3
+			? `${numbers[2]}/${numbers[1]}/${numbers[0]}`
+			: value;
+	}
+</script>
 
 
 
@@ -17,49 +26,43 @@
 
 
 		<h2>What is the app?</h2>
-		<p>Welcome to NISRA's Northern Ireland Local Statistics Explorer: a high level overview of Northern Ireland's statistical information</p>
+		<p>The Northern Ireland Local Statistics Explorer provides a high-level overview of key statistics for Northern Ireland and its local areas.</p>
 
-		<p>Explore the collection of statistical information published by the Northern Ireland Statistics and Research Agency (NISRA) with our 
-			interactive web page, the NISRA Local Statistics Explorer. It is designed to provide users with easy access to key statistics for Northern Ireland and its local areas. </p>
+		<p>The interactive application brings together a selection of statistical information published by the Northern Ireland Statistics and Research Agency (NISRA), making it easier to explore and compare statistics for different areas.</p>
 
-		<h2>Features:</h2>
+		<h2>Features</h2>
 		<ul> 
-			<li>Comprehensive Data Coverage: a selection of statistical data covering various aspects of life in Northern Ireland, including demographics, economy, education, health, and more.</li>
-			<li>User-Friendly Interface: Navigate through the intuitive interface, designed to make exploring statistical information a seamless experience for users of all levels.</li>
-			<li>Data Downloads and Sharing: Get links to download datasets for further analysis.</li>
+			<li><strong>Comprehensive data coverage:</strong> Explore a selection of statistics covering different aspects of life in Northern Ireland, including population, the economy, education, health and more.</li>
+			<li><strong>User-friendly interface:</strong> Navigate and explore statistical information through an intuitive interface designed for a wide range of users.</li>
+			<li><strong>Data downloads:</strong> Follow links to source datasets to download data for further analysis.</li>
+			<li><strong>Supporting information:</strong> Use the &lsquo;i&rsquo; button beside each statistic to view definitions, data sources, contact details and the date the statistic was last updated.</li>
+			<li><strong>More statistics:</strong> Use the More statistics section within each topic to find related statistics that are available elsewhere.</li>
+
 		</ul>
 		
 		<h2>Sources of data</h2>
 		
-		<p>All of the data is sourced from the  <a href="https://data.nisra.gov.uk">NISRA Data Portal</a> and the <a href="https://explore.nisra.gov.uk/area-explorer-2021/">Census Area Explorer</a>.</p>
-		<p>At each statistic the &lsquo;i&rsquo; button provides definitions, source, contact details and date last updated.&nbsp; 
-			A more statistics section under each topic provides details of other statistics that are available.</p>
+		<p>Data in the Local Statistics Explorer is sourced from the <a href="https://data.nisra.gov.uk">NISRA Data Portal</a> and the <a href="https://explore.nisra.gov.uk/area-explorer-2021/">Census Area Explorer</a>.</p>
 		
 		<h3>The NISRA Data Portal</h3>
-		<p>The <a href="https://data.nisra.gov.uk">NISRA Data Portal</a> is a repository for data on our population, society and economy.  </p>
-		<p>The Data Portal is continually refreshed with new and updated datasets from across the NICS and Public Sector.  
-			It gives users the opportunity to view and filter data sets, plot interactive charts and visualise data on interactive maps, save queries, create favourite datasets and widgets, access data in multiple formats - xlsx, csv, JSON-stat, px and share results and automate processes using API queries.</p>
+		<p>The <a href="https://data.nisra.gov.uk">NISRA Data Portal</a> is the central access point for official statistics produced by NISRA. It brings together a wide range of datasets covering Northern Ireland's population, society and economy.  </p>
+		<p>The Data Portal is continually refreshed with new and updated datasets from across the Northern Ireland Civil Service (NICS) and wider public sector.  
+			Users can search and filter datasets, create tables, explore data through interactive charts and maps, save queries and favourite datasets, and download data in a range of formats, including XLSX, CSV, JSON-stat and PX. Data can also be accessed programmatically using API queries.</p>
 		
-		<p><a href = "https://www.nisra.gov.uk/nisra-data-portal-faqs-and-training-materials">Training Materials</a> (NISRA Data Portal user guide, instructional video and FAQ section) have been published to help you navigate and use the new system.  </p>
-		<p>You can sign-up to attend online training sessions by emailing <a href="mailto:info@nisra.gov.uk">info@nisra.gov.uk</a> to register your interest.  Further help, if needed, will also be available on request.</p>
+		<p><a href = "https://www.nisra.gov.uk/nisra-data-portal-faqs-and-training-materials">Training Materials</a> including user guidance and instructional videos, are available to help you use the Data Portal.  </p>
+		<p>You can register your interest in online training or request further help by emailing <a href="mailto:info@nisra.gov.uk">info@nisra.gov.uk</a>. </p>
 
 
 		<h3>The Census Area Explorer</h3>
-		<p>The census happens only once every 10 years. It gives us the most accurate estimate of all the people and households in Northern Ireland.  The last census in Northern Ireland took place on 21 March 2021.</p>
-		<p>You can explore the results of Census 2021 for Northern Ireland through the Census Area Explorer, the NISRA website or the Flexible Table Builder.</p>	
+		<p>The census takes place once every 10 years and provides the most accurate estimate of the people and households in Northern Ireland. The most recent census took place on 21 March 2021.</p>
+		<p>You can explore Census 2021 results using the Census Area Explorer, the NISRA website and the Flexible Table Builder.</p>	
 		
-		<p>The <a href="https://explore.nisra.gov.uk/area-explorer-2021/">Census Area Explorer</a> is an easy to use interactive tool that the user can choose an area and compare the Census 2021 results with Northern Ireland or the Census 2011.</p>
-		<p>The <a href="https://www.nisra.gov.uk/statistics/census">NISRA website</a> has news, results, outputs prospectus and information on previous censuses.</p>
-		<p>	The <a href="https://build.nisra.gov.uk/en/">Flexible Table Builder</a> enables you to build your own table or search through and customise ready-made tables.</p>
-
-		<h3>Disclosure</h3>
-		<p>Different disclosure rules apply for each of the datasets.  Please refer to the link to the data in the &lsquo;i&rsquo; button.  Detailed metadata and notes are available on the Data Portal and the Census webpages.</p>
-
-		<h3>Rounding</h3>
-		<p>Different rounding rules apply for each of the datasets.  Please refer to the link to the data in the &lsquo;i&rsquo; button.  Detailed metadata and notes are available on the Data Portal and the Census webpages.</p>
-
+		<p>The <a href="https://explore.nisra.gov.uk/area-explorer-2021/">Census Area Explorer</a> is an interactive tool that allows you to select an area and explore Census 2021 results, including comparisons with Northern Ireland and Census 2011.</p>
+		<p>The <a href="https://www.nisra.gov.uk/statistics/census">NISRA website</a> provides Census news, results, publications and information about previous censuses.</p>
+		<p>The <a href="https://build.nisra.gov.uk/en/">Flexible Table Builder</a> allows you to build customised Census 2021 tables or search for and customise ready-made tables.</p>
 
 		<h3>Geographical Levels</h3>
+		<p>The Local Statistics Explorer provides statistics for several geographical levels.</p>
 
 		<table>
 			<thead>
@@ -78,7 +81,7 @@
 				<td>11</td>
 			  </tr>
 			  <tr>
-				<td>District Electoral Area (DEA2021), called electoral areas in this web application</td>
+				<td>District Electoral Area (DEA2014), called electoral areas in this web application</td>
 				<td>80</td>
 			  </tr>
 			  <tr>
@@ -94,36 +97,69 @@
 
 
 		<h4>Administrative  geographies</h4>
-		<p>Northern Ireland is divided into 11 Local Government Districts (LGD) which are also known as councils.  
-			 Further information is available in an <a href='https://www.nisra.gov.uk/sites/nisra.gov.uk/files/publications/11DC_Guidance_1_0.pdf'>LGD 2014 information paper</a> produced by NISRA.
-			 The 11 new Districts became operational in April 2015. Each LGD is subdivided into district electoral areas.</p>
-		 <p>District Electoral Areas (DEA’s) are the units made up of groups of local government wards, usually of around 5-7, which are used for the purpose of administration of local government elections and are also used to help District Councils develop strategy for service delivery.
-			 </p> 
+		<p>Northern Ireland is divided into 11 Local Government Districts (LGD), also known as councils. The 11 new Districts became operational in April 2015. </p>
+		<p>Further information is available in the <a href='https://www.nisra.gov.uk/sites/nisra.gov.uk/files/publications/11DC_Guidance_1_0.pdf'>LGD 2014 information paper</a> produced by NISRA.</p>
+		<p>Each LGD is subdivided into district electoral areas.</p>
+		<p>District Electoral Areas (DEAs) are the units made up of groups of local government wards, usually around 5 to 7, which are used for the purpose of administration of local government elections and are also used to help District Councils develop strategy for service delivery.</p> 
 
 		<h4>Statistical geographies</h4>
-		<p>Data Zones and Super Data Zones are statistical output geographies created to support the release of local-level Census 2021 statistics.</p>
-		<p>There are 850 Super Data Zones (SDZ2021) across Northern Ireland and the 3,780 Data Zones (DZ2021) nest within this geography. These two geographies nest within the 80 District Electoral Areas (DEA2014) and 11 Local Government Districts (LGD2014).</p>
-		<p>There is more information in <a href="https://www.nisra.gov.uk/publications/census-2021-output-geography-information-papers">Census 2021 output geography information papers</a></p>	
+		<p>Data Zones and Super Data Zones are statistical output geographies created to support the publication of local-level Census 2021 statistics.</p>
+		<p>There are 3,780 Data Zones (DZ2021) across Northern Ireland. These nest within 850 Super Data Zones (SDZ2021), which in turn nest within the 80 District Electoral Areas (DEA2014) and 11 Local Government Districts (LGD2014).</p>
+		<p>More information is available in the <a href="https://www.nisra.gov.uk/publications/census-2021-output-geography-information-papers">Census 2021 output geography information papers</a></p>	
 
-		<p>A summary of other NISRA Statistical Geographies is available in the <a href="https://www.nisra.gov.uk/files/nisra/publications/nisra-geography-fact-sheet.pdf" >NISRA Geography FactSheet</a></p>
+		<p>A summary of NISRA statistical geographies is also available in the <a href="https://www.nisra.gov.uk/files/nisra/publications/nisra-geography-fact-sheet.pdf" >NISRA Geography FactSheet</a></p>
 		
 		
 		<h4>Postcodes</h4>
-			<p>Postcodes are sourced from the <a href="https://www.nisra.gov.uk/support/geography/central-postcode-directory">Central Postcode Directory (CPD)</a>.  The CPD is a list of postcodes in Northern Ireland, with the average location of the addresses in each postcode. It is used to provide a direct lookup between postcodes and a range of administrative and statistical geographies including Local Government Districts, District Electioral Areas, Data Zones, Super Data Zones and Settlements.   
-				The version of the CPD used is July 2024.</p>
+			<p>Postcodes are sourced from the <a href="https://www.nisra.gov.uk/support/geography/central-postcode-directory">Central Postcode Directory (CPD)</a>. </p>   
+			<p>The CPD contains Northern Ireland postcodes and their average locations. It provides a lookup between postcodes and a range of administrative and statistical geographies, including Local Government Districts, District Electoral Areas, Data Zones, Super Data Zones and settlements. </p>
+			<p>The version of the CPD used is July 2024.</p>
 			
 		<h4>Boundary Files</h4>
-			<p>The boundary files used in the application are available to download at :</p>
+			<p>Boundary files used by the application are available from the following sources: </p>
 			<ul>
-				<li><a href="https://www.opendatani.gov.uk/@land-property/osni-open-data-largescale-boundaries-local-government-districts-1993">Local Government Districts (1993)</a></li>
+				<li><a href="https://www.opendatani.gov.uk/@land-property-services-ordnance-survey-of-northern-ireland/osni-open-data-largescale-boundaries-local-government-districts-2012">Local Government Districts (2012)</a></li>
 				<li><a href="https://www.nisra.gov.uk/support/geography/super-data-zones-census-2021">Super Data Zones</a></li>
 				<li><a href="https://www.nisra.gov.uk/support/geography/data-zones-census-2021">Data Zones </a></li>
 			</ul>
 
 		<h4>Background Mapping</h4>
-			<p>OpenStreet Map has been used to provide background mapping</p>
+			<p>OpenStreetMap is used to provide the background mapping in the application.</p>
 
 
+		<h3>Disclosure and rounding</h3>
+		<p>Different disclosure and rounding rules apply to the datasets included in the Local Statistics Explorer.</p>
+		<p>Use the &lsquo;i&rsquo; button beside a statistic to follow the link to its source data. Detailed metadata, definitions, methodology and notes are available from the NISRA Data Portal and Census webpages.</p>
+
+		<h2>Timeliness</h2>
+		<p>The Local Statistics Explorer is refreshed daily with updated data from the NISRA Data Portal.</p>
+		<p>The &lsquo;i&rsquo; button beside each statistic shows the date on which that statistic was last updated.</p>
+
+		<div class="div-grey-box new-datasets" aria-labelledby="new-datasets-heading">
+			<h3 id="new-datasets-heading">Latest Updates</h3>
+
+			{#if data.new_datasets.length > 0}
+				<ul>
+					{#each data.new_datasets as item (item.table_code || item.dataset_url)}
+						<li>
+							<a href={item.dataset_url} target="_blank" rel="noreferrer">
+								{item.title}
+							</a>
+
+							<div>
+								Last updated: {formatLastUpdated(item.last_updated)}
+
+								{#if item.year}
+									({item.year})
+								{/if}
+							</div>
+						</li>
+					{/each}
+				</ul>
+			{:else}
+				<p>No new datasets have been added recently.</p>
+			{/if}
+		</div>
 
 		<h2>Video guides</h2>
 		<ul>
@@ -131,24 +167,20 @@
 			<li><a href="https://www.youtube.com/watch?v=HwGsqgdsiHM">Data Portal</a></li>
 			<li><a href="https://www.youtube.com/watch?v=a6cn2yyITHU">Flexible Table Builder</a></li>
 		</ul>
-	
-	
-	
-		<h2>Timeliness</h2>
-		<p>This web application is refreshed daily with updated data from the NISRA data portal.</p>
 
-		<h2>Versions</h2>
-		<p>This app was originally released in October 2024.</p>
+		<h2>Version history</h2>
+		<p>The Northern Ireland Local Statistics Explorer was first released in October 2024.</p>
 		<!-- <p>In XXXX 2024, further data was added on XXXX</p> -->
 		
-		<h2>About this app</h2>
-		<p>This web application is based on and inspired by the&nbsp;<a href="https://github.com/ONSvisual">ONS Digital Content team prototypes</a>. It has been modified by NISRA and released as a prototype to explore statistical data for Northern Ireland.</p>
+		<h2>About this application</h2>
+		<p>The Local Statistics Explorer is based on and inspired by prototypes developed by the&nbsp;<a href="https://github.com/ONSvisual">ONS Digital Content team prototypes</a>. It has been adapted by NISRA to enable users to explore statistics for Northern Ireland and its local areas.</p>
+		<p>The application is being developed as a prototype and will continue to be improved in response to user feedback.</p>
 
 		<h2>Feedback and contact details</h2>
-		<p>This is a prototype application and we are very keen to get feedback on how it can be improved.</p>
-		<p>We welcome feedback from users through our short <a href="https://dttselfserve.nidirect.gov.uk/NISRA/RateIt#/Northern_Ireland_Local_Statistics_Explorer">survey</a>.</p>
+		<p>We welcome feedback on the Local Statistics Explorer and how it could be improved.</p>
+		<p>You can provide feedback through our short <a href="https://dttselfserve.nidirect.gov.uk/NISRA/RateIt#/Northern_Ireland_Local_Statistics_Explorer">survey</a>.</p>
 		<p>Contact details for each of the datasets are available in the &lsquo;i&rsquo; button.</p>
-		<p>Contact <a href="mailto:explore@nisra.gov.uk">explore@nisra.gov.uk</a> for further information.</p>
+		<p>For general enquiries about the Local Statistics Explorer, email <a href="mailto:explore@nisra.gov.uk">explore@nisra.gov.uk</a>.</p>
 
 	</div>
 
@@ -166,7 +198,49 @@
 		th {
 		  background-color: #f2f2f2;
 		}
+
+		/* Styles for the New Datasets section */
+  		.new-datasets {
+    		margin-top: 30px;
+  		}
+
+  		.new-datasets h3 {
+    		margin: 0 0 12px;
+    		color: #3878c5;
+    		font-size: 1.5em;
+    		line-height: 1.2;
+  		}
+
+  		.new-datasets ul {
+    		list-style: none;
+    		margin: 0;
+    		padding: 0;
+  		}
+
+  		.new-datasets li {
+    		padding: 10px 0;
+    		border-bottom: 1px solid #d9d9d9;
+    		overflow-wrap: anywhere;
+  		}
+
+  		.new-datasets li:first-child {
+    		padding-top: 0;
+  		}
+
+  		.new-datasets li:last-child {
+    		padding-bottom: 0;
+    		border-bottom: 0;
+  		}
+
+  		.new-datasets a {
+    		color: #3878c5;
+    		font-weight: bold;
+  		}
+
+  		.new-datasets li div,
+  		.new-datasets > p {
+    		margin: 4px 0 0;
+  		}
 	  </style>
 
-	  
 </Section>

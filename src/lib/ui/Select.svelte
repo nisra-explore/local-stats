@@ -118,10 +118,20 @@
 		<span class="selection">{selectedItem[label]} {#if group}<small>{selectedItem[group]}</small>{/if}</span>
 	</a>
 	{:else}
-	<a id="toggle" on:click={toggle} on:focus={toggle} >
-		<input on:keydown={typing} type="text" placeholder={placeholder} bind:value={filter} autocomplete="false" bind:this={input} on:keyup={doKeyup} autofocus="autofocus" on:focus={(e) => e.currentTarget.select()} />
+	<div class="search-control">
+		<a id="toggle" on:click={toggle} on:focus={toggle}>
+			<input on:keydown={typing} type="text" placeholder={placeholder} bind:value={filter} autocomplete="false" bind:this={input} on:keyup={doKeyup} autofocus="autofocus" on:focus={(e) => e.currentTarget.select()} />
+		</a>
 
-	</a>
+		<button
+			class="btn search-button"
+			type="button"
+			aria-label="Search"
+			on:click={toggle}
+		>
+			<img src="/img/search.svg" alt="" />
+		</button>
+	</div>
 	{/if}
 	
 	{#if expanded}
@@ -157,6 +167,20 @@
 	#select {
 		text-align: left;
 		padding-bottom: 5px;
+	}
+	.search-control {
+    display: flex;
+    align-items: stretch;
+	}
+	.search-control #toggle {
+		flex: 1;
+	}
+	.search-button {
+		margin-bottom: 0;
+	}
+	.search-button img {
+		width: 24px;
+		height: 24px;
 	}
 	a {
 		text-decoration: none;

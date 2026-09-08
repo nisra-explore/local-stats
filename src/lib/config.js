@@ -164,6 +164,13 @@ export const topics = {
 		{ category: 'Age 65+', label: '65+' }
 	],
 
+	HousingStock: [
+		{ category: 'Apartment', label: 'Apartment' },
+		{ category: 'Detached', label: 'Detached' },
+		{ category: 'Semi-Detached', label: 'Semi-Detached' },
+		{ category: 'Terrace', label: 'Terrace' }
+	],
+
 	age: [
 		{ category: 'a0to14', label: '0-14' },
 		{ category: 'a15to39', label: '15-39' },

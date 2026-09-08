@@ -182,11 +182,11 @@
 					}
 				}
 				if (place_data[category_lookup] <= 100) {
-					newdata.push({group: "Northern Ireland",
+					newdata.push({group: data.ni.name,
 								  category: label_lookup,
 								  perc: ni_data[category_lookup],
 								  width: 0});
-					if (data.place.name != "Northern Ireland") {
+					if (data.place.name != data.ni.name) {
 						newdata.push({group: data.place.name,
 									  category: label_lookup,
 									  perc: place_data[category_lookup],
@@ -312,6 +312,18 @@
       goto(`${base}/${ev.detail.value}/`, { noScroll: true, keepFocus: true });
     }
 
+	function compareSelect(ev) {
+      let compare = ev.currentTarget.value;
+      // Keep the address clean when the default (NI) is chosen.
+      let query = compare == "N92000002" ? "" : `?compare=${compare}`;
+      goto(`${base}/${data.place.code}/${query}`, { noScroll: true, keepFocus: true });
+    }
+
+	function clearCompare() {
+      // Drop ?compare= from the address; the loader then falls back to Northern Ireland.
+      goto(`${base}/${data.place.code}/`, { noScroll: true, keepFocus: true });
+    }
+
     function onResize() {
       cols =
         w < 575
@@ -336,6 +348,9 @@
     $: data.place && update(data.place);
     $: comp_ni = true;
     $: comp_none = false;
+	// Short form for the compact "(NI ...)" labels, full name for prose.
+    $: comp_short = data.ni.type == "ni" ? "NI" : data.ni.name;
+    $: comp_full = data.ni.name;
 
 	function returnPct (expr) {
 
@@ -384,6 +399,34 @@
 					p_data[latest_year].toLocaleString() + '</span><p><span class="em ' +
 					changeClass(change) + '">' + change_word + " " + changeStr(change, "%", 1,) + '</span> since ' + comparison_year + ' Mid-Year Population Estimate</p>';
 
+		}
+
+		return output;
+
+	}
+
+	function popChangenew (place) {
+
+		let output = "";
+
+		if (place.data.hasOwnProperty("PopChange")) {
+
+			let p_data = place.data.PopChange.value;
+			let latest_year = Object.keys(p_data).slice(-1);
+			let comparison_year = latest_year - 10;
+			let change = (p_data[latest_year] - p_data[comparison_year]) / p_data[comparison_year] * 100;
+			let change_word;
+
+			if (change < 0) {
+				change_word = "Down"
+			} else if (change > 0) {
+				change_word  = "Up"
+			}
+
+			output = '<p><span class="em ' +
+					changeClass(change) + '">' +
+					change_word + " " + changeStr(change, "%", 1) +
+					'</span> since ' + comparison_year;
 		}
 
 		return output;
@@ -492,12 +535,12 @@ function compareNIrate (value) {
 
 		if ( rtn_value_place > (rtn_value + 2) ) 
 				{
-					rtn_value = "<p>This is higher than the NI value</p>";
+					rtn_value = "<p>This is higher than the " + comp_short + " value</p>";
 			}
 		else if (rtn_value_place < (rtn_value - 2)) {
-			rtn_value = "<p>This is lower than the NI value</p>";} 
+			rtn_value = "<p>This is lower than the " + comp_short + " value</p>";} 
 		else {
-			rtn_value = "<p>This is similar to the NI value</p>";;
+			rtn_value = "<p>This is similar to the " + comp_short + " value</p>";;
 				} 
 
 		return rtn_value;
@@ -519,7 +562,7 @@ function gps (value, place) {
 				(check("GP.value.PRACLIST")).toLocaleString() +
 			 			"</span> patients per practice.</p>"+
 						"<p>"+(compareNIrate("GP.value.PRACLIST")).toLocaleString() +
-						 "<span style='color: #1460aa'> (NI " 
+						 "<span style='color: #1460aa'> (" + comp_short 
 							+  data.ni.data.GP.value.PRACLIST.toLocaleString() 
 							+" patients per practice) </span></p>";
 		
@@ -639,13 +682,13 @@ function compareDensity (place) {
 		let comparison = pop_den / ni_pop_den;
 
 		if (comparison < 0.8 ) {
-			comparison = "Lower than the Northern Ireland average";}
+			comparison = "Lower than the " + comp_full + " average";}
 		else if (comparison.toFixed(0) > 1) {
-			comparison = 'Approximately <span class = "em" style = "background-color: lightgrey">' + comparison.toFixed(0) + " times </span> the Northern Ireland average";
+			comparison = 'Approximately <span class = "em" style = "background-color: lightgrey">' + comparison.toFixed(0) + " times </span> the " + comp_full + " average";
 		} else if (comparison.toFixed(0) == 1) {
-			comparison = 'Approximately <span class = "em" style = "background-color: lightgrey">the same density level</span> as the Northern Ireland average';
+			comparison = 'Approximately <span class = "em" style = "background-color: lightgrey">the same density level</span> as the ' + comp_full + " average";
 		} else {	
-			comparison = 'Approximately <span class = "em" style = "background-color: lightgrey">1/' + (1 / comparison).toFixed(0) + " </span> of the Northern Ireland average";
+			comparison = 'Approximately <span class = "em" style = "background-color: lightgrey">1/' + (1 / comparison).toFixed(0) + " </span> of the " + comp_full + " average";
 		}
 
 		return comparison;
@@ -782,19 +825,24 @@ function compareDensity (place) {
 			/>
 
 			<GreyBox
-				id = "pop"
-				place = {data.place}
-				year =  {"Population estimates " + pullYear("MYETotal", data.place)}
-				content = {'<span class="text-big" style="font-size: 2.8em;">' + data.place.data.MYETotal.value.toLocaleString() + '</span>'}
-				chart_compare_type = {chart_compare_type}
-				compare_content = {{
+				id="pop"
+				place={data.place}
+				year={"Population estimates " + pullYear("MYETotal", data.place)}
+				content={
+					'<span class="text-big" style="font-size: 2.8em;">' +
+					data.place.data.MYETotal.value.toLocaleString() +
+					'</span>'
+				}
+				chart_compare_type={chart_compare_type}
+				compare_content={{
 					ni: "",
-					lgd: '<span class = "em" style = "background-color: lightgrey">' + returnPct(data.place.data.population.value["2021"].all / data.ni.data.population.value["2021"].all) + '</span> of Northern Ireland population<br>' +
+					lgd: '<span class = "em" style = "background-color: lightgrey">' + returnPct(data.place.data.population.value["2021"].all / data.ni.data.population.value["2021"].all) + '</span> of ' + comp_full + ' population<br>' +
 						 'The ' + returnRank(data.place.data.population.value_rank["2021"].all) + " population of 11 Councils",
-					dea: '<span class = "em" style = "background-color: lightgrey">' + returnPct(data.place.data.population.value["2021"].all / data.ni.data.population.value["2021"].all) + '</span> of Northern Ireland population',
+					dea: '<span class = "em" style = "background-color: lightgrey">' + returnPct(data.place.data.population.value["2021"].all / data.ni.data.population.value["2021"].all) + '</span> of ' + comp_full + ' population',
 					sdz: "Data not available for area comparison",
-					dz: " Data not available for area comparison"
+					dz: "Data not available for area comparison"
 				}}
+				content_after={popChangenew(data.place)}
 			/>
 
 			<GreyBox
@@ -953,6 +1001,26 @@ function compareDensity (place) {
 					>
 				{/if}
 			</div>
+			<!-- Comparison selector. Councils only -->
+    		{#if data.place.type == "lgd"}
+      			<div style="grid-column: {w > 891 ? cols: '1 / -1'}; margin-top: {w > 891 ? '-110px': '0'};">
+        			<p style="margin-bottom: 2px;">
+          			<label for="compare-select">Compare with another LGD:</label>
+        			</p>
+        			<select
+          				id="compare-select"
+          				class="compare-select"
+          				value={data.compare_code}
+          				on:change={compareSelect}
+        			>
+          				{#each data.compare_options.filter((o) => o.code != data.place.code) as option}
+            				<option value={option.code}>{option.name}</option>
+          				{/each}
+        			</select>
+        			<br />
+        			<button class="btn" on:click={clearCompare}>Clear comparison</button>
+      			</div>
+    		{/if}
 		</div>
 
 		 <div class="accordion" id="accordionPanelsStayOpenExample">
@@ -967,26 +1035,13 @@ function compareDensity (place) {
 			chart_compare_type = {chart_compare_type}
 			boxes = {{
 					box_1: {
-						id: "popchange",
-						year:  "Population Estimates " + pullYear("BroadAge", data.place),
-						content: popChange(data.place),
-						show: ["ni", "lgd"]
-					},
-					box_1a: {
-						id: "popchange",
-					content: "Data is available for " + parentlinks(data.place,"ni, lgd"),
-						show: ["dea", "sdz", "dz"],
-						i_button: false,
-						title: "<span style='font-size: 0.88em'>Population change</span>"
-					},
-					box_2: {
 						id: "broadage",
 						year:  "Population Estimates " + pullYear("BroadAge", data.place),
 						content:  "GroupChart",
 						chart_data: makeDataNICompare("BroadAge"),
 						show: ["ni", "lgd", "dea", "sdz"]
 					},
-					box_2a: {
+					box_1a: {
 						id: "age",
 						year:  pullCensusYear("age"),
 						content:  "GroupChart",
@@ -994,28 +1049,27 @@ function compareDensity (place) {
 						show: ["dz"]
 					},
 
-					box_3: {
+					box_2: {
 						id: "hhsize",
 						year: pullCensusYear("hh_size"),
 						content: "GroupChart",
 						chart_data: makeDataNICompare("hh_size")
 					},
-					box_4: {
+					box_3: {
 						id: "religion",
 						year: pullCensusYear("religion_or_religion_brought_up_in"),
 						content: "GroupChart",
 						chart_data: makeDataNICompare("religion_or_religion_brought_up_in")
 					},
 
-					box_5 :{
+					box_4 :{
 						id: "language",
 						year: pullCensusYear("mainlang"),
 						content: "GroupChart",
 						chart_data: makeDataNICompare("mainlang")
-					 }
-					,
+					},
 
-					box_6: {
+					box_5: {
 						id: "houseprices",
 						year: pullYear("houseprices", data.place),
 						content: "<span class='text-big'>£"+(check("houseprices.value.SP")).toLocaleString(undefined, {maximumFractionDigits: 0})+"</span>"+
@@ -1023,7 +1077,7 @@ function compareDensity (place) {
 						show: ["ni"]
 					},
 
-					box_6a: {
+					box_5a: {
 						id: "houseprices",
 						year: pullYear("houseprices", data.place),
 						content: "<p><span class='text-big'>£"+(check("houseprices.value.SP")).toLocaleString(undefined, {maximumFractionDigits: 0})+"</span>"+
@@ -1033,15 +1087,29 @@ function compareDensity (place) {
 						show: ["lgd"]
 					},
 
-					box_6b: {
+					box_5b: {
 						id: "houseprices",
 						content: "Data is available for " + parentlinks(data.place,"ni, lgd"),
 						show: ["dea","sdz","dz"],
 						i_button: false,
 						title: "<span style='font-size: 0.88em'>Average house price</span>"
-					}
+					},
 
-				
+					box_6: {
+						id: "housingstock",
+						year: pullYear("HousingStock", data.place),
+						content: "GroupChart",
+						chart_data: makeDataNICompare("HousingStock"),
+						show: ["ni", "lgd"]
+					},
+
+					box_6a: {
+						id: "housingstock",
+						content: "Data is available for " + parentlinks(data.place, "ni, lgd"),
+						show: ["dea", "sdz", "dz"],
+						i_button: false,
+						title: "Housing stock"
+					}
 
 			}}
 			more = "More information on the size of the population is available in the latest <a href='https://www.nisra.gov.uk/publications/2022-mid-year-population-estimates-northern-ireland'>mid-year estimates release</a>, 
@@ -1092,11 +1160,11 @@ function compareDensity (place) {
 				id: "wellbeing",
 				year: pullYear("wellbeing", data.place),
 				content: "<p>Happiness</p><span class='text-big'>" + (check("Happy.value")).toLocaleString() + "</span>/ 10, <span class = 'text-small'>where 10 is completely happy.</span>"	+
-						"<span style='color: #1460aa'> (NI " + data.ni.data.Happy.value + "/10) </span></p>"+
+						"<span style='color: #1460aa'> (" + comp_short + " " + data.ni.data.Happy.value + "/10) </span></p>"+
 						"<p>Life Satisfaction</p><span class='text-big'>" + (check("Satisfy.value")).toLocaleString() + "</span>/ 10, <span class = 'text-small'>where 10 is completely satisfied. </span>"+
-						"<span style='color: #1460aa'> (NI " + data.ni.data.Satisfy.value +"/10) </span></p>"+ 
+						"<span style='color: #1460aa'> (" + comp_short + " " + data.ni.data.Satisfy.value +"/10) </span></p>"+ 
 						"<p>Loneliness</p><span class='text-big'>" + (check("Lonely.value")).toLocaleString(undefined, {minimumFractionDigits: 1}) + "%</span><span class = 'text-small'> of people who feel lonely at least some of the time. </span> "+
-						"<span style='color: #1460aa'> (NI " + data.ni.data.Lonely.value +"%) </span></p>" ,
+						"<span style='color: #1460aa'> (" + comp_short + " " + data.ni.data.Lonely.value +"%) </span></p>" ,
 
 				show: [ "lgd"]
 			},
@@ -1125,11 +1193,11 @@ function compareDensity (place) {
 				content: "<p>Male</p> <span class='text-big'>" + 
 					(check("LE.value.Males")).toLocaleString() +
 					"</span> years"+
-					"<span style='color: #1460aa'> (NI " + data.ni.data.LE.value.Males +") </span></p>"+
+					"<span style='color: #1460aa'> (" + comp_short + " " + data.ni.data.LE.value.Males +") </span></p>"+
 						
 					"<p>Female</p> <span class='text-big'>" +
 					(check("LE.value.Females")).toLocaleString() + "</span> years"+
-					"<span style='color: #1460aa'> (NI " + data.ni.data.LE.value.Females +") </span></p>",
+					"<span style='color: #1460aa'> (" + comp_short + " " + data.ni.data.LE.value.Females +") </span></p>",
 				show: [ "lgd", "dea"]
 			},
 			box_3c: {
@@ -1188,7 +1256,7 @@ function compareDensity (place) {
 						"</span>  <span class='text-big'>" + 
 						(check("DEN_REG.value.Dental_Registrations") / check("MYETotal.value")*100).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0, minimumFractionDigits: 0 }) +
 						"%</span> of the population are registered with a health service dentist. "+
-						"<span style='color: #1460aa'> (NI " + ((data.ni.data.DEN_REG.value.Dental_Registrations / data.ni.data.MYETotal.value)*100).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 }) +
+						"<span style='color: #1460aa'> (" + comp_short + " " + ((data.ni.data.DEN_REG.value.Dental_Registrations / data.ni.data.MYETotal.value)*100).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 }) +
 						"%)</span></p>",
 				show: [ "lgd", "dea"]
 			},
@@ -1281,7 +1349,7 @@ function compareDensity (place) {
 						 "</span> </p>"+
 						'<p>Median weekly salary</p> <span class="text-big">£' +
 					     (check("ASHE_weekly.value")).toLocaleString(undefined, {maximumFractionDigits: 0, minimumFractionDigits: 0}) + '</span> '+
-						 "<span style='color: #1460aa'> (NI £" + data.ni.data.ASHE_weekly.value.toLocaleString(undefined, {maximumFractionDigits: 0, minimumFractionDigits: 0}) +") </span></p>",
+						 "<span style='color: #1460aa'> (" + comp_short + " £" + data.ni.data.ASHE_weekly.value.toLocaleString(undefined, {maximumFractionDigits: 0, minimumFractionDigits: 0}) +") </span></p>",
 				show: [ "lgd"]
 			},
 			
@@ -1315,13 +1383,13 @@ function compareDensity (place) {
 				content: '<span class="text-big">' + data.place.data.BS.value.UC.toLocaleString() + '</span> claimants<br><span class="text-big">' + (data.place.data.BS.value.UC / data.place.data.MYETotal.value * 100).toFixed(1) + '%</span> of population',
 				compare_content: {
 					ni: "",
-					lgd: "<span style='color: #1460aa; font-size: 12pt;'>(NI " + 
+					lgd: "<span style='color: #1460aa; font-size: 12pt;'>(" + comp_short + " " + 
 					 (data.ni.data.BS.value.UC / data.ni.data.MYETotal.value * 100).toFixed(1) + "%)</span>",
-					dea: "<span style='color: #1460aa; font-size: 12pt;'>(NI " + 
+					dea: "<span style='color: #1460aa; font-size: 12pt;'>(" + comp_short + " " + 
 					(data.ni.data.BS.value.UC / data.ni.data.MYETotal.value * 100).toFixed(1) + "%)</span>",
-					sdz: "<span style='color: #1460aa; font-size: 12pt;'>(NI " + 
+					sdz: "<span style='color: #1460aa; font-size: 12pt;'>(" + comp_short + " " + 
 					 (data.ni.data.BS.value.UC / data.ni.data.MYETotal.value * 100).toFixed(1) + "%)</span>",
-					dz: "<span style='color: #1460aa; font-size: 12pt;'>(NI " + 
+					dz: "<span style='color: #1460aa; font-size: 12pt;'>(" + comp_short + " " + 
 					 (data.ni.data.BS.value.UC / data.ni.data.MYETotal.value * 100).toFixed(1) + "%)</span>"
 				}
 				
@@ -1333,13 +1401,13 @@ function compareDensity (place) {
 				content: '<span class="text-big">' + data.place.data.BS.value.PIP.toLocaleString() + '</span> claimants<br><span class="text-big">' + (data.place.data.BS.value.PIP / data.place.data.MYETotal.value * 100).toFixed(1) + '%</span> of population',
 				compare_content: {
 					ni: "",
-					lgd: "<span style='color: #1460aa; font-size: 12pt;'>(NI " + 
+					lgd: "<span style='color: #1460aa; font-size: 12pt;'>(" + comp_short + " " + 
 					(data.ni.data.BS.value.PIP / data.ni.data.MYETotal.value * 100).toFixed(1) + "%)</span>",
-					dea: "<span style='color: #1460aa; font-size: 12pt;'>(NI " + 
+					dea: "<span style='color: #1460aa; font-size: 12pt;'>(" + comp_short + " " + 
 					(data.ni.data.BS.value.PIP / data.ni.data.MYETotal.value * 100).toFixed(1) + "%)</span>",
-					sdz: "<span style='color: #1460aa; font-size: 12pt;'>(NI " + 
+					sdz: "<span style='color: #1460aa; font-size: 12pt;'>(" + comp_short + " " + 
 					(data.ni.data.BS.value.PIP / data.ni.data.MYETotal.value * 100).toFixed(1) + "%)</span>",
-					dz: "<span style='color: #1460aa; font-size: 12pt;'>(NI " + 
+					dz: "<span style='color: #1460aa; font-size: 12pt;'>(" + comp_short + " " + 
 					(data.ni.data.BS.value.PIP / data.ni.data.MYETotal.value * 100).toFixed(1) + "%)</span>"
 				}
 			
@@ -1351,13 +1419,13 @@ function compareDensity (place) {
 				content: '<span class="text-big">' + data.place.data.BS.value.RP.toLocaleString() + '</span> claimants<br><span class="text-big">' + (data.place.data.BS.value.RP / data.place.data.MYETotal.value * 100).toFixed(1) + '%</span> of population',
 				compare_content: {
 					ni: "",
-					lgd: "<span style='color: #1460aa; font-size: 12pt;'>(NI " + 
+					lgd: "<span style='color: #1460aa; font-size: 12pt;'>(" + comp_short + " " + 
 					(data.ni.data.BS.value.RP / data.ni.data.MYETotal.value * 100).toFixed(1) + "%)</span>",
-					dea: "<span style='color: #1460aa; font-size: 12pt;'>(NI " + 
+					dea: "<span style='color: #1460aa; font-size: 12pt;'>(" + comp_short + " " + 
 					(data.ni.data.BS.value.RP / data.ni.data.MYETotal.value * 100).toFixed(1) + "%)</span>",
-					sdz: "<span style='color: #1460aa; font-size: 12pt;'>(NI " + 
+					sdz: "<span style='color: #1460aa; font-size: 12pt;'>(" + comp_short + " " + 
 					(data.ni.data.BS.value.RP / data.ni.data.MYETotal.value * 100).toFixed(1) + "%)</span>",
-					dz: "<span style='color: #1460aa; font-size: 12pt;'>(NI " + 
+					dz: "<span style='color: #1460aa; font-size: 12pt;'>(" + comp_short + " " + 
 					(data.ni.data.BS.value.RP / data.ni.data.MYETotal.value * 100).toFixed(1) + "%)</span>"
 				}
 			}	
@@ -1424,9 +1492,9 @@ function compareDensity (place) {
 			box_2b: {
 				id: "fsme",
 				content: "<p style='margin:0'>Primary school <span class='text-big'> "+ Number(check("Primary.perc.FSME")).toFixed(1) + "% </span>"+
-				"<span style='color: #1460aa'> (NI " + data.ni.data.Primary.perc.FSME.toFixed(1) +"%) </span></p>"+
+				"<span style='color: #1460aa'> (" + comp_short + " " + data.ni.data.Primary.perc.FSME.toFixed(1) +"%) </span></p>"+
 					 "<p style='margin:0'>Post primary school <span class='text-big'>"+ Number(check("PostPrimary.perc.FSME")).toFixed(1) + "% </span>"+
-					 "<span style='color: #1460aa'> (NI " + data.ni.data.PostPrimary.perc.FSME.toFixed(1) + "%) </span></p>",
+					 "<span style='color: #1460aa'> (" + comp_short + " " + data.ni.data.PostPrimary.perc.FSME.toFixed(1) + "%) </span></p>",
 				year: pullYear("Primary", data.place),
 				show: [ "lgd", "dea"]
 			},
@@ -1463,7 +1531,7 @@ function compareDensity (place) {
 						"<p><span class='text-big'>" + 
 							Number(check("AllSchools.perc.SEN")).toFixed(1) + 
 						"%</span> of all pupils"+
-							 "<span style='color: #1460aa'> (NI " + data.ni.data.AllSchools.perc.SEN.toFixed(1) + "%) </span></p>", 
+							 "<span style='color: #1460aa'> (" + comp_short + " " + data.ni.data.AllSchools.perc.SEN.toFixed(1) + "%) </span></p>", 
 						show: ["lgd", "dea"]
 			},
 
@@ -1499,7 +1567,7 @@ function compareDensity (place) {
 				content: "<span class='text-big'>"  + 
 				    	 (check("Attainment.value")).toLocaleString() +"%</span> "+ "<p>of pupils left school with 5 or more GCSEs (including equivalents) at grades A*-C, including GCSE English and maths.</span>"+
 						 						  (compareNIrate("Attainment.value")).toLocaleString() +
-						"<span style='color: #1460aa'>(NI " + data.ni.data.Attainment.value.toLocaleString(undefined, {minimumFractionDigits: 1}) + "%) </span>" ,
+						"<span style='color: #1460aa'>(" + comp_short + " " + data.ni.data.Attainment.value.toLocaleString(undefined, {minimumFractionDigits: 1}) + "%) </span>" ,
 
 				show: ["lgd"]
 			},
@@ -1529,7 +1597,7 @@ function compareDensity (place) {
 			},
 
 		}}
-		more = "<p>The <a href='https://www.nisra.gov.uk/statistics/children-education-and-skills/school-education-statistics'>Department of Education</a> publishes statistics on <a href='https://www.education-ni.gov.uk/articles/school-enrolments-overview'>school enrolments</a>, <a href='https://www.education-ni.gov.uk/articles/school-performance'>school performance</a>, <a href='https://www.education-ni.gov.uk/articles/school-leavers'>school leavers</a>, qualifications and destinations, <a href='https://www.education-ni.gov.uk/articles/pupil-attendance'>pupil attendance</a>, suspensions and expulsions, school meals and <a href='https://www.education-ni.gov.uk/articles/education-workforce'>education workforce</a>. The <a href='https://www.nisra.gov.uk/statistics/children-education-and-skills/higher-and-further-education-and-training-statistics'>Department for the Economy</a> publishes <a href='https://www.economy-ni.gov.uk/topics/statistics-and-economic-research/higher-education-statistics-and-research'>Higher</a> and <a href='https://www.economy-ni.gov.uk/topics/statistics-and-economic-research/further-education-statistics-and-research'>Further</a> education and <a href='https://www.economy-ni.gov.uk/articles/training-success-statistics'>training</a> statistics. The <a href='https://www.nisra.gov.uk/statistics/census/2021-census'>2021 census</a> collected data on qualifications which can be explored in the <a href='https://explore.nisra.gov.uk/area-explorer-2021/'>Census Area Explorer</a> and the <a href='https://build.nisra.gov.uk/en/'>Flexible Table Builder</a>.</p>"
+		more = "<p>The <a href='https://www.nisra.gov.uk/statistics/education-and-skills'>Department of Education</a> publishes statistics on <a href='https://www.education-ni.gov.uk/articles/school-enrolments-overview'>school enrolments</a>, <a href='https://www.education-ni.gov.uk/articles/school-performance'>school performance</a>, <a href='https://www.education-ni.gov.uk/articles/school-leavers'>school leavers</a>, qualifications and destinations, <a href='https://www.education-ni.gov.uk/articles/pupil-attendance'>pupil attendance</a>, suspensions and expulsions, school meals and <a href='https://www.education-ni.gov.uk/articles/education-workforce'>education workforce</a>. The <a href='https://www.nisra.gov.uk/statistics/education-and-skills'>Department for the Economy</a> publishes <a href='https://www.economy-ni.gov.uk/topics/statistics-and-economic-research/higher-education-statistics-and-research'>Higher</a> and <a href='https://www.economy-ni.gov.uk/topics/statistics-and-economic-research/further-education-statistics-and-research'>Further</a> education and <a href='https://www.economy-ni.gov.uk/articles/training-success-statistics'>training</a> statistics. The <a href='https://www.nisra.gov.uk/statistics/census/2021-census'>2021 census</a> collected data on qualifications which can be explored in the <a href='https://explore.nisra.gov.uk/area-explorer-2021/'>Census Area Explorer</a> and the <a href='https://build.nisra.gov.uk/en/'>Flexible Table Builder</a>.</p>"
 		
 		/>
 
@@ -1585,7 +1653,7 @@ function compareDensity (place) {
 				id: "env_problem",
 				year: pullYear("Env_problem", data.place),
 				content: "<p>The most important environment problems in this area were: </p><p><span class='text-bold' >" + (check("env_problem.text"))+ "</span>.</p>"+
-				"<p><span style='color: #1460aa'>(NI: " + data.ni.data.env_problem.text+ ")</span>.</p>",
+				"<p><span style='color: #1460aa'>(" + comp_short + ": " + data.ni.data.env_problem.text+ ")</span>.</p>",
 
 					show: ["lgd"]
 			},
@@ -1613,7 +1681,7 @@ function compareDensity (place) {
 			year: pullYear("Env_ghg", data.place),
 			content:  "<p><span class='text-big'>"  + (check("Env_ghg.value.GHGALL")).toLocaleString(undefined, {maximumFractionDigits: 0, minimumFractionDigits: 0}) +"</span> kilotonnes of carbon dioxide equivalent (KtCO2e).</p>"+
 					 "<p><span class='text-big'>" + ((check("Env_ghg.value.GHGALL")/check("Env_ghg.value.GHGALL_BASE")-1)*-100).toLocaleString(undefined, {maximumFractionDigits: 1, minimumFractionDigits: 1}) +"%</span> reduction since 2005.</p>"+
-					 "<span style='color: #1460aa'>(NI " + ((data.ni.data.Env_ghg.value.GHGALL/data.ni.data.Env_ghg.value.GHGALL_BASE-1)*-100).toLocaleString(undefined, {maximumFractionDigits: 1, minimumFractionDigits: 1}) + "%) </span>" ,
+					 "<span style='color: #1460aa'>(" + comp_short + ": " + ((data.ni.data.Env_ghg.value.GHGALL/data.ni.data.Env_ghg.value.GHGALL_BASE-1)*-100).toLocaleString(undefined, {maximumFractionDigits: 1, minimumFractionDigits: 1}) + "%) </span>" ,
 					
 			show: [ "lgd"]
 		},
@@ -1649,7 +1717,7 @@ function compareDensity (place) {
 			year: pullYear("Env_active", data.place),
 			content:  "<span class='text-big'>"  + 
 					 (check("Env_active.value.JWCPT")).toLocaleString(undefined, {maximumFractionDigits: 0, minimumFractionDigits: 0}) +"%</span><p>of all journeys were made by walking, cycling and public transport." +
-					 "<span style='color: #1460aa'> (NI " + data.ni.data.Env_active.value.JWCPT + "%) </span></p>",						
+					 "<span style='color: #1460aa'> (" + comp_short + " " + data.ni.data.Env_active.value.JWCPT + "%) </span></p>",						
 			show: ["lgd"]
 					
 		},
@@ -1705,7 +1773,7 @@ function compareDensity (place) {
 		// }
 
 	}}
-	more = "<p>The <a href='https://www.daera-ni.gov.uk/landing-pages/statistics'>Department of Agriculture, Environment and Rural Affairs (DAERA)</a>
+	more = "<p>The <a href='https://www.daera-ni.gov.uk/articles/agricultural-statistics'>Department of Agriculture, Environment and Rural Affairs (DAERA)</a>
 				publishes statistics on the Environment from a range of sources, including 
 				<a href='https://www.daera-ni.gov.uk/articles/northern-ireland-greenhouse-gas-inventory'>greenhouse gas inventory</a>,
 				<a href='https://www.daera-ni.gov.uk/articles/northern-ireland-local-authority-collected-municipal-waste-management-statistics'>
@@ -1766,7 +1834,7 @@ function compareDensity (place) {
 				content:  "<p><span class='text-big'>"  + 
 				    	 (check("crime.value.allcrime")).toLocaleString(undefined, {maximumFractionDigits: 0, minimumFractionDigits: 0}) +" </span>crimes recorded</p>" +
 						 "<p><span class='text-big'>" +(check("crime.value.allcrime")/check("MYETotal.value")*1000).toLocaleString(undefined, {maximumFractionDigits: 0, minimumFractionDigits: 0}) +" </span> crimes recorded per 1,000 population."  + 
-						 "<span style='color: #1460aa'> (NI " +((data.ni.data.crime.value.allcrime)/(data.ni.data.MYETotal.value)*1000).toLocaleString(undefined, {maximumFractionDigits: 0, minimumFractionDigits: 0}) +")</span></p>"
+						 "<span style='color: #1460aa'> (" + comp_short + " " +((data.ni.data.crime.value.allcrime)/(data.ni.data.MYETotal.value)*1000).toLocaleString(undefined, {maximumFractionDigits: 0, minimumFractionDigits: 0}) +")</span></p>"
 						 ,
 						
 				show: [ "lgd", "dea"]
@@ -1848,7 +1916,7 @@ function compareDensity (place) {
 				year: pullYear("crimeworry", data.place),
 				content: "<p> <span class='text-big' >" +
 				(check("crimeworry.value.WorryC2")).toLocaleString(undefined, {maximumFractionDigits: 1, minimumFractionDigits: 1})+ "%</span> of people are highly worried about crime."+
-				"<span style='color: #1460aa'> (NI " +((data.ni.data.crimeworry.value.WorryC2)).toLocaleString(undefined, {maximumFractionDigits: 1, minimumFractionDigits: 1}) +"%)</span></p>",
+				"<span style='color: #1460aa'> (" + comp_short + " " +((data.ni.data.crimeworry.value.WorryC2)).toLocaleString(undefined, {maximumFractionDigits: 1, minimumFractionDigits: 1}) +"%)</span></p>",
 
 					show: [ "lgd"]
 			},
@@ -1876,7 +1944,7 @@ function compareDensity (place) {
 				year: pullYear("crimeperception", data.place),
 				content: "<p> <span class='text-big' >" +
 				(check("crimeperception.value.ASB8")).toLocaleString(undefined, {maximumFractionDigits: 1, minimumFractionDigits: 1})+ "%</span> think there is a high level of antisocial behaviour in the area."+
-				"<span style='color: #1460aa'> (NI " +((data.ni.data.crimeperception.value.ASB8)).toLocaleString(undefined, {maximumFractionDigits: 1, minimumFractionDigits: 1}) +"%)</span></p>",
+				"<span style='color: #1460aa'> (" + comp_short + " " +((data.ni.data.crimeperception.value.ASB8)).toLocaleString(undefined, {maximumFractionDigits: 1, minimumFractionDigits: 1}) +"%)</span></p>",
 
 
 					show: [ "lgd"]
@@ -1904,7 +1972,7 @@ function compareDensity (place) {
 		 <p>Statistics on the police complaints system are published by
 <a href='https://www.policeombudsman.org/Statistics-and-Research'>
 Police Ombudsmans Office for Northern Ireland</a>.</p>
-<p><a href='https://www.justice-ni.gov.uk/topics/doj-statistics-and-research'>Department of Justice statistics</a> include reoffending, victims and witnesses, prosecutions and convictions.; Statistics are also available from the <a href='https://www.justice-ni.gov.uk/topics/statistics-and-research/ni-prison-service-statistics'>Northern Ireland Prison Service</a>, <a href='https://www.justice-ni.gov.uk/topics/statistics-and-research/ni-courts-and-tribunals-service-statistics'>Northern Ireland Courts and Tribunals Service</a>, <a href='https://www.justice-ni.gov.uk/topics/statistics-and-research/youth-justice-statistics'>Youth Justice Agency statistics and </a>, <a href='https://www.justice-ni.gov.uk/topics/legal-aid/legal-services-agency-northern-ireland'>Legal Services Agency</a> and <a href='https://www.ppsni.gov.uk/statistics-and-research'>Public Prosecutions Service for Northern Ireland (PPSNI)</a>.</p>
+<p><a href='https://www.nisra.gov.uk/statistics/crime-and-justice'>Department of Justice statistics</a> include reoffending, victims and witnesses, prosecutions and convictions. Statistics are also available from the <a href='https://www.justice-ni.gov.uk/topics/statistics-and-research/ni-prison-service-statistics'>Northern Ireland Prison Service</a>, <a href='https://www.justice-ni.gov.uk/topics/statistics-and-research/ni-courts-and-tribunals-service-statistics'>Northern Ireland Courts and Tribunals Service</a>, <a href='https://www.justice-ni.gov.uk/topics/statistics-and-research/youth-justice-statistics'>Youth Justice Agency statistics</a>, <a href='https://www.justice-ni.gov.uk/topics/legal-aid/legal-services-agency-northern-ireland'>Legal Services Agency</a> and <a href='https://www.ppsni.gov.uk/statistics-and-research'>Public Prosecutions Service for Northern Ireland (PPSNI)</a>.</p>
 <p><a href='https://www.pbni.org.uk/statistics-and-research'>Probation Board for Northern Ireland (PBNI)</a> publish statistical information on their Caseload, Stakeholder Survey Reports, and other statistical reports.</p>
 
 "
@@ -2027,15 +2095,15 @@ Police Ombudsmans Office for Northern Ireland</a>.</p>
 				content:  "<strong>Agriculture</strong>" + 
 					"<p><span class='text-big'>"  + 
 				    	 (check("farms.value.F")).toLocaleString() +" </span> farms "+
-						 "<span style='color: #1460aa'>(" + (check("farms.value.F")/(data.ni.data.farms.value.F)*100).toLocaleString(undefined, {maximumFractionDigits: 1, minimumFractionDigits: 1}) +"% of NI)</span>.</p>"  +
+						 "<span style='color: #1460aa'>(" + (check("farms.value.F")/(data.ni.data.farms.value.F)*100).toLocaleString(undefined, {maximumFractionDigits: 1, minimumFractionDigits: 1}) +"% of " + comp_short + ")</span>.</p>"  +
 						 "<span class='text-big'>"  + 
 				    	 (check("farms.value.FA")).toLocaleString() +" </span> farmers "+
-						 "<span style='color: #1460aa'>(" + (check("farms.value.FA")/(data.ni.data.farms.value.FA)*100).toLocaleString(undefined, {maximumFractionDigits: 1, minimumFractionDigits: 1}) +"% of NI)</span>."  +
+						 "<span style='color: #1460aa'>(" + (check("farms.value.FA")/(data.ni.data.farms.value.FA)*100).toLocaleString(undefined, {maximumFractionDigits: 1, minimumFractionDigits: 1}) +"% of " + comp_short + ")</span>."  +
 						  "<p><strong>Tourism</strong></p><span class='text-big'>"  + 
 				    	 (check("tourism.value.TourismJobs")).toLocaleString() +" </span> jobs " + 
-				    	 "<span style='color: #1460aa'>(" + (check("tourism.value.TourismJobs")/(data.ni.data.tourism.value.TourismJobs)*100).toLocaleString(undefined, {maximumFractionDigits: 1, minimumFractionDigits: 1}) +"% of NI)</span>."  +
+				    	 "<span style='color: #1460aa'>(" + (check("tourism.value.TourismJobs")/(data.ni.data.tourism.value.TourismJobs)*100).toLocaleString(undefined, {maximumFractionDigits: 1, minimumFractionDigits: 1}) +"% of " + comp_short + ")</span>."  +
 						 "<p><span class='text-big'>" + (check("tourism_estab.value.estab")).toLocaleString() +" </span> accommodation establishments "  +
-						 "<span style='color: #1460aa'>(" + (check("tourism_estab.value.estab")/(data.ni.data.tourism_estab.value.estab)*100).toLocaleString(undefined, {maximumFractionDigits: 1, minimumFractionDigits: 1}) +"% of NI)</span>.</p>"  ,
+						 "<span style='color: #1460aa'>(" + (check("tourism_estab.value.estab")/(data.ni.data.tourism_estab.value.estab)*100).toLocaleString(undefined, {maximumFractionDigits: 1, minimumFractionDigits: 1}) +"% of " + comp_short + ")</span>.</p>"  ,
 						
 						 show: [ "lgd"]
 						},
@@ -2100,14 +2168,7 @@ Police Ombudsmans Office for Northern Ireland</a>.</p>
 		background-color: #f5f5f6;
 		padding: 16px 16px;
 	}
-	.btn {
-		padding: 2px 4px;
-		margin: 0.2;
-		border: 2px solid #00205b;
-		cursor: pointer;
-		color: #00205b;
-		background-color: lightgrey;
-	}
+
 	.btn-active {
 		color: white;
 		background-color: #00205b;
@@ -2193,5 +2254,20 @@ Police Ombudsmans Office for Northern Ireland</a>.</p>
 	.filter-navy {
 		filter: invert(12%) sepia(78%) saturate(1934%) hue-rotate(204deg)
 			brightness(91%) contrast(110%);
+	}
+
+	.compare-select {
+		width: 350px;
+		max-width: 100%; 
+		box-sizing: border-box;
+		padding: 8px 5px;
+		margin-bottom: 10px;
+		border: 2px solid #00205b;
+		background-color: #fff;
+		color: #00205b;
+		font-family: inherit;
+		font-size: inherit;
+		font-weight: 500;
+		border-radius: 0;
 	}
 </style>

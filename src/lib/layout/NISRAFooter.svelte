@@ -2,13 +2,13 @@
  // import { assets } from "$app/paths";
 	import { getContext } from 'svelte';
 	import Section from "$lib/layout/Section.svelte";
-  import { asset } from "$app/paths";
+
 
 //	export let theme = getContext('theme');
 </script>
 
 <!-- svelte-ignore missing-declaration -->
-<Section column="wide">
+<!-- <Section column="wide">
 <div class="block" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); justify-content: stretch;">
 <div style="margin-left:16px; padding-right:16px;">
 	
@@ -20,8 +20,7 @@
   </div>
 
   </div>
-</div>
-</Section>
+</Section> -->
   
 <footer class="nisra-footer">
   <div class="footer-container">
@@ -31,7 +30,7 @@
       <div class="footer-col">
         <h3 style="color: #fff; font-size: 15px; font-weight: normal; margin-top: 0;">Data Tools</h3>
         <ul class="footer-list">
-          <li><a href="https://explore.nisra.gov.uk/local-stats/">Local Statistics Explorer</a></li>
+          <li><a href="https://explore.nisra.gov.uk/custom-profiles/#map/">Custom Area Profiles</a></li>
           <li><a href="https://data.nisra.gov.uk">Data Portal</a></li>
           <li><a href="https://build.nisra.gov.uk/en/">Census Flexible Table Builder</a></li>
         </ul>
@@ -42,7 +41,7 @@
         <h3 style="color: #fff; font-size: 15px; font-weight: normal; margin-top: 0;">Corporate</h3>
         <ul class="footer-list">
           <li><a href="https://www.nisra.gov.uk/">NISRA Website</a></li>
-          <li><a href="https://www.nisra.gov.uk/statistics/about-nisra/careers">Careers</a></li>
+          <li><a href="https://www.nisra.gov.uk/about-us/careers">Careers</a></li>
           <li><a href="https://www.nisra.gov.uk/contact">Contact</a></li>
         </ul>
       </div>
@@ -53,27 +52,27 @@
         <ul class="footer-social">
           <li>
             <a href="https://www.facebook.com/nisra.gov.uk">
-               <img src={asset("/img/logo/facebook-brands-solid-full.svg")} alt="NISRA on Facebook" role="img" class="img-50"/>
+               <img src="/img/logo/facebook-brands-solid-full.svg" alt="NISRA on Facebook" role="img" class="img-50"/>
              </a>
           </li>
           <li>
              <a href="https://x.com/NISRA/">
-               <img src={asset("/img/logo/x-twitter-brands-solid-full.svg")} alt="NISRA on Twitter/X" role="img" class="img-50"/>
+               <img src="/img/logo/x-twitter-brands-solid-full.svg" alt="NISRA on Twitter/X" role="img" class="img-50"/>
              </a>
           </li>
           <li>
              <a href="https://www.youtube.com/user/nisrastats">
-               <img src={asset("/img/logo/youtube-brands-solid-full.svg")} alt="NISRA on YouTube" role="img" class="img-50"/>
+               <img src="/img/logo/youtube-brands-solid-full.svg" alt="NISRA on YouTube" role="img" class="img-50"/>
              </a>
           </li>
           <li>
              <a href="https://www.linkedin.com/company/northern-ireland-statistics-and-research-agency/">
-               <img src={asset("/img/logo/linkedin-in-brands-solid-full.svg")} alt="NISRA on LinkedIn" role="img" class="img-50"/>
+               <img src="/img/logo/linkedin-in-brands-solid-full.svg" alt="NISRA on LinkedIn" role="img" class="img-50"/>
              </a>
           </li>
           <li>
              <a href="https://www.instagram.com/nisra.gov.uk/">
-               <img src={asset("/img/logo/instagram-brands-solid-full.svg")} alt="NISRA on Instagram" role="img" class="img-50"/>
+               <img src="/img/logo/instagram-brands-solid-full.svg" alt="NISRA on Instagram" role="img" class="img-50"/>
              </a>
           </li>
         </ul>

@@ -25,6 +25,7 @@
   let c;
   let f;
   let space_needed;
+  let skipLinkHidden = true; /* skip-link */
 	
 	const debounce = (func, delay) => {
 		let timer;
@@ -61,6 +62,27 @@
 		  space_needed = `${calculated_space}px`;
     }
 
+    const revealSkipLink = (event) => {
+      if (event.key === "Tab") {
+        skipLinkHidden = false;
+      }
+    };
+
+    const clearSkipLinkHash = () => {
+      setTimeout(() => {
+        history.replaceState(
+          null,
+          "",
+          window.location.pathname + window.location.search
+        );
+      }, 1);
+    };
+
+    const skipLink = document.getElementById("skip-link");
+
+    window.addEventListener("keydown", revealSkipLink);
+    skipLink.addEventListener("click", clearSkipLinkHash);
+
     window.addEventListener('resize', debouncedSetSpaceHeight);
     window.addEventListener('click', debouncedSetSpaceHeight);
     window.addEventListener('load', debouncedSetSpaceHeight);
@@ -72,6 +94,16 @@
     cookieDomain: window.location.hostname,
     analyticsProps
   });
+  
+  return () => {
+    window.removeEventListener("keydown", revealSkipLink);
+    skipLink.removeEventListener("click", clearSkipLinkHash);
+
+    window.removeEventListener('resize', debouncedSetSpaceHeight);
+    window.removeEventListener('click', debouncedSetSpaceHeight);
+    window.removeEventListener('load', debouncedSetSpaceHeight);
+    window.removeEventListener('mousemove', debouncedSetSpaceHeight);
+  };
    
   });
   
@@ -85,13 +117,23 @@
 
 <div bind:this={c}>
 
+  <a
+    id="skip-link"
+    href="#content"
+    class:hidden={skipLinkHidden}
+  >
+    Skip to main content
+  </a>
+
   <div id="cookie-banner"></div>
 
   <Warning/>
 
-    <NISRAHeader/>
+  <NISRAHeader/>
 
-  <slot/>
+  <main id="content" tabindex="-1"> 
+    <slot/>
+  </main>
 </div>
 
 <div bind:this={f} style = "margin-top: {space_needed}">

@@ -19,6 +19,7 @@ export let i_button = true;
 export let heading = null;
 export let chart_compare_type;
 export let compare_content = null;
+export let content_after = null;
 export let year = null
 
 function divClass (id) {
@@ -86,5 +87,10 @@ function divClass (id) {
         <span class = "text-small">{@html compare_content[place.type]}</span>
     {/if}
 
+    {#if (content_after != null)}
+        <br>
+        <br>
+        <span class = "text-small">{@html content_after}</span>
+    {/if}
 
 </div>

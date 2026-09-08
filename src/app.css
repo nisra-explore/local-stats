@@ -14,7 +14,7 @@ body {
 	padding: 0;
 	-webkit-box-sizing: border-box;
 	        box-sizing: border-box;
-	font-family: "Open Sans", "Helvetica Neue", "Arial", sans-serif;
+	font-family: 'Roboto', Arial, sans-serif; /* updated font family */
 }
 
 /* COMPONENTS */
@@ -27,13 +27,29 @@ a {
 
 a:hover {
 	text-decoration-color:  #000000;
-	text-decoration-thickness: 2px;
+	text-decoration-thickness: 3px; /* underline thickness */
 	
 }
 
 a:visited {
 	color: purple;
 }
+
+/* skip to main rules */
+#skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 8px 16px;
+  background-color: #ffbf47;
+  color: #000;
+}
+
+#skip-link.hidden {
+  left: -9999px;
+}
+/* skip to main rules */
 
 label {
 	display: block;
@@ -54,11 +70,24 @@ input:disabled {
 	color: #ccc;
 }
 
-button {
+/* button {
 	color: #333;
 	background-color: #f4f4f4;
 	outline: none;
-}
+} */
+
+/* purple button */
+.btn {
+  background-color: #732777;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin-bottom: 15px;
+} 
+/* purple button */
 
 button:disabled {
 	color: #999;
@@ -68,8 +97,20 @@ button:not(:disabled):active {
 	background-color: #ddd;
 }
 
+/* purple button */
+.btn:not(:disabled):active {
+  background-color: #5c1f60;
+}
+
 button:focus {
 	border-color: #666;
+}
+
+/* focus ring for keyboard users */
+:focus-visible {
+  outline: 3px solid #d4351c !important;
+  outline-offset: 2.5px;
+  box-shadow: none !important;
 }
 
 header, section, nav, footer, figure, caption {

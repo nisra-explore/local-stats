@@ -10,6 +10,14 @@
 
   export let data;
 
+  function formatLastUpdated(value) {
+    if (!value) return value;
+    let numbers = String(value).split("-");
+    return numbers.length === 3
+      ? numbers[2] + "/" + numbers[1] + "/" + numbers[0]
+      : value;
+  }
+
   function menuSelect(ev) {
       goto(`${base}/${ev.detail.value}/`, { noscroll: true });
     }
@@ -79,8 +87,22 @@
       </div>
 
     </div>
-
   </div>
+</Section>
+
+<Section column="wide">
+	<div class="row">
+
+
+		<h3>Whats new in the Local Statistics Explorer</h3>
+
+
+		<h4>Recent Updates</h4>
+
+		<ul> 
+			<li><strong>LGD area comparison:</strong> Added a dropdown to allow users to compare LGD areas with each other.</li>
+			<li><strong>New dataset:</strong> Housing Stock data has been added as a tile under People and Communities with a chart for the dataset NIHSLGD.</li>
+		</ul>
 </Section>
 
 <style>

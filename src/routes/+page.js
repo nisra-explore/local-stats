@@ -34,8 +34,8 @@ export async function load({ fetch }) {
     // let ni = await loadArea("N92000002", fetch);
     // let place = await loadArea(code, fetch);
     // console.log(search_data, place, ni)
-    return {
+        return {
         search_data
     };
-
+    
 }

@@ -2,7 +2,6 @@
 
 import { onMount } from 'svelte';
   import { afterNavigate } from '$app/navigation';
-  import { asset } from "$app/paths";
   import { tick } from 'svelte'; // Svelte's tick function ensures updates are applied before next DOM refresh.
 
   export let id;
@@ -308,6 +307,15 @@ function get_i_button_info () {
 				  "<p class = 'pibutton'>Last updated:" + checkMeta("houseprices[0].last_updated") + ".</p>"+
 				  "<p class = 'pibutton'><a href='mailto:" + checkMeta("houseprices[0].email") + "'>Email for more information</a> </p>"  
 		},
+
+		housingstock: {
+			title: "Housing stock",
+			info:
+				" <p class = 'pibutton'>Access data at: <a href='" + checkMeta("HousingStock[0].dataset_url") + "'>" + checkMeta("HousingStock[0].title") + "</a></p>"+
+				"<p class = 'pibutton'>Last updated: " + checkMeta("HousingStock[0].last_updated") + ".</p>"+
+				"<p class = 'pibutton'><a href='mailto:" + checkMeta("HousingStock[0].email") + "'>Email for more information</a> </p>"
+		},
+
 		concern: {
 			title: "Concern about the environment",
 			info:  " <p class = 'pibutton'>Access data at: <a href='" + checkMeta("Env_concern[0].dataset_url") + "'>" + checkMeta("Env_concern[0].title") + "</a></p>"+
@@ -499,12 +507,15 @@ async function handleClick() {
 	bind:this={row}
 >
 	<div class="blocktitle" on:click={changeAria}>
-		{i_button_info[id].title} <img class="i-button" src={asset("/img/i-button.svg")} alt="Information button">
+		{i_button_info[id].title} <button
+    								type="button" class="info-btn" id="infoButton" aria-expanded="false" aria-controls="infoContent" aria-label="Show more information">
+    							  <i class="bi bi-info-circle" aria-hidden="true"></i>
+								  </button>
 	</div>
 </div>
 <div class="collapse" id="{id}-info">
     <div class="card card-body" aria-hidden="true" bind:this={card}>
-        {@html i_button_info[id].info} 
+        {@html i_button_info[id].info}
     </div>
 </div>
 
@@ -558,5 +569,25 @@ async function handleClick() {
 
 	.show {
 		display: block !important;
+	}
+
+	.info-btn {
+  	width: 32px;
+  	height: 32px;
+  	padding: 0;
+  	background: transparent;
+  	color:#222222;
+  	border: none;
+  	display: inline-flex;
+  	align-items: center;
+  	justify-content: center;
+
+  	cursor: pointer;
+  	font-size: 20px;
+	}
+
+	.info-btn:hover {
+  	background-color: #732777;
+  	color:#fff;
 	}
 </style>
