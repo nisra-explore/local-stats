@@ -1,10 +1,7 @@
 <script>
- // import { assets } from "$app/paths";
-	import { getContext } from 'svelte';
-	import Section from "$lib/layout/Section.svelte";
-
-
-//	export let theme = getContext('theme');
+  import { asset } from "$app/paths";
+  import { getContext } from 'svelte';
+  import Section from "$lib/layout/Section.svelte";
 </script>
 
 <!-- svelte-ignore missing-declaration -->
@@ -52,27 +49,27 @@
         <ul class="footer-social">
           <li>
             <a href="https://www.facebook.com/nisra.gov.uk">
-               <img src="/img/logo/facebook-brands-solid-full.svg" alt="NISRA on Facebook" role="img" class="img-50"/>
+               <img src={asset("/img/logo/facebook-brands-solid-full.svg")} alt="NISRA on Facebook" role="img" class="img-50"/>
              </a>
           </li>
           <li>
              <a href="https://x.com/NISRA/">
-               <img src="/img/logo/x-twitter-brands-solid-full.svg" alt="NISRA on Twitter/X" role="img" class="img-50"/>
+               <img src={asset("/img/logo/x-twitter-brands-solid-full.svg")} alt="NISRA on Twitter/X" role="img" class="img-50"/>
              </a>
           </li>
           <li>
              <a href="https://www.youtube.com/user/nisrastats">
-               <img src="/img/logo/youtube-brands-solid-full.svg" alt="NISRA on YouTube" role="img" class="img-50"/>
+               <img src={asset("/img/logo/youtube-brands-solid-full.svg")} alt="NISRA on YouTube" role="img" class="img-50"/>
              </a>
           </li>
           <li>
              <a href="https://www.linkedin.com/company/northern-ireland-statistics-and-research-agency/">
-               <img src="/img/logo/linkedin-in-brands-solid-full.svg" alt="NISRA on LinkedIn" role="img" class="img-50"/>
+               <img src={asset("/img/logo/linkedin-in-brands-solid-full.svg")} alt="NISRA on LinkedIn" role="img" class="img-50"/>
              </a>
           </li>
           <li>
              <a href="https://www.instagram.com/nisra.gov.uk/">
-               <img src="/img/logo/instagram-brands-solid-full.svg" alt="NISRA on Instagram" role="img" class="img-50"/>
+               <img src={asset("/img/logo/instagram-brands-solid-full.svg")} alt="NISRA on Instagram" role="img" class="img-50"/>
              </a>
           </li>
         </ul>
