@@ -604,6 +604,14 @@
         "Age 65+": 17.0275
       }
     },
+    "HousingStock": {
+      "perc": {
+        "Apartment": 11.4278,
+        "Detached": 29.2162,
+        "Semi-Detached": 26.6162,
+        "Terrace": 32.7398
+      }
+    },
     "Destination": {
       "perc": {
         "destHEpct": 38.7,
@@ -683,6 +691,17 @@
         "email": "lps.statisticsbranch@finance-ni.gov.uk",
         "title": "House Price Index and Standardised Price",
         "year": "2026Q2"
+      }
+    ],
+    "HousingStock": [
+      {
+        "table_code": "NIHSLGD",
+        "dataset_url": "https://data.nisra.gov.uk/table/NIHSLGD",
+        "geog_level": "lgd",
+        "last_updated": "2026-02-09",
+        "email": "lps.statisticsbranch@finance-ni.gov.uk",
+        "title": "Housing stock",
+        "year": "2025"
       }
     ],
     "LE": [
