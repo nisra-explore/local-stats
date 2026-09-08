@@ -1180,23 +1180,23 @@ function compareDensity (place) {
 				id: "lifeexpectancy",
 				year: pullYear("LE", data.place),
 				content: "<p>Male</p> <span class='text-big'>" + 
-						(check("LE.value.Males")).toFixed(1) +
+						Number(check("LE.value.Males")).toFixed(1) +
 						"</span> years"+
 						"<p>Female</p> <span class='text-big'>" +
-						(check("LE.value.Females")).toFixed(1) + "</span> years",
+						Number(check("LE.value.Females")).toFixed(1) + "</span> years",
 				show: ["ni"]
 			},
 			box_3b: {
 				id: "lifeexpectancy",
 				year: pullYear("LE", data.place),
-				content: "<p>Male</p> <span class='text-big'>" + 
-						(check("LE.value.Males")).toFixed(1) +
+				content: "<p>Male</p> <span class='text-big'>" +
+						Number(check("LE.value.Males")).toFixed(1) +
 						"</span> years"+
-						"<span style='color: #1460aa'> (" + comp_short + " " + data.ni.data.LE.value.Males.toFixed(1) +") </span></p>"+
+						"<span style='color: #1460aa'> (" + comp_short + " " + Number(data.ni.data.LE.value.Males).toFixed(1) +") </span></p>"+
 						"<p>Female</p> <span class='text-big'>" +
-						(check("LE.value.Females")).toFixed(1) + "</span> years"+
-						"<span style='color: #1460aa'> (" + comp_short + " " + data.ni.data.LE.value.Females.toFixed(1) +") </span></p>",
-				show: [ "lgd", "dea"]
+						Number(check("LE.value.Females")).toFixed(1) + "</span> years"+
+						"<span style='color: #1460aa'> (" + comp_short + " " + Number(data.ni.data.LE.value.Females).toFixed(1) +") </span></p>",
+				show: ["lgd", "dea"]
 			},
 			box_3c: {
 				id: "lifeexpectancy",
