@@ -112,7 +112,7 @@
 					placeholder="Enter postcode..."
 					bind:this={searchInput}
 				>
-				<button on:click={search}><img src = "{asset("/img/search.svg")}" alt = "Search button" width="40px"></button>
+				<button on:click={search}><img src = {asset("/img/search.svg")} alt = "Search button" width="40px"></button>
 				</form>
 				<div bind:this={resultTable}></div>
 			</div>
