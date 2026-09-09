@@ -7,6 +7,7 @@
 	import NISRAFooter from "$lib/layout/NISRAFooter.svelte";
   import Warning from "$lib/ui/Warning.svelte"
   import { initCookieConsent } from "$lib/cookies";
+  import { base } from "$app/paths";
 
   // STYLE CONFIG
   // Set theme globally (options are 'light' or 'dark')
@@ -111,8 +112,8 @@
 </script>
 
 <svelte:head>
-<link rel="icon" href="https://www.nisra.gov.uk/sites/nisra.gov.uk/themes/nisra_theme/favicon.ico" /> 
-<link rel="apple-touch-icon" href="https://www.nisra.gov.uk/sites/nisra.gov.uk/themes/nisra_theme/favicon.ico">
+<link rel="icon" href="{base}/favicon.ico" />
+<link rel="apple-touch-icon" href="{base}/favicon.ico" />
 </svelte:head>
 
 <div bind:this={c}>
