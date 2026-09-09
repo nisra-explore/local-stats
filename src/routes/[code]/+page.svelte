@@ -739,7 +739,6 @@ function compareDensity (place) {
 					style="width: 350px; padding-top: 5px;"
 					class:float-right={cols > 1}
 				>
-					<p>Search for your area:</p>
 					<Select
 						search_data = {data.search_data}
 						group="typestr"
