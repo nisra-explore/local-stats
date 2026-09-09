@@ -1,6 +1,7 @@
 <script>
 	import { createEventDispatcher } from 'svelte';
-	
+	import { assets } from '$app/paths';
+
 	const dispatch = createEventDispatcher();
 	
 	export let search_data;
@@ -129,7 +130,7 @@
 			aria-label="Search"
 			on:click={toggle}
 		>
-			<img src="/img/search.svg" alt="" />
+			<img src={`${assets}/img/search.svg`} alt="" />
 		</button>
 	</div>
 	{/if}
