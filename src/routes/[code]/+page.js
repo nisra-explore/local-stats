@@ -62,10 +62,11 @@ export async function load({ params, fetch, url }) {
     if (place.type != "lgd") compare_code = NI_CODE;
 
     let ni = await loadArea(compare_code, fetch);
+    let northern_ireland = await loadArea(NI_CODE, fetch);
 
 
     return {
-        search_data, place, ni, compare_options, compare_code
+        search_data, place, ni, northern_ireland, compare_options, compare_code
     };
 
 }

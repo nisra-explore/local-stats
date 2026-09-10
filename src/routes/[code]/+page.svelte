@@ -2092,15 +2092,15 @@ Police Ombudsmans Office for Northern Ireland</a>.</p>
 				content:  "<strong>Agriculture</strong>" + 
 					"<p><span class='text-big'>"  + 
 				    	 (check("farms.value.F")).toLocaleString() +" </span> farms "+
-						 "<span style='color: #1460aa'>(" + (check("farms.value.F")/(data.ni.data.farms.value.F)*100).toLocaleString(undefined, {maximumFractionDigits: 1, minimumFractionDigits: 1}) +"% of " + comp_short + ")</span>.</p>"  +
+						 "<span style='color: #1460aa'>(" + (check("farms.value.F")/(data.northern_ireland.data.farms.value.F)*100).toLocaleString(undefined, {maximumFractionDigits: 1, minimumFractionDigits: 1}) +"% of NI)</span>.</p>"  +
 						 "<span class='text-big'>"  + 
 				    	 (check("farms.value.FA")).toLocaleString() +" </span> farmers "+
-						 "<span style='color: #1460aa'>(" + (check("farms.value.FA")/(data.ni.data.farms.value.FA)*100).toLocaleString(undefined, {maximumFractionDigits: 1, minimumFractionDigits: 1}) +"% of " + comp_short + ")</span>."  +
+						 "<span style='color: #1460aa'>(" + (check("farms.value.FA")/(data.northern_ireland.data.farms.value.FA)*100).toLocaleString(undefined, {maximumFractionDigits: 1, minimumFractionDigits: 1}) +"% of NI)</span>."  +
 						  "<p><strong>Tourism</strong></p><span class='text-big'>"  + 
 				    	 (check("tourism.value.TourismJobs")).toLocaleString() +" </span> jobs " + 
-				    	 "<span style='color: #1460aa'>(" + (check("tourism.value.TourismJobs")/(data.ni.data.tourism.value.TourismJobs)*100).toLocaleString(undefined, {maximumFractionDigits: 1, minimumFractionDigits: 1}) +"% of " + comp_short + ")</span>."  +
+				    	 "<span style='color: #1460aa'>(" + (check("tourism.value.TourismJobs")/(data.northern_ireland.data.tourism.value.TourismJobs)*100).toLocaleString(undefined, {maximumFractionDigits: 1, minimumFractionDigits: 1}) +"% of NI)</span>."  +
 						 "<p><span class='text-big'>" + (check("tourism_estab.value.estab")).toLocaleString() +" </span> accommodation establishments "  +
-						 "<span style='color: #1460aa'>(" + (check("tourism_estab.value.estab")/(data.ni.data.tourism_estab.value.estab)*100).toLocaleString(undefined, {maximumFractionDigits: 1, minimumFractionDigits: 1}) +"% of " + comp_short + ")</span>.</p>"  ,
+						 "<span style='color: #1460aa'>(" + (check("tourism_estab.value.estab")/(data.northern_ireland.data.tourism_estab.value.estab)*100).toLocaleString(undefined, {maximumFractionDigits: 1, minimumFractionDigits: 1}) +"% of NI)</span>.</p>"  ,
 						
 						 show: [ "lgd"]
 						},
