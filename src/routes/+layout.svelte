@@ -14,15 +14,6 @@
   let theme = "light";
   setContext("theme", themes[theme]);
 
-  // GOOGLE ANALYTICS
-  // Settings for page analytics. Values must be shared with <AnalyticsBanner> component
-  const analyticsId = "GTM-WKK8ZWP";
-  const analyticsProps = {
-    "contentTitle": "Northern Ireland Local Statistics Explorer",
-    "releaseDate": "20220823",
-    "contentType": "exploratory"
-  };
-
   let c;
   let f;
   let space_needed;
@@ -88,27 +79,23 @@
     window.addEventListener('click', debouncedSetSpaceHeight);
     window.addEventListener('load', debouncedSetSpaceHeight);
     window.addEventListener('mousemove', debouncedSetSpaceHeight);
-
+    
     initCookieConsent({
-    bannerId: 'cookie-banner',
-    gtmId: 'GTM-WKK8ZWP',
-    cookieDomain: window.location.hostname,
-    analyticsProps
+      bannerId: "cookie-banner"
+    });
+    
+    return () => {
+      window.removeEventListener("keydown", revealSkipLink);
+      skipLink.removeEventListener("click", clearSkipLinkHash);
+
+      window.removeEventListener('resize', debouncedSetSpaceHeight);
+      window.removeEventListener('click', debouncedSetSpaceHeight);
+      window.removeEventListener('load', debouncedSetSpaceHeight);
+      window.removeEventListener('mousemove', debouncedSetSpaceHeight);
+    };
+  
   });
   
-  return () => {
-    window.removeEventListener("keydown", revealSkipLink);
-    skipLink.removeEventListener("click", clearSkipLinkHash);
-
-    window.removeEventListener('resize', debouncedSetSpaceHeight);
-    window.removeEventListener('click', debouncedSetSpaceHeight);
-    window.removeEventListener('load', debouncedSetSpaceHeight);
-    window.removeEventListener('mousemove', debouncedSetSpaceHeight);
-  };
-   
-  });
-  
-
 </script>
 
 <svelte:head>
