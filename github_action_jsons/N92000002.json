@@ -610,7 +610,7 @@
       "value": 1927855
     },
     "Median": {
-      "value": 40.3
+      "value": 40.6
     },
     "BRES": {
       "perc": {
@@ -677,10 +677,10 @@
         "table_code": "MA01T02",
         "dataset_url": "https://data.nisra.gov.uk/table/MA01T02",
         "geog_level": "lgd",
-        "last_updated": "2025-09-17",
+        "last_updated": "2026-10-01",
         "email": "census@nisra.gov.uk",
         "title": "Median age",
-        "year": "2024"
+        "year": "2025"
       }
     ],
     "BroadAge": [
