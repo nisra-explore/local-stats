@@ -386,7 +386,8 @@
         "2021": 149272,
         "2022": 149915,
         "2023": 150822,
-        "2024": 151669
+        "2024": 151669,
+        "2025": 152367
       }
     },
     "Primary": {
@@ -583,7 +584,7 @@
       "value": 5860
     },
     "MYETotal": {
-      "value": 151669
+      "value": 152367
     },
     "Median": {
       "value": 41.6
@@ -598,10 +599,10 @@
     },
     "BroadAge": {
       "perc": {
-        "Age 0-15": 19.9256,
-        "Age 16-39": 28.135,
-        "Age 40-64": 33.3707,
-        "Age 65+": 18.5687
+        "Age 0-15": 19.6965,
+        "Age 16-39": 28.0002,
+        "Age 40-64": 33.4488,
+        "Age 65+": 18.8545
       }
     },
     "HousingStock": {
@@ -643,10 +644,10 @@
         "table_code": "MYE01T06",
         "dataset_url": "https://data.nisra.gov.uk/table/MYE01T06",
         "geog_level": "lgd",
-        "last_updated": "2025-09-17",
+        "last_updated": "2026-10-02",
         "email": "census@nisra.gov.uk",
         "title": "Population totals",
-        "year": "2024"
+        "year": "2025"
       }
     ],
     "Median": [
@@ -665,10 +666,10 @@
         "table_code": "MYE01T04",
         "dataset_url": "https://data.nisra.gov.uk/table/MYE01T04",
         "geog_level": "lgd",
-        "last_updated": "2025-09-18",
+        "last_updated": "2026-10-02",
         "email": "census@nisra.gov.uk",
         "title": "Mid-year population estimates",
-        "year": "2024"
+        "year": "2025"
       }
     ],
     "PopChange": [
@@ -676,10 +677,10 @@
         "table_code": "MYE01T06",
         "dataset_url": "https://data.nisra.gov.uk/table/MYE01T06",
         "geog_level": "lgd",
-        "last_updated": "2025-09-17",
+        "last_updated": "2026-10-02",
         "email": "census@nisra.gov.uk",
         "title": "Population totals",
-        "year": "2024"
+        "year": "2025"
       }
     ],
     "houseprices": [
