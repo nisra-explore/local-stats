@@ -590,10 +590,10 @@
       "value": 17.9
     },
     "ASHE": {
-      "value": 37052
+      "value": 38203.4
     },
     "ASHE_weekly": {
-      "value": 591.9
+      "value": 624.7
     },
     "ClassSize": {
       "value": 17.4
@@ -810,10 +810,10 @@
         "table_code": "GAPLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/GAPLGD",
         "geog_level": "lgd",
-        "last_updated": "2025-10-29",
+        "last_updated": "2026-10-22",
         "email": "economicstats@nisra.gov.uk",
         "title": "Gross Annual Pay",
-        "year": "2025"
+        "year": "2026"
       }
     ],
     "ASHE_weekly": [
@@ -821,10 +821,10 @@
         "table_code": "GHWPLGD",
         "dataset_url": "https://data.nisra.gov.uk/table/GHWPLGD",
         "geog_level": "lgd",
-        "last_updated": "2025-10-29",
+        "last_updated": "2026-10-22",
         "email": "economicstats@nisra.gov.uk",
         "title": "Gross Hourly (excluding overtime) and Weekly Pay",
-        "year": "2025"
+        "year": "2026"
       }
     ],
     "BRES": [
