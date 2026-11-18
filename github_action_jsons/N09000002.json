@@ -644,7 +644,7 @@
         "table_code": "MYE01T06",
         "dataset_url": "https://data.nisra.gov.uk/table/MYE01T06",
         "geog_level": "lgd",
-        "last_updated": "2026-10-02",
+        "last_updated": "2026-11-18",
         "email": "census@nisra.gov.uk",
         "title": "Population totals",
         "year": "2025"
@@ -666,7 +666,7 @@
         "table_code": "MYE01T04",
         "dataset_url": "https://data.nisra.gov.uk/table/MYE01T04",
         "geog_level": "lgd",
-        "last_updated": "2026-10-02",
+        "last_updated": "2026-11-18",
         "email": "census@nisra.gov.uk",
         "title": "Mid-year population estimates",
         "year": "2025"
@@ -677,7 +677,7 @@
         "table_code": "MYE01T06",
         "dataset_url": "https://data.nisra.gov.uk/table/MYE01T06",
         "geog_level": "lgd",
-        "last_updated": "2026-10-02",
+        "last_updated": "2026-11-18",
         "email": "census@nisra.gov.uk",
         "title": "Population totals",
         "year": "2025"
