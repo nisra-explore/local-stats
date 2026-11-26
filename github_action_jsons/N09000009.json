@@ -511,14 +511,14 @@
     "niets_sales": {
       "value": {
         "ALL": null,
-        "NI": 14897.4727,
-        "GB": 833.5416,
-        "IE": 278.7134,
-        "REU": 895.4252,
-        "ROW": 4614.3054,
-        "EXTERN": 2765.7848,
-        "EXPORT": 668.6319,
-        "IMPORT": 945.9034
+        "NI": 15737.2793,
+        "GB": 1067.3399,
+        "IE": 359.5551,
+        "REU": 1196.5467,
+        "ROW": 4465.6965,
+        "EXTERN": 3052.885,
+        "EXPORT": 565.2948,
+        "IMPORT": 906.7809
       },
       "perc": {
         "ALL": null,
@@ -552,8 +552,8 @@
     },
     "houseprices": {
       "value": {
-        "SP": 195452.7783,
-        "HPI": 127.3111
+        "SP": 200727.2405,
+        "HPI": 130.7467
       }
     },
     "Satisfy": {
@@ -688,10 +688,10 @@
         "table_code": "LPSHPI01",
         "dataset_url": "https://data.nisra.gov.uk/table/LPSHPI01",
         "geog_level": "lgd",
-        "last_updated": "2026-08-25",
+        "last_updated": "2026-11-25",
         "email": "lps.statisticsbranch@finance-ni.gov.uk",
         "title": "House Price Index and Standardised Price",
-        "year": "2026Q2"
+        "year": "2026Q3"
       }
     ],
     "HousingStock": [
@@ -1062,10 +1062,10 @@
         "table_code": "NIETS05",
         "dataset_url": "https://data.nisra.gov.uk/table/NIETS05",
         "geog_level": "lgd",
-        "last_updated": "2026-05-12",
+        "last_updated": "2026-11-26",
         "email": "economicstats@nisra.gov.uk",
         "title": "NIETS: Trade by Local Government District",
-        "year": "2024"
+        "year": "2025"
       }
     ],
     "niets_purch": [
@@ -1073,10 +1073,10 @@
         "table_code": "NIETS05",
         "dataset_url": "https://data.nisra.gov.uk/table/NIETS05",
         "geog_level": "lgd",
-        "last_updated": "2026-05-12",
+        "last_updated": "2026-11-26",
         "email": "economicstats@nisra.gov.uk",
         "title": "NIETS: Trade by Local Government District",
-        "year": "2024"
+        "year": "2025"
       }
     ]
   }
