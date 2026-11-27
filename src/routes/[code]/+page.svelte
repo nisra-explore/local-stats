@@ -1080,9 +1080,9 @@ function compareDensity (place) {
 						id: "houseprices",
 						year: pullYear("houseprices", data.place),
 						content: "<p><span class='text-big'>£"+(check("houseprices.value.SP")).toLocaleString(undefined, {maximumFractionDigits: 0})+"</span>"+
-						"<span style='color: #1460aa'> (NI £"+(data.ni.data.houseprices.value.SP).toLocaleString(undefined, {maximumFractionDigits: 0})+") </span></p>" +
+						"<span style='color: #1460aa'> (NI £"+(check("data.ni.data.houseprices.value.SP")).toLocaleString(undefined, {maximumFractionDigits: 0})+") </span></p>" +
 						"<p><span class='text-big'>"+((check("houseprices.value.HPI")-100)).toLocaleString(undefined, {maximumFractionDigits: 1})+"%</span> higher than in quarter 1 2015"+
-						"<span style='color: #1460aa'> (NI "+((data.ni.data.houseprices.value.HPI-100)).toLocaleString(undefined, {maximumFractionDigits: 1})+"%)</span></p>",
+						"<span style='color: #1460aa'> (NI "+((check("data.ni.data.houseprices.value.HPI")-100)).toLocaleString(undefined, {maximumFractionDigits: 1})+"%)</span></p>",
 						show: ["lgd"]
 					},
 
